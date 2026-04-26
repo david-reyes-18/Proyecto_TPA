@@ -42,7 +42,7 @@ Aqui el jugador utilizará su laptop para revisar correos electrónicos de clien
 ### Taller
 Una vez aceptado el servicio, el taller será el espacio en el cual se diagnosticará y reparará el dispositivo, donde se deberán realizar pasos de reparación que costarán una operación matemática y toma de desiciones lógicas.
 
-### Propósito Formativo
+## Propósito Formativo
 
 Innomath busca combinar:
 
