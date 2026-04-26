@@ -16,16 +16,16 @@ Todo proseso sera desarrollado mediante la resolucion de **problemas matemático
 ## Jugabilidad
 Una vez el usuario ingrese al juego por primera vez se le preguntará que nivel jugará, teniendo los siguientes niveles a dispocición:
 
-*Fácil
-*Medio
-*Difícil
+- Fácil
+- Medio
+- Difícil
 
 Esto afectará directamente a la complejidad de:
 
-*Operaciones matemáticas
-*Problemas lógicos
-*Problemas relacionados a diagnóstico computacional
-*Procesos de reparación
+- Operaciones matemáticas
+- Problemas lógicos
+- Problemas relacionados a diagnóstico computacional
+- Procesos de reparación
 
 ## Espacio de juego
 El espacio de juego corresponde a la habitación del personaje que controlaremos, el cual tendrá dos espacios principales:
@@ -33,11 +33,11 @@ El espacio de juego corresponde a la habitación del personaje que controlaremos
 ### Escritorio
 Aqui el jugador utilizará su laptop para revisar correos electrónicos de clientes ficticos que solicitarán diferentes servicios técnicos, por ejemplo:
 
-*Aumento de ram
-*Cambio de almacenamiento
-*Problemas de sobrecalentamiento
-*Remplazo de componentes dañados
-*Pantallas dañadas
+- Aumento de ram
+- Cambio de almacenamiento
+- Problemas de sobrecalentamiento
+- Remplazo de componentes dañados
+- Pantallas dañadas
 
 ### Taller
 Una vez aceptado el servicio, el taller será el espacio en el cual se diagnosticará y reparará el dispositivo, donde se deberán realizar pasos de reparación que costarán una operación matemática y toma de desiciones lógicas.
@@ -47,15 +47,15 @@ Una vez aceptado el servicio, el taller será el espacio en el cual se diagnosti
 Innomath busca combinar:
 
 ### Matemáticas
-*Aritmética
-*Álgebra
-*Lógica
-*Resolución de problemas
-*Modelamiento matemático
+- Aritmética
+- Álgebra
+- Lógica
+- Resolución de problemas
+- Modelamiento matemático
 
 ### Tecnología
 
-*Componentes de una PC
-*Arquitectura básica de una PC
-*Reparación
-*Mantención
+- Componentes de una PC
+- Arquitectura básica de una PC
+- Reparación
+- Mantención
