@@ -4,7 +4,7 @@
 ## Objetivo
 El objetivo que tiene **Innomath** es que el jugador pueda aprender acerca de componentes fundamentales que poseen las laptops y computadores de escritorio, comprendiendo asi su *funcionamiento*, *diagnóstico* y *reparación*.
 
-Todo proseso sera desarrollado mediante la resolucion de **problemas matemáticos**, **lógicos** y **razonamiento**, permitiendo fortalecer:
+Todo proceso será desarrollado mediante la resolución de **problemas matemáticos**, **lógicos** y **razonamiento**, permitiendo fortalecer:
 
 - Habilidades matemáticas
 - Pensamiento lógico
