@@ -1,14 +1,21 @@
 from abc import ABC, abstractmethod
 
 class Componente(ABC):
-    def __init__(self, nombre: str, esta_funcionando: bool = True):
+    def __init__(self, nombre: str):
         self._nombre = nombre
-        self._esta_funcionando = esta_funcionando
+        self._esta_funcionando = True
     
-    @abstractmethod
+    @property
+    def nombre(self) -> str:
+        return self._nombre
+    
+    @property
+    def esta_funcionando(self) -> bool:
+        return self._esta_funcionando
+    
     def reparar(self):
-        pass
+        self._esta_funcionando = True
     
     @abstractmethod
-    def reemplazar(self):
+    def diagnosticar(self) -> str:
         pass
