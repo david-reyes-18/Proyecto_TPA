@@ -20,9 +20,9 @@ class Dispositivo:
         return self._esta_reparado
     
     def marcar_reparado(self):
-        self.esta_reparado = True
+        self._esta_reparado = True
     
-    def obtener_componente(self, nombre: str) -> Componente:
+    def obtener_componente(self, nombre: str) -> Componente | None:
         for componente in self._componentes:
             if componente.nombre.lower() == nombre.lower():
                 return componente
@@ -31,5 +31,5 @@ class Dispositivo:
     def diagnosticar(self) -> list[str]:
         diagnosticos = []
         for componente in self._componentes:
-            diagnosticos.append(componente.diagnosticar)
+            diagnosticos.append(componente.diagnosticar())
         return diagnosticos

@@ -7,4 +7,21 @@ class PlacaBase(Componente):
         self._cantidad_slots = cantidad_slots
         self._cantidad_maxima_ram = cantidad_maxima_ram
     
+    @property
+    def tipo_ram(self) -> str:
+        return self._tipo_ram
     
+    @property
+    def cantidad_slots(self) -> int:
+        return self._cantidad_slots
+    
+    @property
+    def cantidad_maxima_ram(self) -> int:
+        return self._cantidad_maxima_ram
+    
+    def cantidad_ram_por_slot(self) -> int:
+        return self._cantidad_maxima_ram // self._cantidad_slots
+    
+    def diagnosticar(self) -> str:
+        return f"""Placa base: {self._cantidad_slots} Slots, 
+                {self._cantidad_maxima_ram} GB RAM {self._tipo_ram}"""

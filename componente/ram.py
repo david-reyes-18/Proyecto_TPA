@@ -1,8 +1,8 @@
 from componente.componente import Componente
 
 class RAM(Componente):
-    def __init__(self, capacidad_gb: int, velocidad_mhz: int, tipo: str):
-        super().__init__("RAM")
+    def __init__(self, nombre: str, capacidad_gb: int, velocidad_mhz: int, tipo: str):
+        super().__init__(nombre)
         self._capacidad_gb = capacidad_gb
         self._velocidad_mhz = velocidad_mhz
         self._tipo = tipo
