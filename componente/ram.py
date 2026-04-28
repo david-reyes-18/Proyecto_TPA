@@ -1,10 +1,11 @@
 from componente.componente import Componente
 
 class RAM(Componente):
-    def __init__(self, capacidad_gb: int, velocidad_mhz: int):
+    def __init__(self, capacidad_gb: int, velocidad_mhz: int, tipo: str):
         super().__init__("RAM")
         self._capacidad_gb = capacidad_gb
         self._velocidad_mhz = velocidad_mhz
+        self._tipo = tipo
         
     @property
     def capacidad_gb(self) -> int:
@@ -13,6 +14,10 @@ class RAM(Componente):
     @property
     def velocidad_mhz(self) -> int:
         return self._velocidad_mhz
+    
+    @property
+    def tipo(self) -> str:
+        return self._tipo
     
     def diagnosticar(self) -> str:
         return f"{self.nombre} posee {self.capacidad_gb}GB de {self.velocidad_mhz} MHZ."
