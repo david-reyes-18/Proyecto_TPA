@@ -1,8 +1,11 @@
 from componente.componente import Componente
+from sistema.resultado_operaciones import ResultadoOperacion
+from sistema.codigo_operacion import CodigoOperacion
+from sistema.mensaje_sistema import MensajesSistema
 
 class PlacaBase(Componente):
     def __init__(self, tipo_ram: str, cantidad_slots: int, cantidad_maxima_ram: int):
-        super().__init__("Placa Base", es_reemplazable = True, es_reparable = True)
+        super().__init__("Placa Base", es_reemplazable = False, es_reparable = False)
         self._tipo_ram = tipo_ram
         self._cantidad_slots = cantidad_slots
         self._cantidad_maxima_ram = cantidad_maxima_ram
@@ -22,12 +25,23 @@ class PlacaBase(Componente):
     def cantidad_ram_por_slot(self) -> int:
         return self._cantidad_maxima_ram // self._cantidad_slots
     
-    def reparar(self):
-        return "Funcion no implementada"
+    def reparar(self) -> ResultadoOperacion:
+        return ResultadoOperacion(
+            exito_operacion = False,
+            codigo_operacion = CodigoOperacion.NO_REPARABLE,
+            mensaje_sistema = MensajesSistema.NO_REPARABLE
+        )
     
-    def reemplazar(self):
-        return "Funcion no implementada"
+    def reemplazar(self) -> ResultadoOperacion:
+        return ResultadoOperacion(
+            exito_operacion = False,
+            codigo_operacion = CodigoOperacion.NO_REEMPLAZABLE,
+            mensaje_sistema = MensajesSistema.NO_REEMPLAZABLE
+        )
     
-    def diagnosticar(self) -> str:
-        return f"""Placa base: {self._cantidad_slots} Slots, 
-                {self._cantidad_maxima_ram} GB RAM {self._tipo_ram}"""
+    def diagnosticar(self) -> ResultadoOperacion:
+        return ResultadoOperacion(
+            exito_operacion = True,
+            codigo_operacion = CodigoOperacion.COMPONENTE_FUNCIONAL,
+            mensaje_sistema = MensajesSistema.COMPONENTE_FUNCIONAL
+        )

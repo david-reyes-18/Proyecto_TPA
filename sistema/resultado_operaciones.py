@@ -15,15 +15,15 @@ class ResultadoOperacion:
     
     @property
     def exito(self) -> bool:
-        return self._exito
+        return self._exito_operacion
 
     @property
     def codigo(self):
-        return self._codigo
+        return self._codigo_operacion
 
     @property
     def mensaje(self) -> str:
-        return self._mensaje
+        return self._mensaje_sistema
 
     @property
     def costo(self) -> int:
@@ -32,14 +32,3 @@ class ResultadoOperacion:
     @property
     def experiencia(self) -> int:
         return self._experiencia
-
-    def ganancia_neta(self) -> int:
-        return self._recompensa - self._costo
-
-    def __str__(self) -> str:
-        return (
-            f"[{self._codigo.value}] {self._mensaje} | "
-            f"Costo: {self._costo} | "
-            f"Recompensa: {self._recompensa} | "
-            f"Experiencia: {self._experiencia}"
-        )

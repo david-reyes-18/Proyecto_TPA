@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from sistema.resultado_operaciones import ResultadoOperacion
 
 class Componente(ABC):
     def __init__(self, nombre: str, es_reemplazable: bool, es_reparable: bool):
@@ -24,13 +25,13 @@ class Componente(ABC):
         return self._esta_funcionando
     
     @abstractmethod
-    def reparar(self):
+    def reparar(self) -> ResultadoOperacion:
         pass
     
     @abstractmethod
-    def reemplazar(self):
+    def reemplazar(self) -> ResultadoOperacion:
         pass
     
     @abstractmethod
-    def diagnosticar(self) -> str:
+    def diagnosticar(self) -> ResultadoOperacion:
         pass

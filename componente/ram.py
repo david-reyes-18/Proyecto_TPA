@@ -1,4 +1,7 @@
 from componente.componente import Componente
+from sistema.resultado_operaciones import ResultadoOperacion
+from sistema.codigo_operacion import CodigoOperacion
+from sistema.mensaje_sistema import MensajesSistema
 
 class RAM(Componente):
     def __init__(self, nombre: str, 
@@ -23,11 +26,26 @@ class RAM(Componente):
     def tipo(self) -> str:
         return self._tipo
     
-    def reparar(self):
-        pass
+    def reparar(self)-> ResultadoOperacion:
+        return ResultadoOperacion(
+            exito_operacion = False,
+            codigo_operacion = CodigoOperacion.SIN_REPARACION,
+            mensaje_sistema = MensajesSistema.ERROR_NO_REPARABLE
+        )
     
-    def reemplazar(self, nueva_ram: RAM):
-        self = nueva_ram
+    def reemplazar(self, nueva_ram: RAM) -> ResultadoOperacion:
+        self._capacidad_gb = nueva_ram.capacidad_gb
+        self._velocidad_mhz = nueva_ram.velocidad_mhz
+        self._tipo = nueva_ram.tipo
+        return ResultadoOperacion(
+            exito_operacion = True,
+            codigo_operacion = CodigoOperacion.EXITO,
+            mensaje_sistema = MensajesSistema.EXITO_REEMPLAZO
+        )
     
-    def diagnosticar(self) -> str:
-        return f"{self.nombre} posee {self.capacidad_gb}GB de {self.velocidad_mhz} MHZ."
+    def diagnosticar(self) -> ResultadoOperacion:
+        return ResultadoOperacion(
+            exito_operacion = True,
+            codigo_operacion = CodigoOperacion.COMPONENTE_FUNCIONAL,
+            mensaje_sistema = MensajesSistema.COMPONENTE_FUNCIONAL
+        )

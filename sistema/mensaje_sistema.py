@@ -3,21 +3,23 @@ class MensajesSistema:
     EXITO_REPARACION = "Reparación realizada con éxito."
     EXITO_REEMPLAZO = "Componente reemplazado correctamente."
     EXITO_INSTALACION = "Instalación completada correctamente."
-    DIAGNOSTICO_OK = "Diagnóstico completado correctamente."
+    COMPONENTE_FUNCIONAL = "El componente se encuantra totalmente funcional"
 
     #Mensajes para diagnosticos especificos
-    BATERIA_DEGRADADA = "La batería presenta desgaste severo."
-    BATERIA_DESCARGADA = "La batería está completamente descargada."
-    PANTALLA_ROTA = "La pantalla presenta daño físico."
-    PIXELES_MUERTOS = "La pantalla presenta píxeles muertos."
+    SLOT_OCUPADO = "El slot en donde se quiere poner la memoria RAM ya se encuentra en uso"
+    CAPACIDAD_MAXIMA_GB_EXCEDIDA = "la cantidad de gb que se desea agregar excede el limite del slot"
     RAM_INCOMPATIBLE = "La memoria RAM no es compatible con la placa base."
-    RAM_DANADA = "La memoria RAM presenta fallas."
+    TAMANO_PANTALLA_INCORRECTA = "La pantalla no posee el tamaño correcto."
+    BATERIA_DEGRADADA = "La batería presenta desgaste severo."
+    PANTALLA_ROTA = "La pantalla presenta daño físico."
+
     CPU_SOBRECALENTADO = "El procesador supera temperaturas seguras."
     GPU_FALLA = "La tarjeta gráfica presenta fallas."
     SSD_DANADO = "La unidad de almacenamiento presenta errores."
 
     #Mensajes para errores
-    ERROR_NO_REEMPLAZABLE = "Este componente no puede ser reemplazado."
+    NO_REEMPLAZABLE = "Este componente no puede ser reemplazado."
+    NO_REPARABLE = "Este componente no se puede reparar"
     ERROR_COMPONENTE_FUNCIONAL = "El componente ya funciona correctamente."
     ERROR_INCOMPATIBILIDAD = "El componente es incompatible."
     ERROR_INSTALACION = "La instalación ha fallado."

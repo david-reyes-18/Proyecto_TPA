@@ -1,4 +1,7 @@
 from componente.ram import RAM
+from sistema.resultado_operaciones import ResultadoOperacion
+from sistema.codigo_operacion import CodigoOperacion
+from sistema.mensaje_sistema import MensajesSistema
 
 class RAMSlot:
     def __init__(
@@ -29,21 +32,34 @@ class RAMSlot:
     def modulo(self) -> RAM | None:
         return self._modulo
     
-    def instalar_ram(self, nueva_ram: RAM) -> bool:
+    def instalar_ram(self, nueva_ram: RAM) -> ResultadoOperacion:
         if self._modulo is not None:
-            return False
+            return ResultadoOperacion(
+                exito_operacion = False,
+                codigo_operacion = CodigoOperacion.SLOP_OCUPADO,
+                mensaje_sistema = MensajesSistema.SLOT_OCUPADO
+            )
         
         if nueva_ram.capacidad_gb > self._capacidad_maxima_ram:
-            return False
-        
-        if nueva_ram.velocidad_mhz > self._capacidad_maxima_mhz:
-            return False
+            return ResultadoOperacion(
+                exito_operacion = False,
+                codigo_operacion = CodigoOperacion.CAPACIDAD_MAXIMA_GB_EXCEDIDA,
+                mensaje_sistema = MensajesSistema.CAPACIDAD_MAXIMA_GB_EXCEDIDA
+            )
         
         if nueva_ram.tipo.lower() != self._tipo_compatible.lower():
-            return False
+            return ResultadoOperacion(
+                exito_operacion = False,
+                codigo_operacion = CodigoOperacion.RAM_INCOMPATIBLE,
+                mensaje_sistema = MensajesSistema.RAM_INCOMPATIBLE
+            )
         
         self._modulo = nueva_ram
-        return True
+        return ResultadoOperacion(
+            exito_operacion = True,
+            codigo_operacion = CodigoOperacion.EXITO_INSTALACION,
+            mensaje_sistema = MensajesSistema.EXITO_INSTALACION
+        )
     
     def remover_ram(self) -> RAM | None:
         ram_removida = self._modulo
