@@ -32,7 +32,7 @@ class SSD(Componente):
             mensaje_sistema=MensajesSistema.NO_REPARABLE
         )
 
-    def reemplazar(self, nuevo_ssd: "SSD", costo: int) -> ResultadoOperacion:
+    def reemplazar(self, nuevo_ssd: SSD, costo: int) -> ResultadoOperacion:
         if self._esta_funcionando:
             return ResultadoOperacion(
                 exito_operacion=False,

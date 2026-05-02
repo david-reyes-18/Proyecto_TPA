@@ -29,8 +29,8 @@ class RAM(Componente):
     def reparar(self)-> ResultadoOperacion:
         return ResultadoOperacion(
             exito_operacion = False,
-            codigo_operacion = CodigoOperacion.SIN_REPARACION,
-            mensaje_sistema = MensajesSistema.ERROR_NO_REPARABLE
+            codigo_operacion = CodigoOperacion.NO_REPARABLE,
+            mensaje_sistema = MensajesSistema.NO_REPARABLE
         )
     
     def reemplazar(self, nueva_ram: RAM) -> ResultadoOperacion:
@@ -39,7 +39,7 @@ class RAM(Componente):
         self._tipo = nueva_ram.tipo
         return ResultadoOperacion(
             exito_operacion = True,
-            codigo_operacion = CodigoOperacion.EXITO,
+            codigo_operacion = CodigoOperacion.EXITO_REEMPLAZO,
             mensaje_sistema = MensajesSistema.EXITO_REEMPLAZO
         )
     

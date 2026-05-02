@@ -21,10 +21,18 @@ class MensajesSistema:
     FORMA_BATERIA_INCORRECTA = "La forma de la bateria no coincide con la del dispositivo"
     BATERIA_DEGRADADA = "La batería presenta desgaste severo."
 
-
+    #CPU
     CPU_SOBRECALENTADO = "El procesador supera temperaturas seguras."
+    CPU_INCOMPATIBLE = "La cpu es incompatible"
+    
+    #GPU
     GPU_FALLA = "La tarjeta gráfica presenta fallas."
+    GPU_INCOMPATIBLE = "La GPU es incompatible"
+    
+    #SSD
     SSD_DANADO = "La unidad de almacenamiento presenta errores."
+    SSD_INTERFAZ_INCOMPATIBLE = "La interfaz del SSD no es compatible con este dispositivo."
+    SSD_CAPACIDAD_INSUFICIENTE = "La capacidad del nuevo SSD es menor que la del actual."
 
     #Mensajes para errores
     NO_REEMPLAZABLE = "Este componente no puede ser reemplazado."
