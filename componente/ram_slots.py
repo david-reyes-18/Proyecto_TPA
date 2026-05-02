@@ -36,7 +36,7 @@ class RAMSlot:
         if self._modulo is not None:
             return ResultadoOperacion(
                 exito_operacion = False,
-                codigo_operacion = CodigoOperacion.SLOP_OCUPADO,
+                codigo_operacion = CodigoOperacion.SLOT_OCUPADO,
                 mensaje_sistema = MensajesSistema.SLOT_OCUPADO
             )
         
