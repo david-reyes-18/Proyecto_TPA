@@ -15,7 +15,7 @@ class GPU(Componente):
                 tipo_gpu: TipoGPU,
                 interfaz: InterfazGPU,
             ):
-        super().__init__("GPU", es_reparable = False)
+        super().__init__("GPU", es_reemplazable = False, es_reparable = False)
         self._modelo = modelo
         self._memoria_gb = memoria_gb
         self._tipo_memoria = tipo_memoria
@@ -77,7 +77,7 @@ class GPU(Componente):
                 mensaje_sistema=MensajesSistema.COMPONENTE_FUNCIONAL
             )
 
-        if self.compatible(nueva_gpu):
+        if not self.compatible(nueva_gpu):
             return ResultadoOperacion(
                 exito_operacion=False,
                 codigo_operacion=CodigoOperacion.GPU_INCOMPATIBLE,
