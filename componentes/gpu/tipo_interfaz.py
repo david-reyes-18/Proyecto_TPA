@@ -1,7 +1,7 @@
 from enum import Enum
 
 class InterfazGPU(Enum):
-    PCIe = "PCIe"
+    PCIE = "PCIe"
     MXM = "MXM"
     SOLDADA = "Soldada"
     INTEGRADA = "Integrada"
