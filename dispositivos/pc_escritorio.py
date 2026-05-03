@@ -1,14 +1,14 @@
 from __future__ import annotations
-from dispositivo.dispositivo import Dispositivo
-from problema.problema import Problema
-from componente.componente import Componente
-from componente.cpu import CPU
-from componente.ram import RAM
-from componente.ram_slots import RAMSlot
-from componente.placa_base import PlacaBase
-from componente.ssd.ssd import SSD
-from componente.ssd.ssd_slot import SSDSlot
-from componente.gpu.gpu import GPU
+from dispositivos.dispositivo import Dispositivo
+from problemas.problema import Problema
+from componentes.componente import Componente
+from componentes.cpu import CPU
+from componentes.ram.ram import RAM
+from componentes.ram.ram_slots import RAMSlot
+from componentes.placa_base import PlacaBase
+from componentes.ssd.ssd import SSD
+from componentes.ssd.ssd_slot import SSDSlot
+from componentes.gpu.gpu import GPU
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
@@ -26,7 +26,7 @@ class PCEscritorio(Dispositivo):
         fuente_watts: int,
         problema: Problema,
     ):
-        componentes: list[Componente] = [cpu, gpu, slots_ram, placa_base, ssds]
+        componentes: list[Componente] = [cpu, gpu, placa_base]
         super().__init__(componentes, problema)
 
         self._modelo = modelo
@@ -81,7 +81,11 @@ class PCEscritorio(Dispositivo):
         )
 
     def almacenamiento_total_gb(self) -> int:
-        return sum(ssd.capacidad_gb for ssd in self._ssds)
+        return sum(
+            slot.ssd_instalado.capacidad_gb
+            for slot in self._ssds
+            if slot.ssd_instalado is not None
+        )
 
     def diagnosticar_todo(self) -> dict[str, ResultadoOperacion]:
         resultados: dict[str, ResultadoOperacion] = {}
@@ -90,6 +94,8 @@ class PCEscritorio(Dispositivo):
         for i, slot in enumerate(self._slots_ram):
             if slot.modulo is not None:
                 resultados[f"RAM Slot {i}"] = slot.modulo.diagnosticar()
+        for i, slot in enumerate(self._ssd):          # ← NUEVO
+            resultados[f"SSD Slot {i}"] = slot.diagnosticar()
         return resultados
 
     def __str__(self) -> str:

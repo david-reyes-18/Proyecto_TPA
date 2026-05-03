@@ -1,11 +1,11 @@
-from componente.componente import Componente
+from componentes.componente import Componente
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-from componente.gpu.tipo_gpu import TipoGPU
-from componente.gpu.tipo_memoria_gpu import TipoMemoriaGPU
-from componente.gpu.tipo_interfaz import InterfazGPU
+from componentes.gpu.tipo_gpu import TipoGPU
+from componentes.gpu.tipo_memoria_gpu import TipoMemoriaGPU
+from componentes.gpu.tipo_interfaz import InterfazGPU
 
 class GPU(Componente):
     def __init__(self, 

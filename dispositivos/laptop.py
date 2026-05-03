@@ -1,16 +1,16 @@
 from __future__ import annotations
-from dispositivo.dispositivo import Dispositivo
-from problema.problema import Problema
-from componente.componente import Componente
-from componente.cpu import CPU
-from componente.ram import RAM
-from componente.ram_slots import RAMSlot
-from componente.bateria import Bateria
-from componente.pantalla import Pantalla
-from componente.placa_base import PlacaBase
-from componente.ssd.ssd import SSD
-from componente.ssd.ssd_slot import SSDSlot
-from componente.gpu.gpu import GPU
+from dispositivos.dispositivo import Dispositivo
+from problemas.problema import Problema
+from componentes.componente import Componente
+from componentes.cpu import CPU
+from componentes.ram.ram import RAM
+from componentes.ram.ram_slots import RAMSlot
+from componentes.bateria.bateria import Bateria
+from componentes.pantalla import Pantalla
+from componentes.placa_base import PlacaBase
+from componentes.ssd.ssd import SSD
+from componentes.ssd.ssd_slot import SSDSlot
+from componentes.gpu.gpu import GPU
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
@@ -29,7 +29,7 @@ class Laptop(Dispositivo):
         placa_base: PlacaBase,
         problema: Problema,
     ):
-        componentes: list[Componente] = [cpu, gpu, ssd, bateria, pantalla, placa_base]
+        componentes: list[Componente] = [cpu, gpu, pantalla, placa_base]
         super().__init__(componentes, problema)
 
         self._modelo = modelo
@@ -87,14 +87,22 @@ class Laptop(Dispositivo):
             slot.modulo.capacidad_gb for slot in self._slots_ram if slot.modulo is not None
         )
     
+    def almacenamiento_total_gb(self) -> int:
+        return sum(
+            slot.ssd_instalado.capacidad_gb
+            for slot in self._ssds
+            if slot.ssd_instalado is not None
+        )
+    
     def diagnosticar_todo(self) -> dict[str, ResultadoOperacion]:
-        """Devuelve un dict {nombre_componente: ResultadoOperacion}."""
         resultados: dict[str, ResultadoOperacion] = {}
         for componente in self._componentes:
             resultados[componente.nombre] = componente.diagnosticar()
         for i, slot in enumerate(self._slots_ram):
             if slot.modulo is not None:
                 resultados[f"RAM Slot {i}"] = slot.modulo.diagnosticar()
+        for i, slot in enumerate(self._ssd):
+            resultados[f"SSD Slot {i}"] = slot.diagnosticar()
         return resultados
 
     def __str__(self) -> str:

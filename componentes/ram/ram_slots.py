@@ -1,4 +1,4 @@
-from componente.ram import RAM
+from componentes.ram.ram import RAM
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema

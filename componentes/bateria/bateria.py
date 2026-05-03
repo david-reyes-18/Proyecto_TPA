@@ -1,5 +1,5 @@
-from componente.componente import Componente
-from componente.forma_bateria import FormaBateria
+from componentes.componente import Componente
+from componentes.forma_bateria import FormaBateria
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema

@@ -1,5 +1,5 @@
-from problema.problema import Problema
-from componente.componente import Componente
+from problemas.problema import Problema
+from componentes.componente import Componente
 
 class Dispositivo:
     def __init__(self, componentes: list[Componente], problema: Problema):

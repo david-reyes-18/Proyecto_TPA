@@ -1,5 +1,5 @@
-from componente.ssd.ssd import SSD
-from componente.ssd.interfaz_ssd import InterfazSSD
+from componentes.ssd.ssd import SSD
+from componentes.ssd.interfaz_ssd import InterfazSSD
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
