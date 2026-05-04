@@ -15,18 +15,18 @@ class GPU(Componente):
                 tipo_gpu: TipoGPU,
                 interfaz: InterfazGPU,
             ):
-        super().__init__("GPU", es_reemplazable = False, es_reparable = False)
+        
+        reemplazable_fisicamente = (
+            tipo_gpu == TipoGPU.DEDICADA and
+            interfaz == InterfazGPU.PCIE
+        )
+        
+        super().__init__("GPU", es_reemplazable = reemplazable_fisicamente, es_reparable = False)
         self._modelo = modelo
         self._memoria_gb = memoria_gb
         self._tipo_memoria = tipo_memoria
         self._tipo_gpu = tipo_gpu
         self._interfaz = interfaz
-        
-        self._es_reemplazable = (
-            tipo_gpu == TipoGPU.DEDICADA and
-            interfaz == InterfazGPU.PCIe
-        )       
-
 
     @property
     def modelo(self) -> str:
@@ -49,11 +49,7 @@ class GPU(Componente):
         return self._interfaz
     
     def compatible(self, nueva_gpu: GPU) -> bool:
-        return (
-            self._tipo_memoria == nueva_gpu.tipo_memoria and
-            self._tipo_gpu == nueva_gpu.tipo_gpu and
-            self._interfaz == nueva_gpu.interfaz
-        )
+        return self._interfaz == nueva_gpu.interfaz
 
     def reparar(self) -> ResultadoOperacion:
         return ResultadoOperacion(

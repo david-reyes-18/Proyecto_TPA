@@ -1,4 +1,5 @@
 from componentes.componente import Componente
+from componentes.cpu.socket import SocketCPU
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
@@ -8,12 +9,19 @@ class CPU(Componente):
     def __init__(self, 
                 modelo: str, 
                 nucleos: int, 
-                frecuencia_ghz: float, 
-                es_reemplazable: bool):
-        super().__init__("CPU", es_reemplazable = es_reemplazable, es_reparable = False)
+                frecuencia_ghz: float,
+                socket: SocketCPU
+                ):
+        
+        super().__init__("CPU", es_reemplazable = True, es_reparable = False)
+        
         self._modelo = modelo
         self._nucleos = nucleos
         self._frecuencia_ghz = frecuencia_ghz
+        self._socket = socket
+        
+        if self._socket == SocketCPU.BGA:
+            self._es_reemplazable = False
 
     @property
     def modelo(self) -> str:

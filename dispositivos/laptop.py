@@ -2,7 +2,7 @@ from __future__ import annotations
 from dispositivos.dispositivo import Dispositivo
 from problemas.problema import Problema
 from componentes.componente import Componente
-from componentes.cpu import CPU
+from componentes.cpu.cpu import CPU
 from componentes.ram.ram import RAM
 from componentes.ram.ram_slots import RAMSlot
 from componentes.bateria.bateria import Bateria
