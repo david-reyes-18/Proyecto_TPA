@@ -14,7 +14,7 @@ class Bateria(Componente):
                 esta_conectada: bool,
             ):
         super().__init__(nombre = "Bateria", es_reemplazable = True, es_reparable = False)
-        self._voltaje = voltaje_v
+        self._voltaje_v = voltaje_v
         self._forma_bateria = forma_bateria
         self._capacidad_wh = capacidad_wh
         self._salud = salud

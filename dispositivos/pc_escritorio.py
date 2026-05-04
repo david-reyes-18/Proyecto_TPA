@@ -21,7 +21,7 @@ class PCEscritorio(Dispositivo):
         cpu: CPU,
         gpu: GPU,
         slots_ram: list[RAMSlot],
-        ssds: list[SSDSlot],
+        slots_ssd: list[SSDSlot],
         placa_base: PlacaBase,
         fuente_watts: int,
         problema: Problema,
@@ -33,7 +33,7 @@ class PCEscritorio(Dispositivo):
         self._cpu = cpu
         self._gpu = gpu
         self._slots_ram = slots_ram
-        self._ssds = ssds
+        self._slots_ssd = slots_ssd
         self._placa_base = placa_base
         self._fuente_watts = fuente_watts
 
@@ -54,8 +54,8 @@ class PCEscritorio(Dispositivo):
         return self._slots_ram
 
     @property
-    def ssds(self) -> list[SSDSlot]:
-        return self._ssds
+    def slots_ssd(self) -> list[SSDSlot]:
+        return self._slots_ssd
 
     @property
     def placa_base(self) -> PlacaBase:
@@ -83,7 +83,7 @@ class PCEscritorio(Dispositivo):
     def almacenamiento_total_gb(self) -> int:
         return sum(
             slot.ssd_instalado.capacidad_gb
-            for slot in self._ssds
+            for slot in self._slots_ssd
             if slot.ssd_instalado is not None
         )
 
@@ -94,7 +94,7 @@ class PCEscritorio(Dispositivo):
         for i, slot in enumerate(self._slots_ram):
             if slot.modulo is not None:
                 resultados[f"RAM Slot {i}"] = slot.modulo.diagnosticar()
-        for i, slot in enumerate(self._ssd):          # ← NUEVO
+        for i, slot in enumerate(self._slots_ssd):
             resultados[f"SSD Slot {i}"] = slot.diagnosticar()
         return resultados
 

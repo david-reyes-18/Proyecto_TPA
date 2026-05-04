@@ -23,7 +23,7 @@ class Laptop(Dispositivo):
         cpu: CPU,
         gpu: GPU,
         slots_ram: list[RAMSlot],
-        ssd: list[SSDSlot],
+        slots_ssd: list[SSDSlot],
         bateria: Bateria,
         pantalla: Pantalla,
         placa_base: PlacaBase,
@@ -36,7 +36,7 @@ class Laptop(Dispositivo):
         self._cpu = cpu
         self._gpu = gpu
         self._slots_ram = slots_ram
-        self._ssd = ssd
+        self._slots_ssd = slots_ssd
         self._bateria = bateria
         self._pantalla = pantalla
         self._placa_base = placa_base
@@ -58,8 +58,8 @@ class Laptop(Dispositivo):
         return self._slots_ram
 
     @property
-    def ssd(self) -> SSD:
-        return self._ssd
+    def slots_ssd(self) -> list[SSDSlot]:
+        return self._slots_ssd
 
     @property
     def bateria(self) -> Bateria:
@@ -90,7 +90,7 @@ class Laptop(Dispositivo):
     def almacenamiento_total_gb(self) -> int:
         return sum(
             slot.ssd_instalado.capacidad_gb
-            for slot in self._ssds
+            for slot in self._slots_ssd
             if slot.ssd_instalado is not None
         )
     
@@ -101,7 +101,7 @@ class Laptop(Dispositivo):
         for i, slot in enumerate(self._slots_ram):
             if slot.modulo is not None:
                 resultados[f"RAM Slot {i}"] = slot.modulo.diagnosticar()
-        for i, slot in enumerate(self._ssd):
+        for i, slot in enumerate(self._slots_ssd):
             resultados[f"SSD Slot {i}"] = slot.diagnosticar()
         return resultados
 
