@@ -5,12 +5,14 @@ class MensajesSistema:
     EXITO_INSTALACION = "Instalación completada correctamente."
     COMPONENTE_FUNCIONAL = "El componente se encuentra totalmente funcional"
     
-    #RAM / SLOT RAM
-    SLOT_OCUPADO = "El slot en donde se quiere poner la memoria RAM ya se encuentra en uso"
+    #SLOTS
+    SLOT_VACIO = "El slot se encuentra vacio"
+    SLOT_OCUPADO = "El slot ya se encuentra en uso"
+    
+    #RAM
     CAPACIDAD_MAXIMA_GB_EXCEDIDA = "la cantidad de gb que se desea agregar excede el limite del slot"
     RAM_INCOMPATIBLE = "La memoria RAM no es compatible con la placa base."
     RAM_SOLDADA = "La RAM se encuentra soldada"
-    SLOT_VACIO = "El slot donde se quiere remover la ram se encuentra vacio"
     
     #PANTALLA
     TAMANO_PANTALLA_INCORRECTA = "La pantalla no posee el tamaño correcto."

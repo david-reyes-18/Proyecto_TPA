@@ -5,13 +5,28 @@ from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
 class SSD(Componente):
-    def __init__(self, capacidad_gb: int, interfaz: InterfazSSD, velocidad_lectura_mbps: int):
+    def __init__(self,
+                modelo: str,
+                capacidad_gb: int, 
+                interfaz: InterfazSSD, 
+                velocidad_lectura_mbps: int,
+                velocidad_escritura_mbps: int
+            ):
+        
         super().__init__("SSD", es_reemplazable=True, es_reparable=False)
+        self._modelo = modelo
         self._capacidad_gb = capacidad_gb
         self._interfaz = interfaz
         self._velocidad_lectura_mbps = velocidad_lectura_mbps
+        self._velocidad_escritura_mbps = velocidad_escritura_mbps
         self._sectores_danados = 0
 
+    #   Propiedades
+    
+    @property
+    def modelo(self) -> str:
+        return self._modelo
+    
     @property
     def capacidad_gb(self) -> int:
         return self._capacidad_gb
@@ -19,7 +34,21 @@ class SSD(Componente):
     @property
     def interfaz(self) -> InterfazSSD:
         return self._interfaz
-
+    
+    @property
+    def velocidad_lectura_mbps(self) -> int:
+        return self._velocidad_lectura_mbps
+    
+    @property
+    def velocidad_escritura_mbps(self) -> int:
+        return self._velocidad_escritura_mbps
+    
+    @property
+    def sectores_danados(self) -> int:
+        return self._sectores_danados
+    
+    #   Metodos
+    
     def agregar_sectores_danados(self, porcentaje: int):
         self._sectores_danados = porcentaje
         if self._sectores_danados >= 30:
@@ -53,6 +82,8 @@ class SSD(Componente):
             )
         self._capacidad_gb = nuevo_ssd.capacidad_gb
         self._interfaz = nuevo_ssd.interfaz
+        self._velocidad_lectura_mbps = nuevo_ssd.velocidad_lectura_mbps
+        self._velocidad_escritura_mbps = nuevo_ssd.velocidad_escritura_mbps
         self._sectores_danados = 0
         self._esta_funcionando = True
         return ResultadoOperacion(

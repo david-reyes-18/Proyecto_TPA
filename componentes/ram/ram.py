@@ -1,3 +1,4 @@
+from __future__ import annotations
 from componentes.componente import Componente
 from componentes.ram.generacion_ram import GeneracionRAM
 from componentes.ram.formato_ram import FormatoRAM
@@ -13,13 +14,18 @@ class RAM(Componente):
                 generacion: GeneracionRAM, 
                 formato: FormatoRAM
         ):
-        super().__init__(nombre, es_reemplazable = True, es_reparable = False)
+        
+        es_reemplazable = (formato != FormatoRAM.LPDDR)
+        
+        super().__init__(nombre, es_reemplazable = es_reemplazable, es_reparable = False)
         
         self._capacidad_gb = capacidad_gb
         self._velocidad_mhz = velocidad_mhz
         self._generacion = generacion
         self._formato = formato
-
+    
+    #   Propiedades
+    
     @property
     def capacidad_gb(self) -> int:
         return self._capacidad_gb
@@ -35,6 +41,9 @@ class RAM(Componente):
     @property
     def formato(self):
         return self._formato
+    
+    
+    #   Metodos
     
     def reparar(self)-> ResultadoOperacion:
         return ResultadoOperacion(

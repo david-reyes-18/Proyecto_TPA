@@ -1,6 +1,6 @@
 from enum import Enum
 
 class FormatoRAM(Enum):
-    DIMM = "DIMM"
-    DO_DIMM = "SO-DIMM"
-    LPDDR = "LPDDR"
+    DIMM = "DIMM" # PC de escritorio
+    SO_DIMM = "SO-DIMM" # Laptops
+    LPDDR = "LPDDR" # Laptops: soldada en placa (laptops ultradelgadas)

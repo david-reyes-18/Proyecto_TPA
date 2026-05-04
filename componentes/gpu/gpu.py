@@ -1,3 +1,4 @@
+from __future__ import annotations
 from componentes.componente import Componente
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
@@ -14,20 +15,23 @@ class GPU(Componente):
                 tipo_memoria: TipoMemoriaGPU, 
                 tipo_gpu: TipoGPU,
                 interfaz: InterfazGPU,
+                tdp_watts: int
             ):
         
-        reemplazable_fisicamente = (
-            tipo_gpu == TipoGPU.DEDICADA and
-            interfaz == InterfazGPU.PCIE
-        )
+        es_reemplazable = (interfaz == InterfazGPU.PCIE)
         
-        super().__init__("GPU", es_reemplazable = reemplazable_fisicamente, es_reparable = False)
+        super().__init__("GPU", es_reemplazable = es_reemplazable, es_reparable = False)
         self._modelo = modelo
         self._memoria_gb = memoria_gb
         self._tipo_memoria = tipo_memoria
         self._tipo_gpu = tipo_gpu
         self._interfaz = interfaz
-
+        self._tdp_watts = tdp_watts
+        
+    
+    
+    #   Propiedades
+    
     @property
     def modelo(self) -> str:
         return self._modelo
@@ -48,7 +52,15 @@ class GPU(Componente):
     def interfaz(self) -> InterfazGPU:
         return self._interfaz
     
-    def compatible(self, nueva_gpu: GPU) -> bool:
+    @property
+    def tdp_watts(self) -> int:
+        return self._tdp_watts
+    
+    
+    #   Metodos
+    
+    
+    def es_compatible_con(self, nueva_gpu: GPU) -> bool:
         return self._interfaz == nueva_gpu.interfaz
 
     def reparar(self) -> ResultadoOperacion:
@@ -73,7 +85,7 @@ class GPU(Componente):
                 mensaje_sistema=MensajesSistema.COMPONENTE_FUNCIONAL
             )
 
-        if not self.compatible(nueva_gpu):
+        if not self.es_compatible_con(nueva_gpu):
             return ResultadoOperacion(
                 exito_operacion=False,
                 codigo_operacion=CodigoOperacion.GPU_INCOMPATIBLE,
@@ -85,12 +97,14 @@ class GPU(Componente):
         self._tipo_memoria = nueva_gpu.tipo_memoria
         self._tipo_gpu = nueva_gpu.tipo_gpu
         self._interfaz = nueva_gpu.interfaz
+        self._tdp_watts = nueva_gpu.tdp_watts
         self._esta_funcionando = True
 
         return ResultadoOperacion(
             exito_operacion=True,
             codigo_operacion=CodigoOperacion.EXITO_REEMPLAZO,
-            mensaje_sistema=MensajesSistema.EXITO_REEMPLAZO
+            mensaje_sistema=MensajesSistema.EXITO_REEMPLAZO,
+            costo=costo
         )
 
     def diagnosticar(self) -> ResultadoOperacion:

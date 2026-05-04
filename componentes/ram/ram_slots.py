@@ -1,3 +1,4 @@
+from __future__ import annotations
 from componentes.ram.ram import RAM
 from componentes.ram.generacion_ram import GeneracionRAM
 from componentes.ram.formato_ram import FormatoRAM
@@ -22,8 +23,12 @@ class RAMSlot:
         self._modulo = modulo
         self._esta_soldada = False
         
-        if self.esta_ocupado() and modulo.formato == FormatoRAM.LPDDR:
-            self._esta_soldada == True
+        self._esta_soldada = (
+            modulo is not None and modulo.formato == FormatoRAM.LPDDR
+        )
+    
+    
+    #   Propiedades
     
     @property
     def capacidad_maxima_ram(self) -> int:
@@ -49,13 +54,21 @@ class RAMSlot:
     def esta_soldada(self) -> bool:
         return self._esta_soldada
     
+    
+    #   Metodos
+    
     def esta_ocupado(self) -> bool:
         return self._modulo is not None
+    
+    def esta_vacio(self) -> bool:
+        return self._modulo is None
     
     def ram_compatible(self, nueva_ram: RAM) -> bool:
         return (
             self._formato_compatible == nueva_ram.formato and
-            self._generacion_compatible == nueva_ram.generacion
+            self._generacion_compatible == nueva_ram.generacion and
+            self._capacidad_maxima_gb >= nueva_ram.capacidad_gb and
+            self._velocidad_maxima_mhz >= nueva_ram.velocidad_mhz
         )
     
     def instalar_ram(self, nueva_ram: RAM) -> ResultadoOperacion:
@@ -73,7 +86,7 @@ class RAMSlot:
                 mensaje_sistema = MensajesSistema.CAPACIDAD_MAXIMA_GB_EXCEDIDA
             )
         
-        if self.ram_compatible(nueva_ram):
+        if not self.ram_compatible(nueva_ram):
             return ResultadoOperacion(
                 exito_operacion = False,
                 codigo_operacion = CodigoOperacion.RAM_INCOMPATIBLE,
@@ -95,7 +108,7 @@ class RAMSlot:
                 mensaje_sistema=MensajesSistema.RAM_SOLDADA
             )
         
-        if self._modulo == None:
+        if self.esta_vacio():
             return ResultadoOperacion(
                 exito_operacion=False,
                 codigo_operacion=CodigoOperacion.SLOT_VACIO,

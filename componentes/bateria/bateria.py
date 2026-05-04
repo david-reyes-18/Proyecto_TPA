@@ -7,33 +7,36 @@ from sistema.mensaje_sistema import MensajesSistema
 
 class Bateria(Componente):
     def __init__(self, 
-                voltaje: float,
+                voltaje_v: float,
                 forma_bateria: FormaBateria,
-                capacidad_mah: int,
+                capacidad_wh: float,
                 salud: int, 
                 esta_conectada: bool,
             ):
         super().__init__(nombre = "Bateria", es_reemplazable = True, es_reparable = False)
-        self._voltaje = voltaje
+        self._voltaje = voltaje_v
         self._forma_bateria = forma_bateria
-        self._capacidad_mah = capacidad_mah
+        self._capacidad_wh = capacidad_wh
         self._salud = salud
         self._esta_conectada = esta_conectada
         
         if self._salud < 30:
             self._esta_funcionando = False
     
+    
+    #   Propiedades
+    
     @property
-    def voltaje(self) -> float:
-        return self._voltaje
+    def voltaje_v(self) -> float:
+        return self._voltaje_v
     
     @property
     def forma_bateria(self) -> FormaBateria:
         return self._forma_bateria
     
     @property
-    def capacidad_mah(self) -> int:
-        return self._capacidad_mah
+    def capacidad_wh(self) -> float:
+        return self._capacidad_wh
     
     @property
     def salud(self) -> int:
@@ -42,6 +45,9 @@ class Bateria(Componente):
     @property
     def esta_conectada(self) -> bool:
         return self._esta_conectada
+    
+    
+    #   Metodos
     
     def desconectar(self) -> ResultadoOperacion:
         if self._esta_conectada:
@@ -88,7 +94,7 @@ class Bateria(Componente):
                 mensaje_sistema = MensajesSistema.COMPONENTE_FUNCIONAL
             )
         
-        if nueva_bateria.voltaje != self._voltaje:
+        if nueva_bateria.voltaje_v != self._voltaje_v:
             return ResultadoOperacion(
                 exito_operacion = False,
                 codigo_operacion = CodigoOperacion.VOLTAJE_BATERIA_INCORRECTO,
@@ -102,8 +108,8 @@ class Bateria(Componente):
                 mensaje_sistema = MensajesSistema.FORMA_BATERIA_INCORRECTA
             )
         
-        self._capacidad_mah = nueva_bateria.capacidad_mah
-        self._voltaje = nueva_bateria.voltaje
+        self._capacidad_wh = nueva_bateria.capacidad_wh
+        self._voltaje_v = nueva_bateria.voltaje_v
         self._salud = 100
         self._forma_bateria = nueva_bateria._forma_bateria
         self._esta_funcionando = True

@@ -6,7 +6,7 @@ from componentes.cpu.cpu import CPU
 from componentes.ram.ram import RAM
 from componentes.ram.ram_slots import RAMSlot
 from componentes.bateria.bateria import Bateria
-from componentes.pantalla import Pantalla
+from componentes.pantalla.pantalla import Pantalla
 from componentes.placa_base import PlacaBase
 from componentes.ssd.ssd import SSD
 from componentes.ssd.ssd_slot import SSDSlot
