@@ -12,5 +12,6 @@ class TipoMemoriaGPU(Enum):
     GDDR5 = "GDDR5"
     GDDR6 = "GDDR6"
     GDDR6X = "GDDR6X"
+    GDDR7 = "GDDR7"
     HBM2 = "HBM2"
     HBM3 = "HBM3"
