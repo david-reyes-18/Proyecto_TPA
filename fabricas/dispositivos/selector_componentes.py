@@ -1,6 +1,5 @@
 import random
-from fabricas.dispositivos.catalogo_componentes import (DatosPlacaBase, DatosCPU, DatosGPU, DatosBateria,
-                                                        DatosPantalla, DatosRAMModulo, DatosSSD,)
+from fabricas.dispositivos.catalogo_componentes import (DatosPlacaBase, DatosCPU, DatosGPU, DatosBateria, DatosPantalla, DatosRAMModulo, DatosSSD,)
 from componentes.cpu.cpu import CPU
 from componentes.gpu.gpu import GPU
 from componentes.bateria.bateria import Bateria
