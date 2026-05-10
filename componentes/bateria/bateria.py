@@ -1,3 +1,4 @@
+from __future__ import annotations
 from componentes.componente import Componente
 from componentes.bateria.forma_bateria import FormaBateria
 from sistema.resultado_operaciones import ResultadoOperacion
@@ -45,6 +46,10 @@ class Bateria(Componente):
     @property
     def esta_conectada(self) -> bool:
         return self._esta_conectada
+    
+    @property
+    def esta_funcionando(self):
+        return self._salud >= 30
     
     
     #   Metodos

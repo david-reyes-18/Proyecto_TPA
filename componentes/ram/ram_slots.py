@@ -67,8 +67,8 @@ class RAMSlot:
         return (
             self._formato_compatible == nueva_ram.formato and
             self._generacion_compatible == nueva_ram.generacion and
-            self._capacidad_maxima_gb >= nueva_ram.capacidad_gb and
-            self._velocidad_maxima_mhz >= nueva_ram.velocidad_mhz
+            self._capacidad_maxima_ram >= nueva_ram.capacidad_gb and
+            self._capacidad_maxima_mhz >= nueva_ram.velocidad_mhz
         )
     
     def instalar_ram(self, nueva_ram: RAM) -> ResultadoOperacion:

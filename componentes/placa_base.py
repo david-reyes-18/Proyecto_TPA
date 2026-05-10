@@ -98,7 +98,7 @@ class PlacaBase(Componente):
     
     def cantidad_ram_por_slot(self) -> int:
         n_slots = len(self._slots_ram)
-        return self._capacidad_maxima_ram_gb // n_slots if n_slots > 0 else 0
+        return self._cantidad_maxima_ram // n_slots if n_slots > 0 else 0
     
     def reparar(self) -> ResultadoOperacion:
         return ResultadoOperacion(

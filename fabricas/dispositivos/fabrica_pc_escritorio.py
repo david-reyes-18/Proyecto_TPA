@@ -55,7 +55,7 @@ class FabricaEscritorio(FabricaDispositivo):
         modulos_ram = (CatalogoPCEscritorio.MODULOS_RAM_INTERMEDIA_DDR4
                     + CatalogoPCEscritorio.MODULOS_RAM_INTERMEDIA_DDR5)
         return self._crear_escritorio(
-            problemas = problema,
+            problema = problema,
             placas = CatalogoPCEscritorio.PLACAS_INTERMEDIA,
             cpus = CatalogoPCEscritorio.CPUS_INTERMEDIA,
             gpus = CatalogoPCEscritorio.GPUS_INTERMEDIA,

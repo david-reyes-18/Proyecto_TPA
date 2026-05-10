@@ -1,5 +1,6 @@
 from problemas.problema import Problema
 from componentes.componente import Componente
+from sistema.resultado_operaciones import ResultadoOperacion
 
 class Dispositivo:
     def __init__(self, componentes: list[Componente], problema: Problema):
@@ -28,7 +29,7 @@ class Dispositivo:
                 return componente
         return None
     
-    def diagnosticar(self) -> list[str]:
+    def diagnosticar(self) -> ResultadoOperacion:
         diagnosticos = []
         for componente in self._componentes:
             diagnosticos.append(componente.diagnosticar())

@@ -13,7 +13,7 @@ from componentes.placa_base import PlacaBase
 class SelectorComponentes():
     
     @staticmethod
-    def elegir_placa_base(self, placas: list[DatosPlacaBase])-> PlacaBase:
+    def elegir_placa_base(placas: list[DatosPlacaBase])-> PlacaBase:
         return random.choice(placas)
     
     
