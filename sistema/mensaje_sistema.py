@@ -45,3 +45,8 @@ class MensajesSistema:
     ERROR_INCOMPATIBILIDAD = "El componente es incompatible."
     ERROR_INSTALACION = "La instalación ha fallado."
     ERROR_GENERAL = "Ha ocurrido un error en la operación."
+    
+    
+    #Mensajes desafio
+    RESPUESTA_CORRECTA = "La respuesta ingresada es correcta!!!"
+    RESPUESTA_INCORRECTA = "La respuesta ingresada es incorrecta"
