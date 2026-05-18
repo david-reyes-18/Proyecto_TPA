@@ -1,5 +1,6 @@
 from __future__ import annotations
-from componentes.componente import Componente
+from componentes.base.componente import Componente
+from componentes.base.reemplazable import Reemplazable
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
@@ -8,7 +9,7 @@ from componentes.gpu.tipo_gpu import TipoGPU
 from componentes.gpu.tipo_memoria_gpu import TipoMemoriaGPU
 from componentes.gpu.tipo_interfaz import InterfazGPU
 
-class GPU(Componente):
+class GPU(Componente, Reemplazable):
     def __init__(self, 
                 modelo: str, 
                 memoria_gb: int, 
@@ -62,13 +63,6 @@ class GPU(Componente):
     
     def es_compatible_con(self, nueva_gpu: GPU) -> bool:
         return self._interfaz == nueva_gpu.interfaz
-
-    def reparar(self) -> ResultadoOperacion:
-        return ResultadoOperacion(
-            exito_operacion=False,
-            codigo_operacion=CodigoOperacion.NO_REPARABLE,
-            mensaje_sistema=MensajesSistema.NO_REPARABLE
-        )
 
     def reemplazar(self, nueva_gpu: GPU, costo: int) -> ResultadoOperacion:
         if not self._es_reemplazable:

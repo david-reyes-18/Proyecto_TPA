@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from componentes.componente import Componente
+from componentes.base.componente import Componente
 from problemas.paso_de_reparacion import PasoDeReparacion
 
 class Problema(ABC):

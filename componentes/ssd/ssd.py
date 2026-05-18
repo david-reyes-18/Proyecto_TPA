@@ -1,10 +1,11 @@
-from componentes.componente import Componente
+from componentes.base.componente import Componente
+from componentes.base.reemplazable import Reemplazable
 from componentes.ssd.interfaz_ssd import InterfazSSD
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-class SSD(Componente):
+class SSD(Componente, Reemplazable):
     def __init__(self,
                 modelo: str,
                 capacidad_gb: int, 
@@ -53,13 +54,6 @@ class SSD(Componente):
         self._sectores_danados = porcentaje
         if self._sectores_danados >= 30:
             self._esta_funcionando = False
-
-    def reparar(self) -> ResultadoOperacion:
-        return ResultadoOperacion(
-            exito_operacion=False,
-            codigo_operacion=CodigoOperacion.NO_REPARABLE,
-            mensaje_sistema=MensajesSistema.NO_REPARABLE
-        )
 
     def reemplazar(self, nuevo_ssd: SSD, costo: int) -> ResultadoOperacion:
         if self._esta_funcionando:

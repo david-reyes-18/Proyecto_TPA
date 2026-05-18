@@ -2,7 +2,8 @@ from desafios.desafio import Desafio
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
-\
+
+
 class PasoDeReparacion:
     def __init__(self, descripcion_accion: str, explicacion: str, desafio: Desafio):
         self._descripcion_accion = descripcion_accion

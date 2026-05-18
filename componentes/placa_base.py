@@ -1,4 +1,5 @@
-from componentes.componente import Componente
+from componentes.base.componente import Componente
+from componentes.base.reemplazable import Reemplazable
 from componentes.ram.generacion_ram import GeneracionRAM
 from componentes.ram.formato_ram import FormatoRAM
 from componentes.ram.ram import RAM
@@ -13,7 +14,7 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-class PlacaBase(Componente):
+class PlacaBase(Componente, Reemplazable):
     def __init__(self,
                 modelo: str,
                 generacion_ram: GeneracionRAM,
@@ -99,13 +100,6 @@ class PlacaBase(Componente):
     def cantidad_ram_por_slot(self) -> int:
         n_slots = len(self._slots_ram)
         return self._cantidad_maxima_ram // n_slots if n_slots > 0 else 0
-    
-    def reparar(self) -> ResultadoOperacion:
-        return ResultadoOperacion(
-            exito_operacion = False,
-            codigo_operacion = CodigoOperacion.NO_REPARABLE,
-            mensaje_sistema = MensajesSistema.NO_REPARABLE
-        )
     
     def reemplazar(self) -> ResultadoOperacion:
         return ResultadoOperacion(

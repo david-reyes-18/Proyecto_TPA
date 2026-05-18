@@ -1,12 +1,13 @@
 from __future__ import annotations
-from componentes.componente import Componente
+from componentes.base.componente import Componente
+from componentes.base.reemplazable import Reemplazable
 from componentes.ram.generacion_ram import GeneracionRAM
 from componentes.ram.formato_ram import FormatoRAM
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-class RAM(Componente):
+class RAM(Componente, Reemplazable):
     def __init__(self, 
                 nombre: str, 
                 capacidad_gb: int, 
@@ -44,13 +45,6 @@ class RAM(Componente):
     
     
     #   Metodos
-    
-    def reparar(self)-> ResultadoOperacion:
-        return ResultadoOperacion(
-            exito_operacion = False,
-            codigo_operacion = CodigoOperacion.NO_REPARABLE,
-            mensaje_sistema = MensajesSistema.NO_REPARABLE
-        )
     
     def reemplazar(self) -> ResultadoOperacion:
         return ResultadoOperacion(

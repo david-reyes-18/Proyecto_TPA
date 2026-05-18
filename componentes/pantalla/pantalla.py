@@ -1,11 +1,12 @@
 from __future__ import annotations
-from componentes.componente import Componente
+from componentes.base.componente import Componente
+from componentes.base.reemplazable import Reemplazable
 from componentes.pantalla.tipo_panel import TipoPanel
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-class Pantalla(Componente):
+class Pantalla(Componente, Reemplazable):
     def __init__(self, 
                 pulgadas: int, 
                 resolucion: str,
@@ -64,13 +65,6 @@ class Pantalla(Componente):
             codigo_operacion = CodigoOperacion.EXITO_REEMPLAZO,
             mensaje_sistema = MensajesSistema.EXITO_REEMPLAZO,
             costo = costo
-        )
-    
-    def reparar(self) -> ResultadoOperacion:
-        return ResultadoOperacion(
-            exito_operacion = False,
-            codigo_operacion = CodigoOperacion.NO_REPARABLE,
-            mensaje_sistema = MensajesSistema.NO_REPARABLE
         )
     
     def diagnosticar(self) -> ResultadoOperacion:

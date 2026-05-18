@@ -1,5 +1,5 @@
 from problemas.problema import Problema
-from componentes.componente import Componente
+from componentes.base.componente import Componente
 from sistema.resultado_operaciones import ResultadoOperacion
 
 class Dispositivo:

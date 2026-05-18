@@ -23,15 +23,7 @@ class Componente(ABC):
     @property
     def esta_funcionando(self) -> bool:
         return self._esta_funcionando
-    
-    @abstractmethod
-    def reparar(self) -> ResultadoOperacion:
-        pass
-    
-    @abstractmethod
-    def reemplazar(self) -> ResultadoOperacion:
-        pass
-    
+
     @abstractmethod
     def diagnosticar(self) -> ResultadoOperacion:
         pass

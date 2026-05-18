@@ -1,12 +1,13 @@
 from __future__ import annotations
-from componentes.componente import Componente
+from componentes.base.componente import Componente
+from componentes.base.reemplazable import Reemplazable
 from componentes.bateria.forma_bateria import FormaBateria
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
 
-class Bateria(Componente):
+class Bateria(Componente, Reemplazable):
     def __init__(self, 
                 voltaje_v: float,
                 forma_bateria: FormaBateria,
@@ -83,13 +84,6 @@ class Bateria(Componente):
                 codigo_operacion = CodigoOperacion.BATERIA_DESCONECTADA,
                 mensaje_sistema = MensajesSistema.BATERIA_DESCONECTADA
             )
-    
-    def reparar(self) -> ResultadoOperacion:
-        return ResultadoOperacion(
-            exito_operacion = False,
-            codigo_operacion = CodigoOperacion.NO_REPARABLE,
-            mensaje_sistema = MensajesSistema.NO_REPARABLE
-        )
     
     def reemplazar(self, nueva_bateria: Bateria, costo: int) -> ResultadoOperacion:
         if self._esta_funcionando:
