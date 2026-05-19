@@ -1,3 +1,4 @@
+from desafios.tipo_desafio.nombre_tipo_desafio import TipoDesafio
 
 class Desafio:
     def __init__(self, enunciado: str, respuesta: float):
