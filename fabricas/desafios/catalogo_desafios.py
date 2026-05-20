@@ -108,7 +108,26 @@ _MAT_CPU_ESC = [
     ),
     DesafioMatematicoEscritura(
         "Un CPU opera a 2 500 MHz. Expresa esa frecuencia en GHz.",
-        2.5, _CPU, D, tolerancia=0.01,
+        2.5, _CPU, D, tolerancia=0.01
+    ),
+    DesafioMatematicoEscritura(
+        "Un CPU opera a 3200 MHz. ¿Cuántos GHz son?",
+        3.2, _CPU, F, tolerancia=0.01
+    ),
+
+    DesafioMatematicoEscritura(
+        "Un CPU de 8 núcleos con 2 hilos por núcleo. ¿Cuántos hilos lógicos tiene?",
+        16, _CPU, M
+    ),
+
+    DesafioMatematicoEscritura(
+        "Si un CPU ejecuta 4.5 GHz, ¿cuántos millones de ciclos ejecuta por segundo?",
+        4500, _CPU, M
+    ),
+
+    DesafioMatematicoEscritura(
+        "Una caché L1 tarda 1 ns y la RAM 120 ns. ¿Cuántas veces más rápida es la caché?",
+        120, _CPU, D
     ),
 ]
 
@@ -160,13 +179,15 @@ _LOG_CPU_MULT = [
 
 _LOG_CPU_ESC = [
     DesafioLogicoEscritura(
-        "¿Qué tipo de socket usan los CPUs de laptop soldados a la placa? (sigla en mayúsculas)",
-        "BGA", _CPU, F, ignorar_mayusculas=True,
+        "Un CPU genera 90 W y el disipador soporta 120 W. "
+        "¿Cuántos watts sobran de capacidad térmica?",
+        30, _CPU, F
     ),
+
     DesafioLogicoEscritura(
-        "Si un CPU genera 95 W de calor y el disipador solo puede disipar 65 W, "
-        "¿qué problema ocurrirá? Responde en una palabra.",
-        "sobrecalentamiento", _CPU, D, ignorar_mayusculas=True,
+        "Un CPU de 4 núcleos tarda 12 s. "
+        "Idealmente, ¿cuánto tarda usando 6 núcleos?",
+        8, _CPU, D
     ),
 ]
 
@@ -216,13 +237,15 @@ _TEC_CPU_MULT = [
 ]
 
 _TEC_CPU_ESC = [
-    DesafioTecnologicoEscritura(
-        "¿Cómo se llama la tecnología de Intel que permite 2 hilos por núcleo físico?",
-        "Hyper-Threading", _CPU, F, ignorar_mayusculas=True,
+        DesafioTecnologicoEscritura(
+        "¿Cuántos hilos lógicos expone un CPU de 12 núcleos con Hyper-Threading?",
+        24, _CPU, F
     ),
+
     DesafioTecnologicoEscritura(
-        "¿Qué socket usan los Ryzen 5000 de AMD para escritorio?",
-        "AM4", _CPU, M, ignorar_mayusculas=True,
+        "Un Ryzen 7000 usa memoria DDR5 a 6000 MT/s. "
+        "¿Cuántos MT/s más rápidos son respecto a DDR4-3200?",
+        2800, _CPU, M
     ),
 ]
 
@@ -273,6 +296,16 @@ _MAT_RAM_ESC = [
         "Si la RAM DDR4 opera a 1600 MHz de reloj real, ¿cuál es su velocidad efectiva en MT/s?",
         3200, _RAM, D,
     ),
+    DesafioMatematicoEscritura(
+        "Tres módulos RAM de 16 GB. ¿Cuántos GB totales hay?",
+        48, _RAM, F
+    ),
+
+    DesafioMatematicoEscritura(
+        "DDR4 trabaja a 1800 MHz reales. "
+        "¿Cuál es su velocidad efectiva en MT/s?",
+        3600, _RAM, D
+    ),
 ]
 
 _LOG_RAM_BOOL = [
@@ -311,8 +344,15 @@ _LOG_RAM_MULT = [
 
 _LOG_RAM_ESC = [
     DesafioLogicoEscritura(
-        "¿Qué formato de RAM usan las laptops ultradelgadas soldada a la placa? (sigla)",
-        "LPDDR", _RAM, F, ignorar_mayusculas=True,
+        "Una placa tiene 4 slots RAM y ya usa 3. "
+        "¿Cuántos slots quedan libres?",
+        1, _RAM, F
+    ),
+
+    DesafioLogicoEscritura(
+        "Si dual channel duplica el ancho de banda y single channel entrega 25 GB/s, "
+        "¿cuánto entrega dual channel?",
+        50, _RAM, D
     ),
 ]
 
@@ -354,12 +394,14 @@ _TEC_RAM_MULT = [
 
 _TEC_RAM_ESC = [
     DesafioTecnologicoEscritura(
-        "¿Qué significa la sigla DDR en memorias RAM?",
-        "Double Data Rate", _RAM, F, ignorar_mayusculas=True,
+        "DDR5 divide el módulo en 2 canales de 32 bits. "
+        "¿Cuántos bits totales tiene el módulo?",
+        64, _RAM, F
     ),
+
     DesafioTecnologicoEscritura(
-        "¿Qué generación de RAM usa la plataforma AM5 de AMD de forma nativa?",
-        "DDR5", _RAM, M, ignorar_mayusculas=True,
+        "Una RAM DDR5-6400 es cuántos MT/s más rápida que DDR4-3200?",
+        3200, _RAM, M
     ),
 ]
 
@@ -412,6 +454,17 @@ _MAT_SSD_ESC = [
         "¿A qué porcentaje de sectores dañados el SSD deja de funcionar según el sistema?",
         30, _SSD, F,
     ),
+    DesafioMatematicoEscritura(
+        "Un SSD NVMe lee a 3500 MB/s. "
+        "¿Cuántos segundos tarda en leer 7 GB?",
+        2, _SSD, F
+    ),
+
+    DesafioMatematicoEscritura(
+        "Un SSD escribe a 7000 MB/s. "
+        "¿Cuántos GB escribe en 4 segundos?",
+        28, _SSD, D
+    ),
 ]
 
 _LOG_SSD_BOOL = [
@@ -450,8 +503,15 @@ _LOG_SSD_MULT = [
 
 _LOG_SSD_ESC = [
     DesafioLogicoEscritura(
-        "¿Qué interfaz de SSD ofrece mayor velocidad: SATA o NVMe?",
-        "NVMe", _SSD, F, ignorar_mayusculas=True,
+        "Un SSD tiene 4 TB y ya ocupa 3 TB. "
+        "¿Cuántos TB quedan libres?",
+        1, _SSD, F
+    ),
+
+    DesafioLogicoEscritura(
+        "Un SSD SATA tarda 10 s en copiar un archivo. "
+        "Un NVMe es 5 veces más rápido. ¿Cuánto tarda el NVMe?",
+        2, _SSD, D
     ),
 ]
 
@@ -493,8 +553,15 @@ _TEC_SSD_MULT = [
 
 _TEC_SSD_ESC = [
     DesafioTecnologicoEscritura(
-        "¿Qué sigla identifica la interfaz más rápida para SSDs en formato M.2?",
-        "NVMe", _SSD, F, ignorar_mayusculas=True,
+        "PCIe 4.0 x4 duplica el ancho de banda de PCIe 3.0 x4. "
+        "Si PCIe 3.0 entrega 4 GB/s, ¿cuánto entrega PCIe 4.0?",
+        8, _SSD, F
+    ),
+
+    DesafioTecnologicoEscritura(
+        "Un SSD SATA alcanza 550 MB/s y un NVMe 7000 MB/s. "
+        "¿Cuántas veces más rápido es el NVMe?",
+        12.7, _SSD, D, tolerancia=0.1
     ),
 ]
 
@@ -535,6 +602,17 @@ _MAT_GPU_ESC = [
     DesafioMatematicoEscritura(
         "Una GPU con TDP de 200 W funciona 5 horas. ¿Cuántos Wh consume?",
         1000, _GPU, M,
+    ),
+    DesafioMatematicoEscritura(
+        "Una GPU consume 250 W durante 4 horas. "
+        "¿Cuántos Wh consume?",
+        1000, _GPU, F
+    ),
+
+    DesafioMatematicoEscritura(
+        "Una GPU tiene 12 GB VRAM y otra 8 GB. "
+        "¿Cuántos GB más tiene la primera?",
+        4, _GPU, M
     ),
 ]
 
@@ -578,8 +656,15 @@ _LOG_GPU_MULT = [
 
 _LOG_GPU_ESC = [
     DesafioLogicoEscritura(
-        "¿Qué tipo de GPU usa la RAM del sistema en lugar de VRAM dedicada? (una palabra)",
-        "integrada", _GPU, F, ignorar_mayusculas=True,
+        "Una GPU usa 220 W y la fuente tiene 650 W libres. "
+        "¿Cuántos watts libres quedan?",
+        430, _GPU, F
+    ),
+
+    DesafioLogicoEscritura(
+        "Una GPU entrega 120 FPS y otra 80 FPS. "
+        "¿Cuál es la diferencia de FPS?",
+        40, _GPU, D
     ),
 ]
 
@@ -621,12 +706,15 @@ _TEC_GPU_MULT = [
 
 _TEC_GPU_ESC = [
     DesafioTecnologicoEscritura(
-        "¿Cómo se llama la memoria dedicada de una GPU? (sigla de 4 letras)",
-        "VRAM", _GPU, F, ignorar_mayusculas=True,
+        "PCIe x16 tiene 16 líneas PCIe. "
+        "¿Cuántas líneas tiene PCIe x8?",
+        8, _GPU, F
     ),
+
     DesafioTecnologicoEscritura(
-        "¿Qué interfaz usan laptops de gama alta con GPU dedicada soldada a la placa? (una palabra)",
-        "SOLDADA", _GPU, D, ignorar_mayusculas=True,
+        "Una GPU GDDR6X tiene 21 Gbps y una GDDR6 14 Gbps. "
+        "¿Cuántos Gbps más tiene GDDR6X?",
+        7, _GPU, M
     ),
 ]
 
@@ -676,6 +764,17 @@ _MAT_BAT_ESC = [
         "¿Por debajo de qué porcentaje de salud el sistema considera la batería dañada?",
         30, _BAT, M,
     ),
+    DesafioMatematicoEscritura(
+        "Una batería de 80 Wh alimenta un sistema de 20 W. "
+        "¿Cuántas horas dura?",
+        4, _BAT, F
+    ),
+
+    DesafioMatematicoEscritura(
+        "Una batería de 60 Wh tiene salud del 50%. "
+        "¿Cuál es su capacidad efectiva?",
+        30, _BAT, M
+    ),
 ]
 
 _LOG_BAT_BOOL = [
@@ -697,25 +796,32 @@ _LOG_BAT_MULT = [
     DesafioLogicoMultiple(
         "El técnico quiere instalar una batería de 12.6 V en un equipo que usa 11.1 V. ¿Resultado?",
         ["Funciona normalmente",
-         "El sistema rechaza por voltaje incorrecto",
-         "Funciona con velocidad reducida",
-         "El sistema la acepta con advertencia"],
+        "El sistema rechaza por voltaje incorrecto",
+        "Funciona con velocidad reducida",
+        "El sistema la acepta con advertencia"],
         1, _BAT, M,
     ),
     DesafioLogicoMultiple(
         "¿Qué parámetros deben coincidir obligatoriamente al reemplazar una batería?",
         ["Solo la capacidad en Wh",
-         "Voltaje y forma de la batería",
-         "Solo el voltaje",
-         "Marca y modelo exacto"],
+        "Voltaje y forma de la batería",
+        "Solo el voltaje",
+        "Marca y modelo exacto"],
         1, _BAT, D,
     ),
 ]
 
 _LOG_BAT_ESC = [
     DesafioLogicoEscritura(
-        "¿Qué debe hacer el técnico ANTES de desmontar la batería? (una palabra)",
-        "desconectar", _BAT, F, ignorar_mayusculas=True,
+        "Una batería tiene 15% de carga y luego carga 25%. "
+        "¿Qué porcentaje final tiene?",
+        40, _BAT, F
+    ),
+
+    DesafioLogicoEscritura(
+        "Una batería original es de 90 Wh y la nueva de 72 Wh. "
+        "¿Cuántos Wh menos tiene la nueva?",
+        18, _BAT, D
     ),
 ]
 
@@ -748,17 +854,24 @@ _TEC_BAT_MULT = [
     DesafioTecnologicoMultiple(
         "¿Qué indica el porcentaje de 'salud' de una batería?",
         ["El nivel de carga actual",
-         "La capacidad máxima restante vs. capacidad original",
-         "La temperatura de la batería",
-         "El voltaje actual"],
+        "La capacidad máxima restante vs. capacidad original",
+        "La temperatura de la batería",
+        "El voltaje actual"],
         1, _BAT, D,
     ),
 ]
 
 _TEC_BAT_ESC = [
     DesafioTecnologicoEscritura(
-        "¿Qué tecnología de batería se usa en la mayoría de laptops modernas? (Ion de ...)",
-        "Ion de Litio", _BAT, M, ignorar_mayusculas=True,
+        "Cada celda de litio tiene 3.7 V. "
+        "¿Qué voltaje total entregan 3 celdas en serie?",
+        11.1, _BAT, F, tolerancia=0.01
+    ),
+
+    DesafioTecnologicoEscritura(
+        "Una batería de 500 ciclos ha perdido 20% de salud. "
+        "¿Qué porcentaje de salud conserva?",
+        80, _BAT, M
     ),
 ]
 
@@ -808,6 +921,16 @@ _MAT_PAN_ESC = [
         "¿Cuántos píxeles tiene una pantalla 2560×1440? (en millones, con 1 decimal)",
         3.7, _PAN, D, tolerancia=0.1,
     ),
+    DesafioMatematicoEscritura(
+        "Una pantalla de 144 Hz muestra cuántos FPS máximos?",
+        144, _PAN, F
+    ),
+
+    DesafioMatematicoEscritura(
+        "¿Cuántos millones de píxeles tiene una resolución 3840×2160?",
+        8.3, _PAN, D, tolerancia=0.1
+    ),
+
 ]
 
 _LOG_PAN_BOOL = [
@@ -829,25 +952,32 @@ _LOG_PAN_MULT = [
     DesafioLogicoMultiple(
         "Al reemplazar la pantalla de una laptop, ¿qué medida debe coincidir obligatoriamente?",
         ["La resolución exacta",
-         "El tamaño en pulgadas",
-         "La tasa de refresco",
-         "El tipo de panel"],
+        "El tamaño en pulgadas",
+        "La tasa de refresco",
+        "El tipo de panel"],
         1, _PAN, M,
     ),
     DesafioLogicoMultiple(
         "¿Para qué tipo de usuario es más recomendable un panel OLED?",
         ["Trabajo de oficina básico con presupuesto ajustado",
-         "Gaming de entrada sin importar calidad de imagen",
-         "Edición de color profesional y multimedia premium",
-         "Uso exclusivo en entornos muy iluminados"],
+        "Gaming de entrada sin importar calidad de imagen",
+        "Edición de color profesional y multimedia premium",
+        "Uso exclusivo en entornos muy iluminados"],
         2, _PAN, D,
     ),
 ]
 
 _LOG_PAN_ESC = [
     DesafioLogicoEscritura(
-        "¿Qué tipo de panel apaga píxeles individualmente para lograr negros perfectos?",
-        "OLED", _PAN, M, ignorar_mayusculas=True,
+        "Una pantalla mide 15 pulgadas y otra 17 pulgadas. "
+        "¿Cuántas pulgadas de diferencia hay?",
+        2, _PAN, F
+    ),
+
+    DesafioLogicoEscritura(
+        "Una pantalla 60 Hz actualiza cada 16.7 ms. "
+        "¿Cuántas veces por segundo actualiza?",
+        60, _PAN, D
     ),
 ]
 
@@ -875,9 +1005,9 @@ _TEC_PAN_MULT = [
     DesafioTecnologicoMultiple(
         "¿Qué ventaja principal tiene un panel IPS frente a un TN?",
         ["Mayor tasa de refresco máxima",
-         "Mejor ángulo de visión y reproducción de color",
-         "Menor tiempo de respuesta siempre",
-         "Menor consumo eléctrico"],
+        "Mejor ángulo de visión y reproducción de color",
+        "Menor tiempo de respuesta siempre",
+        "Menor consumo eléctrico"],
         1, _PAN, M,
     ),
     DesafioTecnologicoMultiple(
@@ -889,12 +1019,15 @@ _TEC_PAN_MULT = [
 
 _TEC_PAN_ESC = [
     DesafioTecnologicoEscritura(
-        "¿Cómo se llama la resolución 3840×2160? (sigla de 2 caracteres)",
-        "4K", _PAN, F, ignorar_mayusculas=True,
+        "Full HD tiene 1920 píxeles horizontales. "
+        "¿Cuántos tiene Quad HD (2560×1440)?",
+        2560, _PAN, F
     ),
+
     DesafioTecnologicoEscritura(
-        "¿Qué tipo de panel se usa en workstations por colores precisos y amplios ángulos? (sigla)",
-        "IPS", _PAN, M, ignorar_mayusculas=True,
+        "Una pantalla OLED tiene tiempo de respuesta de 1 ms y una IPS 5 ms. "
+        "¿Cuántos ms más rápida es la OLED?",
+        4, _PAN, M
     ),
 ]
 
@@ -942,15 +1075,17 @@ _LOG_GEN_MULT = [
 
 CATALOGO: dict = {
     _CPU: {
-        CategoriaDesafio.MATEMATICO:  {NombreTipoDesafio.BOOLEANO: _MAT_CPU_BOOL,
-                                       NombreTipoDesafio.MULTIPLE: _MAT_CPU_MULT,
-                                       NombreTipoDesafio.ESCRITURA: _MAT_CPU_ESC},
+        CategoriaDesafio.MATEMATICO:  {
+                                    NombreTipoDesafio.BOOLEANO: _MAT_CPU_BOOL,
+                                    NombreTipoDesafio.MULTIPLE: _MAT_CPU_MULT,
+                                    NombreTipoDesafio.ESCRITURA: _MAT_CPU_ESC
+                                },
         CategoriaDesafio.LOGICO:      {NombreTipoDesafio.BOOLEANO: _LOG_CPU_BOOL,
-                                       NombreTipoDesafio.MULTIPLE: _LOG_CPU_MULT,
-                                       NombreTipoDesafio.ESCRITURA: _LOG_CPU_ESC},
+                                    NombreTipoDesafio.MULTIPLE: _LOG_CPU_MULT,
+                                    NombreTipoDesafio.ESCRITURA: _LOG_CPU_ESC},
         CategoriaDesafio.TECNOLOGICO: {NombreTipoDesafio.BOOLEANO: _TEC_CPU_BOOL,
-                                       NombreTipoDesafio.MULTIPLE: _TEC_CPU_MULT,
-                                       NombreTipoDesafio.ESCRITURA: _TEC_CPU_ESC},
+                                    NombreTipoDesafio.MULTIPLE: _TEC_CPU_MULT,
+                                    NombreTipoDesafio.ESCRITURA: _TEC_CPU_ESC},
     },
     _RAM: {
         CategoriaDesafio.MATEMATICO:  {NombreTipoDesafio.BOOLEANO: _MAT_RAM_BOOL,

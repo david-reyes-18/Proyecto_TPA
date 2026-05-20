@@ -33,15 +33,7 @@ class PasoDeReparacion:
     #   Metodos
     
     def verificar_respuesta(self, respuesta_usuario: float) -> ResultadoOperacion:
-        if respuesta_usuario == self._desafio.respuesta:
+        resultado = self._desafio.verificar_respuesta(respuesta_usuario)
+        if resultado.exito_operacion:
             self._completado = True
-            return ResultadoOperacion(
-                exito_operacion=True,
-                codigo_operacion=CodigoOperacion.RESPUESTA_CORRECTA,
-                mensaje_sistema=MensajesSistema.RESPUESTA_CORRECTA
-            )
-        return ResultadoOperacion(
-            exito_operacion=False,
-            codigo_operacion=CodigoOperacion.RESPUESTA_INCORRECTA,
-            mensaje_sistema=MensajesSistema.RESPUESTA_INCORRECTA
-        )
+        return resultado

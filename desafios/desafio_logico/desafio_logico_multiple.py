@@ -1,5 +1,6 @@
 from desafios.tipo_desafio.tipo_multiple  import TipoMultiple
-from desafios.categoria_desafio   import CategoriaDesafio
+from desafios.dificultad_desafio import NivelDificultad
+from desafios.categoria_desafio import CategoriaDesafio
 from desafios.componente_tematico import ComponenteTematico
 
 class DesafioLogicoMultiple(TipoMultiple):
@@ -9,8 +10,9 @@ class DesafioLogicoMultiple(TipoMultiple):
         alternativas: list[str],
         indice_correcto: int,
         componente: ComponenteTematico = ComponenteTematico.GENERAL,
+        dificultad: NivelDificultad = NivelDificultad.FACIL
     ):
-        super().__init__(enunciado, alternativas, indice_correcto)
+        super().__init__(enunciado, alternativas, indice_correcto, dificultad)
         self._categoria  = CategoriaDesafio.LOGICO
         self._componente = componente
 

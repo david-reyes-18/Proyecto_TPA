@@ -1,6 +1,6 @@
 from desafios.tipo_desafio.tipo_multiple  import TipoMultiple
 from desafios.dificultad_desafio import NivelDificultad
-from desafios.categoria_desafio   import CategoriaDesafio
+from desafios.categoria_desafio import CategoriaDesafio
 from desafios.componente_tematico import ComponenteTematico
 
 
