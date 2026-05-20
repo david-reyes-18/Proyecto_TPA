@@ -1,4 +1,5 @@
 from desafios.tipo_desafio.tipo_booleano  import TipoBooleano
+from desafios.dificultad_desafio import NivelDificultad
 from desafios.categoria_desafio   import CategoriaDesafio
 from desafios.componente_tematico import ComponenteTematico
 
@@ -9,8 +10,9 @@ class DesafioTecnologicoBooleano(TipoBooleano):
         enunciado: str,
         respuesta: bool,
         componente: ComponenteTematico = ComponenteTematico.GENERAL,
+        dificultad: NivelDificultad = NivelDificultad.FACIL
     ):
-        super().__init__(enunciado, respuesta)
+        super().__init__(enunciado, respuesta, dificultad)
         self._categoria  = CategoriaDesafio.TECNOLOGICO
         self._componente = componente
 

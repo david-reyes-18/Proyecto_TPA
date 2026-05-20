@@ -1,5 +1,6 @@
 from desafios.desafio import Desafio
 from desafios.tipo_desafio.nombre_tipo_desafio import NombreTipoDesafio
+from desafios.dificultad_desafio import NivelDificultad
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
@@ -10,9 +11,10 @@ class TipoEscritura(Desafio):
         self,
         enunciado: str,
         respuesta: int | float,
-        tolerancia: float = 0.0
+        tolerancia: float = 0.0,
+        dificultad: NivelDificultad = NivelDificultad.FACIL
     ):
-        super().__init__(enunciado, NombreTipoDesafio.ESCRITURA)
+        super().__init__(enunciado, NombreTipoDesafio.ESCRITURA, dificultad)
         
         self._respuesta = respuesta
         self._tolerancia = tolerancia
@@ -20,14 +22,14 @@ class TipoEscritura(Desafio):
     #   Propiedades
 
     @property
-    def respuesta(self) -> int | float | str:
+    def respuesta(self) -> int | float:
         return self._respuesta
 
     @property
     def tolerancia(self) -> float:
         return self._tolerancia
 
-    # ── Verificación ─────────────────────────────────────────────────────────
+    #   Verificación 
 
     def verificar_respuesta(self, respuesta_usuario) -> ResultadoOperacion:
         if abs(respuesta_usuario - float(self._respuesta)) <= self._tolerancia:

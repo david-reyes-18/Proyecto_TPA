@@ -1,5 +1,6 @@
 from desafios.desafio import Desafio
 from desafios.tipo_desafio.nombre_tipo_desafio import NombreTipoDesafio
+from desafios.dificultad_desafio import NivelDificultad
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
@@ -11,8 +12,10 @@ class TipoMultiple(Desafio):
         enunciado: str,
         alternativas: list[str],
         indice_correcto: int,
+        dificultad: NivelDificultad = NivelDificultad.FACIL
+        
     ):
-        super().__init__(enunciado, NombreTipoDesafio.MULTIPLE)
+        super().__init__(enunciado, NombreTipoDesafio.MULTIPLE, dificultad)
 
         self._alternativas = [a.strip() for a in alternativas]
         self._indice_correcto = indice_correcto

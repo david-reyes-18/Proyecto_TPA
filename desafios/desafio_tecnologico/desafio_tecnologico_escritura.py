@@ -1,4 +1,5 @@
 from desafios.tipo_desafio.tipo_escritura import TipoEscritura
+from desafios.dificultad_desafio import NivelDificultad
 from desafios.categoria_desafio   import CategoriaDesafio
 from desafios.componente_tematico import ComponenteTematico
 
@@ -10,9 +11,9 @@ class DesafioTecnologicoEscritura(TipoEscritura):
         respuesta: int | float | str,
         componente: ComponenteTematico = ComponenteTematico.GENERAL,
         tolerancia: float = 0.0,
-        ignorar_mayusculas: bool = True,
+        dificultad: NivelDificultad = NivelDificultad.FACIL
     ):
-        super().__init__(enunciado, respuesta, tolerancia, ignorar_mayusculas)
+        super().__init__(enunciado, respuesta, tolerancia, dificultad)
         self._categoria  = CategoriaDesafio.TECNOLOGICO
         self._componente = componente
 
