@@ -6,6 +6,7 @@ from desafios.dificultad_desafio import NivelDificultad
 from desafios.desafio import Desafio
 
 class FabricaDesafios(ABC):
+    @staticmethod
     @abstractmethod
     def crear_desafio(
         categoria: CategoriaDesafio,

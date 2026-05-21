@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from desafios.tipo_desafio.nombre_tipo_desafio import NombreTipoDesafio
 from sistema.resultado_operaciones import ResultadoOperacion
 from desafios.dificultad_desafio import NivelDificultad
+from desafios.categoria_desafio import CategoriaDesafio
+from desafios.componente_tematico import ComponenteTematico
 
 
 class Desafio(ABC):
@@ -33,4 +35,14 @@ class Desafio(ABC):
 
     @abstractmethod
     def verificar_respuesta(self, respuesta_usuario) -> ResultadoOperacion:
+        pass
+    
+    @property
+    @abstractmethod
+    def categoria(self) -> CategoriaDesafio:
+        pass
+
+    @property
+    @abstractmethod
+    def componente(self) -> ComponenteTematico:
         pass

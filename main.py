@@ -9,9 +9,9 @@ from desafios.tipo_desafio.nombre_tipo_desafio import NombreTipoDesafio
 from desafios.dificultad_desafio import NivelDificultad
 from componentes.cpu.cpu import CPU
 
-print(random.choice(FabricaDesafiosCatalogo.crear_desafio(
+print(FabricaDesafiosCatalogo.crear_desafio(
     categoria=CategoriaDesafio.MATEMATICO, 
     componente=ComponenteTematico.CPU, 
     tipo=NombreTipoDesafio.MULTIPLE, 
     dificultad=NivelDificultad.FACIL
-    )))
+    ).indice_correcto)

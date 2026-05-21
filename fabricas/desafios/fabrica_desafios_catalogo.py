@@ -8,6 +8,7 @@ from desafios.dificultad_desafio import NivelDificultad
 from .fabrica_desafios import FabricaDesafios
 
 class FabricaDesafiosCatalogo(FabricaDesafios):
+    @staticmethod
     def crear_desafio(
         categoria: CategoriaDesafio,
         componente: ComponenteTematico,
