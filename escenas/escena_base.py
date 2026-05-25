@@ -2,8 +2,8 @@ import pygame
 from abc import ABC, abstractmethod
 
 class EscenaBase(ABC):
-    def __init__(self, gestor_juego) -> None:
-        self.gestor_juego = gestor_juego
+    def __init__(self, juego) -> None:
+        self.juego = juego
     
     @abstractmethod
     def manejar_eventos(self, eventos: list[pygame.event.Event]) -> None:

@@ -7,7 +7,7 @@ class Fuente:
     FUENTE = Rutas.fuente("pixel.ttf")
     
     @classmethod
-    def get(cls, size: int) -> pygame.font.Font:
+    def obtener(cls, size: int) -> pygame.font.Font:
         
         key = (cls.FUENTE, size)
         if key not in cls._cache:

@@ -1,5 +1,5 @@
 import pygame
-from escenarios.escena_base import EscenaBase
+from escenas.escena_base import EscenaBase
 
 class ManejadorEscenas:
     def __init__(self):
@@ -10,14 +10,14 @@ class ManejadorEscenas:
         self.escena_actual = nueva_escena
     
     
-    def manejar_eventos(self, events: list[pygame.event.Event]) -> None:
+    def manejar_eventos(self, eventos: list[pygame.event.Event]) -> None:
         if self.escena_actual is not None:
-            self.escena_actual.manejar_eventos(events)
+            self.escena_actual.manejar_eventos(eventos)
     
     
     def actualizar(self, dt: float) -> None:
         if self.escena_actual is not None:
-            self.escena_actual.update(dt)
+            self.escena_actual.actualizar(dt)
     
     
     def dibujar(self, pantalla: pygame.Surface) -> None:
