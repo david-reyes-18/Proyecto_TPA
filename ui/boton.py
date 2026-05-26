@@ -9,8 +9,8 @@ class Boton(Widget):
         text: str,
         rel_x: float,
         rel_y: float,
-        width: int,
-        height: int,
+        width: int | float,
+        height: int | float,
         command,
         font_size=24,
         bg_color=(50, 50, 50),
@@ -32,13 +32,26 @@ class Boton(Widget):
         self.rect = pygame.Rect(0, 0, width, height)
     
     
+    def _calcular_width(self, superficie: pygame.Surface) -> int:
+        if isinstance(self.width, float):
+            return int(superficie.get_width() * self.width)
+        return self.width
+    
+    def _calcular_height(self, superficie: pygame.Surface) -> int:
+        if isinstance(self.height, float):
+            return int(superficie.get_width() * self.height)
+        return self.height
+    
     def actualizar(self, eventos: list[pygame.event.Event], superficie: pygame.Surface) -> None:
         x, y = self.obtener_posicion(superficie)
+        width = self._calcular_width(superficie)
+        height = self._calcular_height(superficie)
+        
         self.rect = pygame.Rect(
             0,
             0,
-            self.width,
-            self.height
+            width,
+            height
         )
         self.rect = self.aplicar_anchor(self.rect, x, y)
         mouse_pos = pygame.mouse.get_pos()

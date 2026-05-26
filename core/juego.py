@@ -29,7 +29,7 @@ class Juego:
             
             for evento in eventos:
                 if evento.type == pygame.QUIT:
-                    self.running = False
+                    self.corriendo = False
                     
             self.manejador_escenas.manejar_eventos(eventos)
             self.manejador_escenas.actualizar(dt)

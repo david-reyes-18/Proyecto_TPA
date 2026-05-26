@@ -17,25 +17,25 @@ class Rutas:
     
     
     @classmethod
-    def imagen(cls, archivo):
+    def imagen(cls, archivo: str) -> Path:
         return cls.IMAGENES / archivo
     
     
     @classmethod
-    def fuente(cls, archivo):
+    def fuente(cls, archivo: str) -> Path:
         return cls.FUENTES / archivo
     
     
     @classmethod
-    def sonido(cls, archivo):
+    def sonido(cls, archivo: str) -> Path:
         return cls.SONIDOS / archivo
     
     
     @classmethod
-    def musica(cls, archivo):
+    def musica(cls, archivo: str) -> Path:
         return cls.MUSICA / archivo
     
     
     @classmethod
-    def mapa(cls, archivo):
+    def mapa(cls, archivo: str) -> Path:
         return cls.MAPAS / archivo
