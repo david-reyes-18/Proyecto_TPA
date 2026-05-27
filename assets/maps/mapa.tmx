@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="26">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="27">
  <tileset firstgid="1" source="habitacion_16x16.tsx"/>
  <tileset firstgid="392" source="interiores_16x16.tsx"/>
  <tileset firstgid="1816" source="objetos.tsx"/>
@@ -329,7 +329,7 @@
 </data>
  </layer>
  <objectgroup id="10" name="decoraciones_colisiones">
-  <object id="24" name="Laptop" type="Laptop" gid="1816" x="284.667" y="113.667" width="49.6667" height="49"/>
-  <object id="25" name="Taller" type="Taller" gid="1817" x="414.892" y="133.653" width="143.373" height="89.5879" rotation="0.112705"/>
+  <object id="24" name="Laptop" type="Laptop" gid="1816" x="286" y="113.667" width="49.6667" height="49"/>
+  <object id="25" name="Taller" type="Taller" gid="1817" x="414.892" y="137.653" width="143.373" height="89.5879" rotation="0.112705"/>
  </objectgroup>
 </map>
