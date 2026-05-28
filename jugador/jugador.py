@@ -1,135 +1,221 @@
 import pygame
 from core.rutas import Rutas
 
-ESCALA          = 4
-FRAME_W         = 16
-FRAME_H         = 32
-FPS_IDLE        = 5
-FPS_RUN         = 10
-FRAMES_IDLE     = 4
-FRAMES_POR_DIR  = 6
+ESCALA = 4
 
-# Orden confirmado inspeccionando frame a frame el spritesheet
+FRAME_W = 16
+FRAME_H = 32
+
+FPS_IDLE = 4
+FPS_RUN = 24
+
+FRAMES_IDLE = 4
+FRAMES_POR_DIR = 6
+
+# filas del spritesheet run
 DIRS_RUN = {
-    "right":  0,
+    "right": 0,
     "up":    1,
     "left":  2,
-    "down": 3,
+    "down":  3,
 }
 
 
 class Jugador:
     def __init__(self, x: int, y: int):
-        self.ancho = FRAME_W * ESCALA   # 48 px
-        self.alto  = FRAME_H * ESCALA   # 96 px
 
-        # Hitbox: franja inferior (pies) para colisiones con el mapa
+        self.ancho = FRAME_W * ESCALA
+        self.alto = FRAME_H * ESCALA
+
+        # hitbox solo pies
         hb_h = self.alto // 4
-        self.hitbox = pygame.Rect(x, y + self.alto - hb_h, self.ancho, hb_h)
-        self.rect   = pygame.Rect(x, y, self.ancho, self.alto)
+
+        self.hitbox = pygame.Rect(
+            x,
+            y + self.alto - hb_h,
+            self.ancho,
+            hb_h
+        )
+
+        self.rect = pygame.Rect(
+            x,
+            y,
+            self.ancho,
+            self.alto
+        )
 
         self.velocidad = 100 * ESCALA
 
-        # Sprites
+        # sprites
         self.frames_idle = self._cortar_idle()
-        self.frames_run  = self._cortar_run()
+        self.frames_run = self._cortar_run()
 
-        # Estado
-        self.direccion  = "down"
+        # estado
+        self.direccion = "down"
         self.moviendose = False
 
-        # Animación — índice y acumulador de tiempo separados por estado
-        self.idx_idle  = 0
-        self.idx_run   = 0
-        self.t_idle    = 0.0
-        self.t_run     = 0.0
+        # animación
+        self.idx_idle = 0
+        self.idx_run = 0
 
-    # ------------------------------------------------------------------
-    # Carga
-    # ------------------------------------------------------------------
+        self.t_idle = 0.0
+        self.t_run = 0.0
+
+    # ----------------------------------------
+    # CARGA SPRITES
+    # ----------------------------------------
 
     def _escalar(self, surf: pygame.Surface) -> pygame.Surface:
-        return pygame.transform.scale(surf, (self.ancho, self.alto))
+        return pygame.transform.scale(
+            surf,
+            (self.ancho, self.alto)
+        )
 
     def _cortar_idle(self) -> list[pygame.Surface]:
+
         sheet = pygame.image.load(
             str(Rutas.imagen("Adam_idle_16x16.png"))
         ).convert_alpha()
-        return [
-            self._escalar(sheet.subsurface((i * FRAME_W, 0, FRAME_W, FRAME_H)))
-            for i in range(FRAMES_IDLE)
-        ]
+
+        frames = []
+
+        for i in range(FRAMES_IDLE):
+            frame = sheet.subsurface(
+                (i * FRAME_W, 0, FRAME_W, FRAME_H)
+            )
+
+            frames.append(
+                self._escalar(frame)
+            )
+
+        return frames
 
     def _cortar_run(self) -> dict[str, list[pygame.Surface]]:
+
         sheet = pygame.image.load(
             str(Rutas.imagen("Adam_run_16x16.png"))
         ).convert_alpha()
-        resultado = {}
-        for nombre, idx in DIRS_RUN.items():
-            resultado[nombre] = [
-                self._escalar(sheet.subsurface(
-                    ((idx * FRAMES_POR_DIR + f) * FRAME_W, 0, FRAME_W, FRAME_H)
-                ))
-                for f in range(FRAMES_POR_DIR)
-            ]
-        return resultado
 
-    # ------------------------------------------------------------------
-    # Actualizar
-    # ------------------------------------------------------------------
+        animaciones = {}
 
-    def actualizar(self, dt: float, dx: int, dy: int,
-                   obstaculos: list[pygame.Rect]):
+        for idx_dir, direccion in enumerate(DIRS_RUN):
+
+            frames = []
+
+            for i in range(FRAMES_POR_DIR):
+
+                frame_index = idx_dir * FRAMES_POR_DIR + i
+
+                frame = sheet.subsurface(
+                    (
+                        frame_index * FRAME_W,
+                        0,
+                        FRAME_W,
+                        FRAME_H
+                    )
+                )
+
+                frames.append(
+                    self._escalar(frame)
+                )
+
+            animaciones[direccion] = frames
+
+        return animaciones
+
+    # ----------------------------------------
+    # UPDATE
+    # ----------------------------------------
+
+    def actualizar(
+        self,
+        dt: float,
+        dx: int,
+        dy: int,
+        obstaculos: list[pygame.Rect]
+    ):
 
         self.moviendose = dx != 0 or dy != 0
 
-        # Dirección según input (horizontal tiene prioridad en diagonal)
-        if   dx < 0: self.direccion = "left"
-        elif dx > 0: self.direccion = "right"
-        elif dy < 0: self.direccion = "up"
-        elif dy > 0: self.direccion = "down"
+        # dirección visual
+        if dx < 0:
+            self.direccion = "left"
+        elif dx > 0:
+            self.direccion = "right"
+        elif dy < 0:
+            self.direccion = "up"
+        elif dy > 0:
+            self.direccion = "down"
 
-        # Movimiento + colisiones eje X
+        # movimiento eje x
         self.hitbox.x += dx
+
         for obs in obstaculos:
             if self.hitbox.colliderect(obs):
-                if dx > 0: self.hitbox.right = obs.left
-                else:      self.hitbox.left  = obs.right
+                if dx > 0:
+                    self.hitbox.right = obs.left
+                elif dx < 0:
+                    self.hitbox.left = obs.right
 
-        # Movimiento + colisiones eje Y
+        # movimiento eje y
         self.hitbox.y += dy
+
         for obs in obstaculos:
             if self.hitbox.colliderect(obs):
-                if dy > 0: self.hitbox.bottom = obs.top
-                else:      self.hitbox.top    = obs.bottom
+                if dy > 0:
+                    self.hitbox.bottom = obs.top
+                elif dy < 0:
+                    self.hitbox.top = obs.bottom
 
-        # Rect visual alineado con hitbox (pies)
+        # sincronizar sprite con hitbox
         self.rect.midbottom = self.hitbox.midbottom
 
-        # Animación idle  (siempre avanza, independiente del run)
+        # idle
         self.t_idle += dt
-        if self.t_idle >= 1.0 / FPS_IDLE:
-            self.t_idle -= 1.0 / FPS_IDLE
-            self.idx_idle = (self.idx_idle + 1) % FRAMES_IDLE
 
-        # Animación run  (solo avanza si se está moviendo)
+        if self.t_idle >= 1 / FPS_IDLE:
+            self.t_idle = 0
+            self.idx_idle = (
+                self.idx_idle + 1
+            ) % FRAMES_IDLE
+
+        # run
         if self.moviendose:
+
             self.t_run += dt
-            if self.t_run >= 1.0 / FPS_RUN:
-                self.t_run -= 1.0 / FPS_RUN
-                self.idx_run = (self.idx_run + 1) % FRAMES_POR_DIR
+
+            if self.t_run >= 1 / FPS_RUN:
+                self.t_run = 0
+                self.idx_run = (
+                    self.idx_run + 1
+                ) % FRAMES_POR_DIR
         else:
-            # Al detenerse, resetear run para que empiece desde frame 0
             self.idx_run = 0
-            self.t_run   = 0.0
+            self.t_run = 0
 
-    # ------------------------------------------------------------------
-    # Dibujar
-    # ------------------------------------------------------------------
+    # ----------------------------------------
+    # DIBUJAR
+    # ----------------------------------------
 
-    def dibujar(self, pantalla: pygame.Surface, camara: pygame.Rect):
+    def dibujar(
+        self,
+        pantalla: pygame.Surface,
+        camara: pygame.Rect
+    ):
+
         if self.moviendose:
-            frame = self.frames_run[self.direccion][self.idx_run]
+            frame = self.frames_run[
+                self.direccion
+            ][self.idx_run]
         else:
-            frame = self.frames_idle[self.idx_idle]
-        pantalla.blit(frame, (self.rect.x - camara.x, self.rect.y - camara.y))
+            frame = self.frames_idle[
+                self.idx_idle
+            ]
+
+        pantalla.blit(
+            frame,
+            (
+                self.rect.x - camara.x,
+                self.rect.y - camara.y
+            )
+        )

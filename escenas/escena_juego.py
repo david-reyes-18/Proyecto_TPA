@@ -5,17 +5,17 @@ from escenas.menu_principal import MenuPrincipal
 from jugador.jugador import Jugador
 from core.rutas import Rutas
 from core.fuente import Fuente
- 
-ESCALA           = 3
-DIST_INTERACCION = 60   # px desde el borde del objeto
- 
- 
+
+ESCALA = 3
+DIST_INTERACCION = 60
+
+
 class EscenaJuego(EscenaBase):
     def __init__(self, juego):
         super().__init__(juego)
         self.juego = juego
- 
-        # --- Mapa ---
+        
+        # Cargar el mapa
         ruta_mapa = str(Rutas.mapa("mapa.tmx"))
         self.tmx_data = pytmx.load_pygame(ruta_mapa, pixelalpha=True)
         self.tile_w = self.tmx_data.tilewidth  * ESCALA
@@ -23,7 +23,7 @@ class EscenaJuego(EscenaBase):
         self.mapa_pixel_w = self.tmx_data.width  * self.tile_w
         self.mapa_pixel_h = self.tmx_data.height * self.tile_h
         self.superficie_mapa = self._renderizar_mapa()
- 
+        
         # --- Colisiones ---
         self.colisiones_paredes = self._cargar_colisiones("colisiones_paredes")
         self.colisiones_laptop  = self._cargar_colisiones_por_tipo("Laptop")
@@ -144,10 +144,10 @@ class EscenaJuego(EscenaBase):
     def actualizar(self, dt: float):
         teclas = pygame.key.get_pressed()
         dx = dy = 0
-        if teclas[pygame.K_w] or teclas[pygame.K_UP]:    dy -= int(self.jugador.velocidad * dt)
-        if teclas[pygame.K_s] or teclas[pygame.K_DOWN]:  dy += int(self.jugador.velocidad * dt)
-        if teclas[pygame.K_a] or teclas[pygame.K_LEFT]:  dx -= int(self.jugador.velocidad * dt)
-        if teclas[pygame.K_d] or teclas[pygame.K_RIGHT]: dx += int(self.jugador.velocidad * dt)
+        if teclas[pygame.K_w]:    dy -= int(self.jugador.velocidad * dt)
+        if teclas[pygame.K_s]:  dy += int(self.jugador.velocidad * dt)
+        if teclas[pygame.K_a]:  dx -= int(self.jugador.velocidad * dt)
+        if teclas[pygame.K_d]: dx += int(self.jugador.velocidad * dt)
  
         self.jugador.actualizar(dt, dx, dy, self.todos_obstaculos)
  

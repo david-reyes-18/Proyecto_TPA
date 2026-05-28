@@ -20,17 +20,17 @@ class Rutas:
     else:
         RAIZ = Path(__file__).resolve().parent.parent
     
-    #Carpeta de los archivos importantes del sistema
+    # Carpeta de los archivos importantes del sistema
     ASSETS = RAIZ / "assets"
     
-    #Carpetas dentro de assets
+    # Carpetas dentro de assets
     IMAGENES = ASSETS / "images"
     FUENTES = ASSETS / "fonts"
     SONIDOS = ASSETS / "sounds"
     MUSICA = ASSETS / "music"
     MAPAS = ASSETS / "maps"
     
-    #   Métodos para llamar al archivo que se quiere obtener
+    # Métodos para llamar al archivo que se quiere obtener
     @classmethod
     def imagen(cls, archivo: str) -> Path:
         return cls.IMAGENES / archivo

@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 import pygame
 from escenas.escena_base import EscenaBase
 from core.fuente import Fuente
- 
+
 if TYPE_CHECKING:
     from core.juego import Juego
  

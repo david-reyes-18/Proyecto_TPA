@@ -29,7 +29,7 @@ class SSD(Componente):
         self._velocidad_escritura_mbps = velocidad_escritura_mbps
         self._sectores_danados = 0
 
-    #   Propiedades
+    #   Getters
     
     @property
     def modelo(self) -> str:
