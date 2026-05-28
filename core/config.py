@@ -1,3 +1,8 @@
+"""
+Archivo que guarda configuraciónes globales y constantes
+para usarse en todo el proyecto
+"""
+
 ANCHO = 1200
 ALTO = 800
 
