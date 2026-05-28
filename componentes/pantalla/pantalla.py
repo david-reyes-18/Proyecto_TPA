@@ -6,20 +6,27 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
+"""
+Clase que moldea una pantalla de laptop
+"""
+
 class Pantalla(Componente, Reemplazable):
-    def __init__(self, 
-                pulgadas: int, 
-                resolucion: str,
-                tipo_panel: TipoPanel,
-                tasa_refresco_hz: int
-            ):
+    def __init__(
+            self, 
+            pulgadas: int, 
+            resolucion: str,
+            tipo_panel: TipoPanel,
+            tasa_refresco_hz: int
+        ) -> None:
+        
         super().__init__("Pantalla", es_reemplazable = True, es_reparable = False)
+        
         self._pulgadas = pulgadas
         self._resolucion = resolucion
         self._tipo_panel = tipo_panel
         self._tasa_refresco_hz = tasa_refresco_hz
     
-    #   Propiedades
+    #  Getters
     
     @property
     def pulgadas(self) -> int:
@@ -36,7 +43,6 @@ class Pantalla(Componente, Reemplazable):
     @property
     def tasa_refresco_hz(self) -> int:
         return self._tasa_refresco_hz
-    
     
     #   Metodos
     

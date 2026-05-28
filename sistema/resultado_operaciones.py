@@ -14,15 +14,15 @@ class ResultadoOperacion:
         self._experiencia = experiencia
     
     @property
-    def exito(self) -> bool:
+    def exito_operacion(self) -> bool:
         return self._exito_operacion
 
     @property
-    def codigo(self):
+    def codigo_operacion(self):
         return self._codigo_operacion
 
     @property
-    def mensaje(self) -> str:
+    def mensaje_sistema(self) -> str:
         return self._mensaje_sistema
 
     @property

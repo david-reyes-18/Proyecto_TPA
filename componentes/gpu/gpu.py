@@ -4,21 +4,29 @@ from componentes.base.reemplazable import Reemplazable
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
-
 from componentes.gpu.tipo_gpu import TipoGPU
 from componentes.gpu.tipo_memoria_gpu import TipoMemoriaGPU
 from componentes.gpu.tipo_interfaz import InterfazGPU
 
+"""
+Modelamiento de una GPU de laptop y pc de escritorio
+"""
+
 class GPU(Componente, Reemplazable):
-    def __init__(self, 
-                modelo: str, 
-                memoria_gb: int, 
-                tipo_memoria: TipoMemoriaGPU, 
-                tipo_gpu: TipoGPU,
-                interfaz: InterfazGPU,
-                tdp_watts: int
-            ):
+    def __init__(
+            self, 
+            modelo: str, 
+            memoria_gb: int, 
+            tipo_memoria: TipoMemoriaGPU, 
+            tipo_gpu: TipoGPU,
+            interfaz: InterfazGPU,
+            tdp_watts: int
+        ):
         
+        """
+        La GPU será reemplazable solamente si su interfaz es PCIe, dado a que 
+        esta interfaces para pc de escritorios son tarjetas dedicadas
+        """
         es_reemplazable = (interfaz == InterfazGPU.PCIE)
         
         super().__init__("GPU", es_reemplazable = es_reemplazable, es_reparable = False)
@@ -28,7 +36,6 @@ class GPU(Componente, Reemplazable):
         self._tipo_gpu = tipo_gpu
         self._interfaz = interfaz
         self._tdp_watts = tdp_watts
-        
     
     
     #   Propiedades
@@ -63,7 +70,7 @@ class GPU(Componente, Reemplazable):
     
     def es_compatible_con(self, nueva_gpu: GPU) -> bool:
         return self._interfaz == nueva_gpu.interfaz
-
+    
     def reemplazar(self, nueva_gpu: GPU, costo: int) -> ResultadoOperacion:
         if not self._es_reemplazable:
             return ResultadoOperacion(

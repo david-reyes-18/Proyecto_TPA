@@ -1,5 +1,9 @@
 from enum import Enum
 
+"""
+Clase que enumera los tipos de interfaces de una GPU
+"""
+
 class InterfazGPU(Enum):
     PCIE = "PCIe" # PC de escritorio: tarjeta dedicada en slot PCIe x16
     MXM = "MXM" # Laptop: módulo dedicado MXM (No reemplazable)

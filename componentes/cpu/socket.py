@@ -1,5 +1,11 @@
 from enum import Enum
 
+"""
+Clase de enumeracion para ordenar los posibles sockets
+que puede tener una laptop y pc de escritorio
+"""
+
+
 class SocketCPU(Enum):
     
     # AMD PC escritorio

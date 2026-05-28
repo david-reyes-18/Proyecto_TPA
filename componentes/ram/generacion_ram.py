@@ -1,5 +1,9 @@
 from enum import Enum
 
+"""
+Clase que enumera las generaciones que puede teenr una RAM
+"""
+
 class GeneracionRAM(Enum):
     DDR3 = "DDR3"
     DDR4 = "DDR4"

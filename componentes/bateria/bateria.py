@@ -6,27 +6,33 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
+"""
+Moldea una bateria de laptop
+"""
+
 
 class Bateria(Componente, Reemplazable):
-    def __init__(self, 
-                voltaje_v: float,
-                forma_bateria: FormaBateria,
-                capacidad_wh: float,
-                salud: int, 
-                esta_conectada: bool,
-            ):
-        super().__init__(nombre = "Bateria", es_reemplazable = True, es_reparable = False)
+    def __init__(
+            self, 
+            voltaje_v: float,
+            forma_bateria: FormaBateria,
+            capacidad_wh: float,
+            salud: int, 
+        ) -> None:
+        
+        super().__init__(nombre="Bateria", es_reemplazable=True, es_reparable=False)
+        
         self._voltaje_v = voltaje_v
         self._forma_bateria = forma_bateria
         self._capacidad_wh = capacidad_wh
         self._salud = salud
-        self._esta_conectada = esta_conectada
+        self._esta_conectada: bool = True
         
         if self._salud < 30:
             self._esta_funcionando = False
     
     
-    #   Propiedades
+    #   Getters
     
     @property
     def voltaje_v(self) -> float:
@@ -49,13 +55,15 @@ class Bateria(Componente, Reemplazable):
         return self._esta_conectada
     
     @property
-    def esta_funcionando(self):
+    def esta_funcionando(self) -> bool:
         return self._salud >= 30
     
     
-    #   Metodos
+    #   Métodos
     
+    #Desconectar la bateria
     def desconectar(self) -> ResultadoOperacion:
+        
         if self._esta_conectada:
             self._esta_conectada = False
             return ResultadoOperacion(
@@ -63,6 +71,7 @@ class Bateria(Componente, Reemplazable):
                 codigo_operacion = CodigoOperacion.BATERIA_DESCONECTADA,
                 mensaje_sistema = MensajesSistema.BATERIA_DESCONECTADA
             )
+        
         else:
             return ResultadoOperacion(
                 exito_operacion = False,
@@ -70,7 +79,9 @@ class Bateria(Componente, Reemplazable):
                 mensaje_sistema = MensajesSistema.BATERIA_CONECTADA
             )
     
+    #Conectar bateria
     def conectar(self) -> ResultadoOperacion:
+        
         if not self._esta_conectada:
             self._esta_conectada = True
             return ResultadoOperacion(
@@ -78,6 +89,7 @@ class Bateria(Componente, Reemplazable):
                 codigo_operacion = CodigoOperacion.BATERIA_CONECTADA,
                 mensaje_sistema = MensajesSistema.BATERIA_CONECTADA
             )
+        
         else:
             return ResultadoOperacion(
                 exito_operacion = False,
@@ -85,7 +97,10 @@ class Bateria(Componente, Reemplazable):
                 mensaje_sistema = MensajesSistema.BATERIA_DESCONECTADA
             )
     
+    #Reemplazar la bateria por una nueva
     def reemplazar(self, nueva_bateria: Bateria, costo: int) -> ResultadoOperacion:
+        
+        #Si se encuentra funcional no hay nesesidad de un cambio
         if self._esta_funcionando:
             return ResultadoOperacion(
                 exito_operacion = False,
@@ -93,6 +108,7 @@ class Bateria(Componente, Reemplazable):
                 mensaje_sistema = MensajesSistema.COMPONENTE_FUNCIONAL
             )
         
+        #Si el voltaje de la nueva bateria y la actual es diferente, entonces no son compatibles
         if nueva_bateria.voltaje_v != self._voltaje_v:
             return ResultadoOperacion(
                 exito_operacion = False,
@@ -100,6 +116,7 @@ class Bateria(Componente, Reemplazable):
                 mensaje_sistema = MensajesSistema.VOLTAJE_BATERIA_INCORRECTO
             )
         
+        #Si la forma de ambas baterias no son iguales entonces la nueva bateria no es compatible
         if nueva_bateria.forma_bateria != self._forma_bateria:
             return ResultadoOperacion(
                 exito_operacion = False,
@@ -107,6 +124,7 @@ class Bateria(Componente, Reemplazable):
                 mensaje_sistema = MensajesSistema.FORMA_BATERIA_INCORRECTA
             )
         
+        #Si todo resultó bien entonces se reemplaza
         self._capacidad_wh = nueva_bateria.capacidad_wh
         self._voltaje_v = nueva_bateria.voltaje_v
         self._salud = 100
@@ -120,13 +138,16 @@ class Bateria(Componente, Reemplazable):
             costo = costo
         )
     
-    def diagnosticar(self):
+    #Diagnostica si el componente se encuentra funcional
+    def diagnosticar(self) -> ResultadoOperacion:
+        
         if self._esta_funcionando:
             return ResultadoOperacion(
                 exito_operacion = True,
                 codigo_operacion = CodigoOperacion.COMPONENTE_FUNCIONAL,
                 mensaje_sistema = MensajesSistema.COMPONENTE_FUNCIONAL
             )
+        
         else:
             return ResultadoOperacion(
                 exito_operacion = False,

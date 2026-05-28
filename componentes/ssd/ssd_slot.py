@@ -54,35 +54,19 @@ class SSDSlot:
             codigo_operacion=CodigoOperacion.EXITO_INSTALACION,
             mensaje_sistema=MensajesSistema.EXITO_INSTALACION
         )
+    
 
-    def reemplazar_ssd(self, nuevo_ssd: SSD, costo: int) -> ResultadoOperacion:
+    def remover_ssd(self) -> SSD | ResultadoOperacion:
         if self.esta_vacio():
             return ResultadoOperacion(
                 exito_operacion=False,
                 codigo_operacion=CodigoOperacion.SLOT_VACIO,
                 mensaje_sistema=MensajesSistema.SLOT_VACIO
             )
-
-        resultado = self._ssd_instalado.reemplazar(nuevo_ssd, costo)
-        if resultado.exito_operacion:
-            self._ssd_instalado = nuevo_ssd
-
-        return resultado
-
-    def remover_ssd(self) -> ResultadoOperacion:
-        if self.esta_vacio():
-            return ResultadoOperacion(
-                exito_operacion=False,
-                codigo_operacion=CodigoOperacion.SLOT_VACIO,
-                mensaje_sistema=MensajesSistema.SLOT_VACIO
-            )
-
+        
+        ssd_removida =self._ssd_instalado
         self._ssd_instalado = None
-        return ResultadoOperacion(
-            exito_operacion=True,
-            codigo_operacion=CodigoOperacion.EXITO_REMOCION,
-            mensaje_sistema=MensajesSistema.EXITO_REMOCION
-        )
+        return ssd_removida
 
     def diagnosticar(self) -> ResultadoOperacion:
         if self.esta_vacio():

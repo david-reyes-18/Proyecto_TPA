@@ -1,5 +1,4 @@
 from componentes.base.componente import Componente
-from componentes.base.reemplazable import Reemplazable
 from componentes.ram.generacion_ram import GeneracionRAM
 from componentes.ram.formato_ram import FormatoRAM
 from componentes.ram.ram import RAM
@@ -14,20 +13,27 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-class PlacaBase(Componente, Reemplazable):
-    def __init__(self,
-                modelo: str,
-                generacion_ram: GeneracionRAM,
-                formato_ram: FormatoRAM, 
-                velocidad_maxima_ram_mhz: int,
-                slots_ram: list[RAMSlot],
-                slots_ssd: list[SSDSlot],
-                cantidad_maxima_ram: int,
-                socket_compatible: SocketCPU,
-                interfaz_gpu_compatible: InterfazGPU
-            ):
+"""
+Modelamiento de la placa base tanto para laptops como para 
+pc de escritorio
+"""
+
+class PlacaBase(Componente):
+    def __init__(
+            self,
+            modelo: str,
+            generacion_ram: GeneracionRAM,
+            formato_ram: FormatoRAM, 
+            velocidad_maxima_ram_mhz: int,
+            slots_ram: list[RAMSlot],
+            slots_ssd: list[SSDSlot],
+            cantidad_maxima_ram: int,
+            socket_compatible: SocketCPU,
+            interfaz_gpu_compatible: InterfazGPU
+        ) -> None:
         
         super().__init__("Placa Base", es_reemplazable = False, es_reparable = False)
+        
         self._modelo = modelo
         self._generacion_ram = generacion_ram
         self._formato_ram = formato_ram
@@ -39,7 +45,7 @@ class PlacaBase(Componente, Reemplazable):
         self._interfaz_gpu_compatible = interfaz_gpu_compatible
     
     
-    #   Propiedades
+    #   Getters
     
     @property
     def modelo(self) -> str:
@@ -78,7 +84,7 @@ class PlacaBase(Componente, Reemplazable):
         return self._interfaz_gpu_compatible
     
     
-    #   Metodos
+    #   Métodos
     
     def cpu_es_compatible(self, cpu: CPU) -> bool:
         return cpu.socket == self._socket_compatible
@@ -100,13 +106,6 @@ class PlacaBase(Componente, Reemplazable):
     def cantidad_ram_por_slot(self) -> int:
         n_slots = len(self._slots_ram)
         return self._cantidad_maxima_ram // n_slots if n_slots > 0 else 0
-    
-    def reemplazar(self) -> ResultadoOperacion:
-        return ResultadoOperacion(
-            exito_operacion = False,
-            codigo_operacion = CodigoOperacion.NO_REEMPLAZABLE,
-            mensaje_sistema = MensajesSistema.NO_REEMPLAZABLE
-        )
     
     def diagnosticar(self) -> ResultadoOperacion:
         return ResultadoOperacion(

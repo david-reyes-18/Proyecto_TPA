@@ -1,22 +1,28 @@
 from __future__ import annotations
 from componentes.base.componente import Componente
-from componentes.base.reemplazable import Reemplazable
 from componentes.cpu.socket import SocketCPU
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
+"""
+Clase que moldea una CPU para laptops y pc de escritorio
+"""
 
-class CPU(Componente, Reemplazable):
-    def __init__(self, 
-                modelo: str, 
-                nucleos: int, 
-                frecuencia_ghz: float,
-                socket: SocketCPU,
-                tdp_watts: int,
-            ):
+class CPU(Componente):
+    def __init__(
+            self, 
+            modelo: str, 
+            nucleos: int, 
+            frecuencia_ghz: float,
+            socket: SocketCPU,
+            tdp_watts: int,
+        ) -> None:
         
-        es_reemplazable = (socket != SocketCPU.BGA)
+        """Sockets tipo BGA (Ball Grid Array) es un montaje para dejar soldada
+        de por vida el procesador, usado para laptops"""
+        
+        es_reemplazable: bool = (socket != SocketCPU.BGA)
         
         super().__init__("CPU", es_reemplazable = es_reemplazable, es_reparable = False)
         
@@ -25,9 +31,8 @@ class CPU(Componente, Reemplazable):
         self._frecuencia_ghz = frecuencia_ghz
         self._socket = socket
         self._tdp_watts = tdp_watts
-
     
-    #   Propiedades
+    #   Getters
     
     @property
     def modelo(self) -> str:
@@ -52,40 +57,13 @@ class CPU(Componente, Reemplazable):
     
     #   Metodos
     
-    def aplicar_pasta_termica(self) -> ResultadoOperacion:
-        return ResultadoOperacion(
-            exito_operacion = True,
-            codigo_operacion = CodigoOperacion.EXITO_REPARACION,
-            mensaje_sistema = MensajesSistema.EXITO_REPARACION
-        )
-
-    def reemplazar(self, nuevo_cpu: CPU, costo: int) -> ResultadoOperacion:
-        if not self._es_reemplazable:
-            return ResultadoOperacion(
-                exito_operacion=False,
-                codigo_operacion = CodigoOperacion.NO_REEMPLAZABLE,
-                mensaje_sistema = MensajesSistema.NO_REEMPLAZABLE
-            )
-        
-        if nuevo_cpu.socket != self._socket:
-            return ResultadoOperacion(
-                exito_operacion=False,
-                codigo_operacion=CodigoOperacion.CPU_INCOMPATIBLE,
-                mensaje_sistema=MensajesSistema.CPU_INCOMPATIBLE,
-            )
-
-        self._modelo = nuevo_cpu.modelo
-        self._nucleos = nuevo_cpu.nucleos
-        self._frecuencia_ghz = nuevo_cpu.frecuencia_ghz
-        self._tdp_watts = nuevo_cpu.tdp_watts
-        self._esta_funcionando = True
-
-        return ResultadoOperacion(
-            exito_operacion = True,
-            codigo_operacion = CodigoOperacion.EXITO_REEMPLAZO,
-            mensaje_sistema = MensajesSistema.EXITO_REEMPLAZO,
-            costo = costo
-        )
+    #TODO: realizar funcion recibir pasta termica y crear clase pasta termica 
+    #def aplicar_pasta_termica(self) -> ResultadoOperacion:
+    #    return ResultadoOperacion(
+    #        exito_operacion = True,
+    #        codigo_operacion = CodigoOperacion.EXITO_REPARACION,
+    #        mensaje_sistema = MensajesSistema.EXITO_REPARACION
+    #    )
     
     def diagnosticar(self) -> ResultadoOperacion:
         if not self._esta_funcionando:

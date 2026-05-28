@@ -6,6 +6,10 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
+"""
+Clase que moldea una ranura para insertar una memoria RAM
+"""
+
 class RAMSlot:
     def __init__(
         self, 
@@ -14,7 +18,7 @@ class RAMSlot:
         generacion_compatible: GeneracionRAM,
         formato_compatible: FormatoRAM,
         modulo: RAM | None = None
-    ):
+    ) -> None:
     
         self._capacidad_maxima_ram = capacidad_maxima_ram
         self._capacidad_maxima_mhz = capacidad_maxima_mhz
@@ -28,7 +32,7 @@ class RAMSlot:
         )
     
     
-    #   Propiedades
+    #   Getters
     
     @property
     def capacidad_maxima_ram(self) -> int:
@@ -55,7 +59,7 @@ class RAMSlot:
         return self._esta_soldada
     
     
-    #   Metodos
+    #   Métodos
     
     def esta_ocupado(self) -> bool:
         return self._modulo is not None
@@ -117,4 +121,5 @@ class RAMSlot:
         
         ram_removida = self._modulo
         self._modulo = None
+        
         return ram_removida

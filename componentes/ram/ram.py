@@ -1,21 +1,30 @@
 from __future__ import annotations
 from componentes.base.componente import Componente
-from componentes.base.reemplazable import Reemplazable
 from componentes.ram.generacion_ram import GeneracionRAM
 from componentes.ram.formato_ram import FormatoRAM
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-class RAM(Componente, Reemplazable):
-    def __init__(self, 
-                nombre: str, 
-                capacidad_gb: int, 
-                velocidad_mhz: int,
-                generacion: GeneracionRAM, 
-                formato: FormatoRAM
-        ):
+"""
+Clase que moldea una RAM
+"""
+
+class RAM(Componente):
+    def __init__(
+            self, 
+            nombre: str, 
+            capacidad_gb: int, 
+            velocidad_mhz: int,
+            generacion: GeneracionRAM, 
+            formato: FormatoRAM
+        ) -> None:
         
+        """
+        Las únicas memorias RAM que no pueden ser reemplazadas
+        son las que tienen el formato LPDDR, las cuales son RAMs
+        soldadas a la placa
+        """
         es_reemplazable = (formato != FormatoRAM.LPDDR)
         
         super().__init__(nombre, es_reemplazable = es_reemplazable, es_reparable = False)
@@ -25,7 +34,7 @@ class RAM(Componente, Reemplazable):
         self._generacion = generacion
         self._formato = formato
     
-    #   Propiedades
+    #   Getters
     
     @property
     def capacidad_gb(self) -> int:
@@ -44,14 +53,7 @@ class RAM(Componente, Reemplazable):
         return self._formato
     
     
-    #   Metodos
-    
-    def reemplazar(self) -> ResultadoOperacion:
-        return ResultadoOperacion(
-            exito_operacion = False,
-            codigo_operacion = CodigoOperacion.NO_REEMPLAZABLE,
-            mensaje_sistema = MensajesSistema.NO_REEMPLAZABLE
-        )
+    #   Método
     
     def diagnosticar(self) -> ResultadoOperacion:
         return ResultadoOperacion(

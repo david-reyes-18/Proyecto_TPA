@@ -1,5 +1,9 @@
 from enum import Enum
 
+"""
+Clase que enumera los tipos de memoria que tiene la GPU
+"""
+
 class TipoMemoriaGPU(Enum):
     
     # Memoria compartida (iGPU)
