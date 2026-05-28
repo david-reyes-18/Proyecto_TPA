@@ -1,13 +1,14 @@
 from pathlib import Path
 import sys
 
-"""
-Clase que maneja las rutas de los archivos del sistema,
-como lo son las imagenes, fuentes, sonidos, música y mapas
-"""
-
 
 class Rutas:
+    
+    
+    """
+    Clase que maneja las rutas de los archivos del sistema,
+    como lo son las imagenes, fuentes, sonidos, música y mapas
+    """
     
     # Si el juego ha sido empaquetado o congelado (si es un .exe), entonces 
     # la RAIZ el juego será laruta en odnde se encuentre el archivo ejecutable,

@@ -13,12 +13,15 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-"""
-Modelamiento de la placa base tanto para laptops como para 
-pc de escritorio
-"""
 
 class PlacaBase(Componente):
+    
+    """
+    Modelamiento de la placa base tanto para laptops como para 
+    pc de escritorio. Encargada de determinar los componentes
+    compatibles para las laptops y PC de escritorio
+    """
+    
     def __init__(
             self,
             modelo: str,

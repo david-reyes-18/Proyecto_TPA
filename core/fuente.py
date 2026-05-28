@@ -1,12 +1,14 @@
 import pygame
 from core.rutas import Rutas
 
-"""
-Clase que genera fuentes de texto, especificamente la fuente
-pixel.ttf en distintos tamaños dependiendo cúal se nesesite
-"""
 
 class Fuente:
+    
+    """
+    Clase que genera fuentes de texto, especificamente la fuente
+    pixel.ttf en distintos tamaños dependiendo cúal se nesesite
+    """
+    
     #Los tamaños se van almacenando en un caché temporalpara evitar crear demasiados objetos
     _cache = {}
     

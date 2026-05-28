@@ -1,9 +1,11 @@
 from enum import Enum
 
-"""
-Clase que enumera los tipos de GPU que hay
-"""
 
 class TipoGPU(Enum):
+    
+    """
+    Clase que enumera los tipos de GPU que hay
+    """
+    
     INTEGRADA = "Integrada"
     DEDICADA = "Dedicada"

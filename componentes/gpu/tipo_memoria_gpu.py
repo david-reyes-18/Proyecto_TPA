@@ -1,10 +1,11 @@
 from enum import Enum
 
-"""
-Clase que enumera los tipos de memoria que tiene la GPU
-"""
 
 class TipoMemoriaGPU(Enum):
+    
+    """
+    Clase que enumera los tipos de memoria que tiene la GPU
+    """
     
     # Memoria compartida (iGPU)
     DDR4 = "DDR4"

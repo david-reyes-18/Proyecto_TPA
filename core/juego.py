@@ -3,13 +3,15 @@ from core.config import ANCHO, ALTO, FPS
 from core.manejador_escenas import ManejadorEscenas
 from escenas.menu_principal import MenuPrincipal
 
-"""
-Aquí se ejecuta el mainloop principal del juego y el
-manejo  de escenas, asi como sus actualizaciones, dibujos
-y maenejo de eventos
-"""
 
 class Juego:
+    
+    """
+    Aquí se ejecuta el mainloop principal del juego y el
+    manejo  de escenas, asi como sus actualizaciones, dibujos
+    y maenejo de eventos
+    """
+    
     def __init__(self):
         pygame.init()
         self.pantalla = pygame.display.set_mode(

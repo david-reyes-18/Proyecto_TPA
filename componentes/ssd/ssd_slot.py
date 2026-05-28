@@ -6,15 +6,22 @@ from sistema.mensaje_sistema import MensajesSistema
 
 
 class SSDSlot:
-    def __init__(self, 
-                interfaz_soportada: InterfazSSD, 
-                ssd_instalado: SSD = None
-            ):
+    
+    """
+    Clase encargada de modelar un slot para SSD en laptops
+    y pc de escritorio
+    """
+    
+    def __init__(
+            self, 
+            interfaz_soportada: InterfazSSD, 
+            ssd_instalado: SSD = None
+        ):
         
         self._interfaz_soportada = interfaz_soportada
         self._ssd_instalado = ssd_instalado
 
-    #   Propiedades
+    #   Getters
     
     @property
     def interfaz_soportada(self) -> InterfazSSD:
@@ -25,7 +32,7 @@ class SSDSlot:
         return self._ssd_instalado
     
     
-    #   Metodos
+    #   Métodos
 
     def esta_ocupado(self) -> bool:
         return self._ssd_instalado is not None

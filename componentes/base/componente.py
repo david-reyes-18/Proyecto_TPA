@@ -1,15 +1,16 @@
 from abc import ABC, abstractmethod
 from sistema.resultado_operaciones import ResultadoOperacion
 
-"""
-La clase abstarcta de Componente se encarga de darle un comportamiento básico
-a cada componente creado, los cuales son un nombre, ver si el componente
-es reemplazable o reparable, asi mismo si está funcionando o existe alguna fala. 
-Por último, cada componente debe tener el método abstracto diagnosticar.
-"""
-
 
 class Componente(ABC):
+    
+    """
+    La clase abstarcta de Componente se encarga de darle un comportamiento básico
+    a cada componente creado, los cuales son un nombre, ver si el componente
+    es reemplazable o reparable, asi mismo si está funcionando o existe alguna fala. 
+    Por último, cada componente debe tener el método abstracto diagnosticar.
+    """
+    
     def __init__(
         self, 
         nombre: str, 

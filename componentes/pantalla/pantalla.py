@@ -6,11 +6,13 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-"""
-Clase que moldea una pantalla de laptop
-"""
 
 class Pantalla(Componente, Reemplazable):
+    
+    """
+    Clase que moldea una pantalla de laptop
+    """
+    
     def __init__(
             self, 
             pulgadas: int, 

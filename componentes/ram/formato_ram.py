@@ -1,10 +1,17 @@
 from enum import Enum
 
-"""
-Clase que enumera los formatos que puede tener una RAM
-"""
 
 class FormatoRAM(Enum):
-    DIMM = "DIMM" # PC de escritorio
-    SO_DIMM = "SO-DIMM" # Laptops
-    LPDDR = "LPDDR" # Laptops: soldada en placa (laptops ultradelgadas)
+    
+    """
+    Clase que enumera los formatos que puede tener una RAM
+    """
+    
+    # PC de escritorio
+    DIMM = "DIMM" 
+    
+    # Laptops
+    SO_DIMM = "SO-DIMM"
+    
+    # Laptops: soldada en placa (laptops ultradelgadas)
+    LPDDR = "LPDDR" 

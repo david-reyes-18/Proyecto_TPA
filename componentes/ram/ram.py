@@ -6,11 +6,13 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-"""
-Clase que moldea una RAM
-"""
 
 class RAM(Componente):
+    
+    """
+    Clase que moldea una RAM para laptop y pc de escritorio
+    """
+    
     def __init__(
             self, 
             nombre: str, 
@@ -20,11 +22,10 @@ class RAM(Componente):
             formato: FormatoRAM
         ) -> None:
         
-        """
-        Las únicas memorias RAM que no pueden ser reemplazadas
-        son las que tienen el formato LPDDR, las cuales son RAMs
-        soldadas a la placa
-        """
+        # Las únicas memorias RAM que no pueden ser reemplazadas
+        # son las que tienen el formato LPDDR, las cuales son RAMs
+        # soldadas a la placa
+        
         es_reemplazable = (formato != FormatoRAM.LPDDR)
         
         super().__init__(nombre, es_reemplazable = es_reemplazable, es_reparable = False)

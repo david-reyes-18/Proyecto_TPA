@@ -5,11 +5,13 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-"""
-Clase que moldea una CPU para laptops y pc de escritorio
-"""
 
 class CPU(Componente):
+    
+    """
+    Clase que moldea una CPU para laptops y pc de escritorio
+    """
+    
     def __init__(
             self, 
             modelo: str, 
@@ -19,8 +21,8 @@ class CPU(Componente):
             tdp_watts: int,
         ) -> None:
         
-        """Sockets tipo BGA (Ball Grid Array) es un montaje para dejar soldada
-        de por vida el procesador, usado para laptops"""
+        # Sockets tipo BGA (Ball Grid Array) es un montaje para dejar soldada
+        # de por vida el procesador, usado para laptops
         
         es_reemplazable: bool = (socket != SocketCPU.BGA)
         

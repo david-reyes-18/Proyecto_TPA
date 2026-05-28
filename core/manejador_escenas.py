@@ -1,13 +1,14 @@
 import pygame
 from escenas.escena_base import EscenaBase
 
-"""
-Clase que se encarga de manejar escenas y recibir toda la información del juego
-para posteriormente dibujar todo en pantalla
-"""
-
 
 class ManejadorEscenas:
+    
+    """
+    Clase que se encarga de manejar escenas y recibir toda la información del juego
+    para posteriormente dibujar todo en pantalla
+    """
+    
     def __init__(self) -> None:
         self.escena_actual: None | EscenaBase = None
     

@@ -1,11 +1,16 @@
 from componentes.base.componente import Componente
-from componentes.base.reemplazable import Reemplazable
 from componentes.ssd.interfaz_ssd import InterfazSSD
 from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-class SSD(Componente, Reemplazable):
+
+class SSD(Componente):
+    
+    """
+    Clase encargada de modelar un SSD
+    """
+    
     def __init__(
         self,
         modelo: str,
@@ -16,6 +21,7 @@ class SSD(Componente, Reemplazable):
     ) -> None:
         
         super().__init__("SSD", es_reemplazable=True, es_reparable=False)
+        
         self._modelo = modelo
         self._capacidad_gb = capacidad_gb
         self._interfaz = interfaz

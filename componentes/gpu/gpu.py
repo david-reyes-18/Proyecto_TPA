@@ -8,11 +8,13 @@ from componentes.gpu.tipo_gpu import TipoGPU
 from componentes.gpu.tipo_memoria_gpu import TipoMemoriaGPU
 from componentes.gpu.tipo_interfaz import InterfazGPU
 
-"""
-Modelamiento de una GPU de laptop y pc de escritorio
-"""
 
 class GPU(Componente, Reemplazable):
+    
+    """
+    Modelamiento de una GPU de laptop y pc de escritorio
+    """
+    
     def __init__(
             self, 
             modelo: str, 
@@ -23,10 +25,10 @@ class GPU(Componente, Reemplazable):
             tdp_watts: int
         ):
         
-        """
-        La GPU será reemplazable solamente si su interfaz es PCIe, dado a que 
-        esta interfaces para pc de escritorios son tarjetas dedicadas
-        """
+        
+        # La GPU será reemplazable solamente si su interfaz es PCIe, dado a que 
+        # esta interfaces para pc de escritorios son tarjetas dedicadas
+        
         es_reemplazable = (interfaz == InterfazGPU.PCIE)
         
         super().__init__("GPU", es_reemplazable = es_reemplazable, es_reparable = False)

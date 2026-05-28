@@ -6,11 +6,13 @@ from sistema.resultado_operaciones import ResultadoOperacion
 from sistema.codigo_operacion import CodigoOperacion
 from sistema.mensaje_sistema import MensajesSistema
 
-"""
-Clase que moldea una ranura para insertar una memoria RAM
-"""
 
 class RAMSlot:
+    
+    """
+    Clase que moldea una ranura para insertar una memoria RAM
+    """
+    
     def __init__(
         self, 
         capacidad_maxima_ram: int, 
@@ -27,7 +29,8 @@ class RAMSlot:
         self._modulo = modulo
         self._esta_soldada = False
         
-        self._esta_soldada = (
+        # Sólo estará soldada si el formato es LPDDR
+        self._esta_soldada: bool = (
             modulo is not None and modulo.formato == FormatoRAM.LPDDR
         )
     
