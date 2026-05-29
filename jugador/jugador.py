@@ -1,132 +1,107 @@
 import pygame
 from core.rutas import Rutas
-
-ESCALA = 4
-
-FRAME_W = 16
-FRAME_H = 32
-
-FPS_IDLE = 4
-FPS_RUN = 24
-
-FRAMES_IDLE = 4
-FRAMES_POR_DIR = 6
-
-# filas del spritesheet run
-DIRS_RUN = {
-    "right": 0,
-    "up":    1,
-    "left":  2,
-    "down":  3,
-}
+from core.config import *
 
 
 class Jugador:
+    
+    """
+    Modela al jugador
+    """
+    
     def __init__(self, x: int, y: int):
-
-        self.ancho = FRAME_W * ESCALA
-        self.alto = FRAME_H * ESCALA
-
-        # hitbox solo pies
-        hb_h = self.alto // 4
-
+        
+        self.ancho: int = FRAME_ANCHO * ESCALA_JUGADOR
+        self.alto: int = FRAME_ALTO * ESCALA_JUGADOR
+        
+        # Hitbox de los pies
+        hitbox_pies: int = self.alto // 4
+        
+        # Hitbox personaje (solo de los pies para efecto 2d retro)
         self.hitbox = pygame.Rect(
             x,
-            y + self.alto - hb_h,
+            y + self.alto - hitbox_pies,
             self.ancho,
-            hb_h
+            hitbox_pies
         )
-
+        
+        # Rect para el personaje
         self.rect = pygame.Rect(
             x,
             y,
             self.ancho,
             self.alto
         )
-
-        self.velocidad = 100 * ESCALA
-
-        # sprites
-        self.frames_idle = self._cortar_idle()
-        self.frames_run = self._cortar_run()
-
-        # estado
-        self.direccion = "down"
-        self.moviendose = False
-
-        # animación
-        self.idx_idle = 0
-        self.idx_run = 0
-
-        self.t_idle = 0.0
+        
+        # Velocidad personaje
+        self.velocidad: int = 100 * ESCALA_GLOB
+        
+        # Sprites jugador para modo estatico y corriendo
+        self.sprites_jugador_estatico: list = self._cargar_sprites_estatico()
+        self.sprites_jugador_corriendo: dict = self._cargar_sprites_corriendo()
+        
+        # Estados
+        self.direccion: str = "ABAJO" #Dirección actual
+        self.moviendose: bool = False
+        
+        # Índices de los sprites actuales
+        self.indice_estatico = 0
+        self.indice_corriendo = 0
+        
         self.t_run = 0.0
-
-    # ----------------------------------------
-    # CARGA SPRITES
-    # ----------------------------------------
-
-    def _escalar(self, surf: pygame.Surface) -> pygame.Surface:
+    
+    # Cargar Sprites
+    
+    def _escalar(self, superficie: pygame.Surface) -> pygame.Surface:
         return pygame.transform.scale(
-            surf,
+            superficie,
             (self.ancho, self.alto)
         )
-
-    def _cortar_idle(self) -> list[pygame.Surface]:
-
-        sheet = pygame.image.load(
-            str(Rutas.imagen("Adam_idle_16x16.png"))
+    
+    def _cargar_sprites_estatico(self) -> list[pygame.Surface]:
+        spritesheet = pygame.image.load(
+            str(Rutas.imagen("jugador/jugador_estatico.png"))
         ).convert_alpha()
-
+        
         frames = []
-
-        for i in range(FRAMES_IDLE):
-            frame = sheet.subsurface(
-                (i * FRAME_W, 0, FRAME_W, FRAME_H)
+        
+        for i in range(FRAMES_ESTATICO):
+            frame = spritesheet.subsurface(
+                (i * FRAME_ANCHO, 0, FRAME_ANCHO, FRAME_ALTO)
             )
-
+            
             frames.append(
                 self._escalar(frame)
             )
-
         return frames
-
-    def _cortar_run(self) -> dict[str, list[pygame.Surface]]:
-
-        sheet = pygame.image.load(
-            str(Rutas.imagen("Adam_run_16x16.png"))
+    
+    
+    def _cargar_sprites_corriendo(self) -> dict[str, list[pygame.Surface]]:
+        spritesheet = pygame.image.load(
+            str(Rutas.imagen("jugador/jugador_corriendo.png"))
         ).convert_alpha()
-
+        
         animaciones = {}
-
-        for idx_dir, direccion in enumerate(DIRS_RUN):
-
+        
+        for indice_direccion, direccion in enumerate(DIRECCIONES):
             frames = []
-
-            for i in range(FRAMES_POR_DIR):
-
-                frame_index = idx_dir * FRAMES_POR_DIR + i
-
-                frame = sheet.subsurface(
+            for i in range(FRAMES_POR_DIRECCION):
+                frame_index = indice_direccion * FRAMES_POR_DIRECCION + i
+                frame = spritesheet.subsurface(
                     (
-                        frame_index * FRAME_W,
+                        frame_index * FRAME_ANCHO,
                         0,
-                        FRAME_W,
-                        FRAME_H
+                        FRAME_ANCHO,
+                        FRAME_ALTO
                     )
                 )
-
                 frames.append(
                     self._escalar(frame)
                 )
-
             animaciones[direccion] = frames
-
         return animaciones
-
-    # ----------------------------------------
-    # UPDATE
-    # ----------------------------------------
-
+    
+    
     def actualizar(
         self,
         dt: float,
@@ -134,84 +109,83 @@ class Jugador:
         dy: int,
         obstaculos: list[pygame.Rect]
     ):
+        
+        self.moviendose: bool = dx != 0 or dy != 0
 
-        self.moviendose = dx != 0 or dy != 0
-
-        # dirección visual
+        # Calcular en que dirección se está moviendo
         if dx < 0:
-            self.direccion = "left"
+            self.direccion = "IZQUIERDA"
+        
         elif dx > 0:
-            self.direccion = "right"
+            self.direccion = "DERECHA"
+        
         elif dy < 0:
-            self.direccion = "up"
+            self.direccion = "ARRIBA"
+        
         elif dy > 0:
-            self.direccion = "down"
-
-        # movimiento eje x
+            self.direccion = "ABAJO"
+        
+        # Calcular el indice del frame estático por cada tipo de dirección
+        if self.direccion == "IZQUIERDA":
+            self.indice_estatico = 2
+        elif self.direccion == "DERECHA":
+            self.indice_estatico = 0
+        elif self.direccion == "ARRIBA":
+            self.indice_estatico = 1
+        elif self.direccion == "ABAJO":
+            self.indice_estatico = 3
+        
+        # Movimiento en x
         self.hitbox.x += dx
-
-        for obs in obstaculos:
-            if self.hitbox.colliderect(obs):
+        
+        for obstaculo in obstaculos:
+            if self.hitbox.colliderect(obstaculo):
                 if dx > 0:
-                    self.hitbox.right = obs.left
+                    self.hitbox.right = obstaculo.left
                 elif dx < 0:
-                    self.hitbox.left = obs.right
-
-        # movimiento eje y
+                    self.hitbox.left = obstaculo.right
+        
+        # Movimiento eje y
         self.hitbox.y += dy
-
-        for obs in obstaculos:
-            if self.hitbox.colliderect(obs):
+        
+        for obstaculo in obstaculos:
+            if self.hitbox.colliderect(obstaculo):
                 if dy > 0:
-                    self.hitbox.bottom = obs.top
+                    self.hitbox.bottom = obstaculo.top
                 elif dy < 0:
-                    self.hitbox.top = obs.bottom
+                    self.hitbox.top = obstaculo.bottom
 
-        # sincronizar sprite con hitbox
+        # Sincronizar sprite con hitbox
         self.rect.midbottom = self.hitbox.midbottom
-
-        # idle
-        self.t_idle += dt
-
-        if self.t_idle >= 1 / FPS_IDLE:
-            self.t_idle = 0
-            self.idx_idle = (
-                self.idx_idle + 1
-            ) % FRAMES_IDLE
-
+        
         # run
         if self.moviendose:
-
             self.t_run += dt
-
-            if self.t_run >= 1 / FPS_RUN:
+            if self.t_run >= 1 / FPS_CORRIENDO:
                 self.t_run = 0
-                self.idx_run = (
-                    self.idx_run + 1
-                ) % FRAMES_POR_DIR
+                self.indice_corriendo = (
+                    self.indice_corriendo + 1
+                ) % FRAMES_POR_DIRECCION
         else:
-            self.idx_run = 0
+            self.indice_corriendo = 0
             self.t_run = 0
-
-    # ----------------------------------------
-    # DIBUJAR
-    # ----------------------------------------
-
+    
+    
     def dibujar(
         self,
         pantalla: pygame.Surface,
         camara: pygame.Rect
     ):
-
+        
         if self.moviendose:
-            frame = self.frames_run[
+            frame = self.sprites_jugador_corriendo[
                 self.direccion
-            ][self.idx_run]
+            ][self.indice_corriendo]
         else:
-            frame = self.frames_idle[
-                self.idx_idle
+            frame = self.sprites_jugador_estatico[
+                self.indice_estatico
             ]
-
+        
         pantalla.blit(
             frame,
             (

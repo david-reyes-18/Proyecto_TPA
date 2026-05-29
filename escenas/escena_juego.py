@@ -148,7 +148,7 @@ class EscenaJuego(EscenaBase):
         if teclas[pygame.K_s]:  dy += int(self.jugador.velocidad * dt)
         if teclas[pygame.K_a]:  dx -= int(self.jugador.velocidad * dt)
         if teclas[pygame.K_d]: dx += int(self.jugador.velocidad * dt)
- 
+        
         self.jugador.actualizar(dt, dx, dy, self.todos_obstaculos)
  
         # Mantener dentro del mapa
