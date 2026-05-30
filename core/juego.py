@@ -1,6 +1,7 @@
 import pygame
-from core.config import ANCHO, ALTO, FPS
+from core.config import FPS
 from core.manejador_escenas import ManejadorEscenas
+from core.manejador_jsons import cargar_config_json
 from escenas.menu_principal import MenuPrincipal
 
 
@@ -14,8 +15,14 @@ class Juego:
     
     def __init__(self):
         pygame.init()
+        
+        datos_resolucion = cargar_config_json("resolucion")
+        
+        self.ancho = datos_resolucion["ancho"]
+        self.alto = datos_resolucion["alto"]
+        
         self.pantalla = pygame.display.set_mode(
-            (ANCHO, ALTO)
+            (self.ancho, self.alto)
         )
         
         pygame.display.set_caption("Innomath")

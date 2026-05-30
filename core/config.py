@@ -3,10 +3,6 @@ Archivo que guarda configuraciónes globales y constantes
 para usarse en todo el proyecto
 """
 
-# Ancho y alto de la ventana al iniciar el juego
-ANCHO = 1200
-ALTO = 800
-
 # Cuadros por segundo que máximos que aparecerán en el juego
 FPS = 60
 
@@ -41,3 +37,6 @@ DIRECCIONES = {
     "IZQUIERDA": 2,
     "ABAJO": 3,
 }
+
+# Distancia minima para realizar la interacción entre dos objetos
+DISTANCIA_INTERACCION = 50

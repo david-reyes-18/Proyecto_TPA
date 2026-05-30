@@ -30,6 +30,9 @@ class Rutas:
     MUSICA = ASSETS / "music"
     MAPAS = ASSETS / "maps"
     
+    # Carpeta de Jsons
+    JSONS = RAIZ / "jsons"
+    
     # Métodos para llamar al archivo que se quiere obtener
     @classmethod
     def imagen(cls, archivo: str) -> Path:
@@ -54,3 +57,7 @@ class Rutas:
     @classmethod
     def mapa(cls, archivo: str) -> Path:
         return cls.MAPAS / archivo
+    
+    @classmethod
+    def json(cls, archivo: str) -> Path:
+        return cls.JSONS / archivo

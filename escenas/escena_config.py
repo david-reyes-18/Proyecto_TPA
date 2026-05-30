@@ -2,6 +2,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 import pygame
 from core.config import *
+from core.manejador_musica import ManejadorMusica
+from core.manejador_sonidos import ManejadorSonidos
+from core.manejador_jsons import cargar_datos_json, guardar_datos_json, cargar_config_json
 from ui.label import Label
 from ui.boton import Boton
 from ui.slider import Slider
@@ -28,30 +31,45 @@ class EscenaConfig(EscenaBase):
         # Labeles
         self.label_titulo = Label(
             text="CONFIGURACION",
-            font_size=46, color=(200, 180, 255),
-            rel_x=0.5, rel_y=0.12, anchor="center",
+            font_size=46, 
+            color=(200, 180, 255),
+            rel_x=0.5, 
+            rel_y=0.12, 
+            anchor="center",
         )
         self.label_audio = Label(
             text="AUDIO",
-            font_size=20, color=(160, 200, 255),
-            rel_x=0.5, rel_y=0.22, anchor="center",
+            font_size=20, 
+            color=(160, 200, 255),
+            rel_x=0.5, 
+            rel_y=0.22, 
+            anchor="center",
         )
         self.label_video = Label(
-            text="RESOLUCION DE PANTALLA",
-            font_size=20, color=(160, 200, 255),
-            rel_x=0.5, rel_y=0.57, anchor="center",
+            text="RESOLUCIÓN DE PANTALLA",
+            font_size=20, 
+            color=(160, 200, 255),
+            rel_x=0.5, 
+            rel_y=0.57, 
+            anchor="center",
         )
         
         self.label_res_nombre = Label(
             text=RESOLUCIONES[self.resolucion_idx][2],
-            font_size=18, color=(240, 240, 255),
-            rel_x=0.5, rel_y=0.625, anchor="center",
+            font_size=18, 
+            color=(240, 240, 255),
+            rel_x=0.5, 
+            rel_y=0.625, 
+            anchor="center",
         )
         
         self.label_msg = Label(
             text="",
-            font_size=16, color=(100, 255, 160),
-            rel_x=0.5, rel_y=0.80, anchor="center",
+            font_size=16, 
+            color=(100, 255, 160),
+            rel_x=0.5, 
+            rel_y=0.80, 
+            anchor="center",
         )
         
         # Conjunto de todos los labeles
@@ -61,49 +79,80 @@ class EscenaConfig(EscenaBase):
             self.label_video,
             self.label_res_nombre,
         ]
-
+        
+        # Cargar el volumen del json
+        datos_volumen = cargar_config_json("volumen")
+        volumen_musica = datos_volumen["musica"]
+        volumen_sonidos = datos_volumen["sonidos"]
+        
         # Sliders
         self.slider_musica = Slider(
             text="Musica",
-            rel_x=0.5, rel_y=0.30,
-            valor_inicial=0.5,
+            rel_x=0.5, 
+            rel_y=0.30,
+            valor_inicial=volumen_musica,
             color_fill=(100, 180, 255),
             on_change=self._on_musica_change,
         )
-        self.slider_efectos = Slider(
+        self.slider_sonidos = Slider(
             text="Efectos",
-            rel_x=0.5, rel_y=0.44,
-            valor_inicial=0.7,
+            rel_x=0.5, 
+            rel_y=0.44,
+            valor_inicial=volumen_sonidos,
             color_fill=(180, 120, 255),
+            on_change=self._on_efectos_change
         )
 
         #Conjunto de todos los sliders
         self.sliders = [
                 self.slider_musica, 
-                self.slider_efectos
+                self.slider_sonidos
             ]
 
         # Botones
         self.boton_resolucion_anterior = Boton(
-            text="<", rel_x=0.34, rel_y=0.62, width=44, height=44,
-            command=self._resolucion_anterior, font_size=26,
-            bg_color=(60, 60, 90), hover_color=(100, 100, 160),
+            text="<", 
+            rel_x=0.34, 
+            rel_y=0.62, 
+            width=44, 
+            height=44,
+            command=self._resolucion_anterior, 
+            font_size=26,
+            bg_color=(60, 60, 90), 
+            hover_color=(100, 100, 160),
         )
         self.boton_resolucion_sgte = Boton(
-            text=">", rel_x=0.66, rel_y=0.62, width=44, height=44,
-            command=self._resolucion_sgte, font_size=26,
-            bg_color=(60, 60, 90), hover_color=(100, 100, 160),
+            text=">", 
+            rel_x=0.66, 
+            rel_y=0.62, 
+            width=44, 
+            height=44,
+            command=self._resolucion_sgte, 
+            font_size=26,
+            bg_color=(60, 60, 90), 
+            hover_color=(100, 100, 160),
         )
         self.boton_aplicar = Boton(
-            text="APLICAR RESOLUCIÓN", rel_x=0.5, rel_y=0.72,
-            width=0.4, height=60,
-            command=self._aplicar_resolucion, font_size=18,
-            bg_color=(50, 120, 80), hover_color=(70, 180, 110),
+            text="APLICAR RESOLUCIÓN", 
+            rel_x=0.5, 
+            rel_y=0.72,
+            width=0.4, 
+            height=60,
+            command=self._aplicar_resolucion, 
+            font_size=18,
+            bg_color=(50, 120, 80), 
+            hover_color=(70, 180, 110),
         )
         self.boton_volver = Boton(
-            text="VOLVER", rel_x=0.5, rel_y=0.87, width=220, height=52,
-            command=self._volver, font_size=22,
-            bg_color=(80, 40, 40), hover_color=(140, 60, 60),
+            text="VOLVER", 
+            rel_x=0.5, 
+            rel_y=0.87, 
+            width=220, 
+            height=52,
+            command=self._volver,
+            font_size=22,
+            bg_color=(80, 40, 40), 
+            hover_color=(140, 60, 60),
         )
 
         self.botones = [
@@ -115,8 +164,11 @@ class EscenaConfig(EscenaBase):
     
     # Comandos de slider y botones
     def _on_musica_change(self, valor: float) -> None:
-        if pygame.mixer and pygame.mixer.get_init():
-            pygame.mixer.music.set_volume(valor)
+        ManejadorMusica.establecer_volumen(valor)
+    
+    def _on_efectos_change(self, valor: float) -> None:
+        ManejadorSonidos.establecer_volumen(valor)
+
 
     def _resolucion_anterior(self) -> None:
         self.resolucion_idx = (self.resolucion_idx - 1) % len(RESOLUCIONES)
@@ -127,11 +179,13 @@ class EscenaConfig(EscenaBase):
         self.label_res_nombre.text = RESOLUCIONES[self.resolucion_idx][2]
 
     def _aplicar_resolucion(self) -> None:
-        w, h, label = RESOLUCIONES[self.resolucion_idx]
-        self.juego.pantalla = pygame.display.set_mode((w, h))
-        import core.config as cfg
-        cfg.ANCHO = w
-        cfg.ALTO = h
+        ancho, alto, label = RESOLUCIONES[self.resolucion_idx]
+        self.juego.pantalla = pygame.display.set_mode((ancho, alto))
+        
+        datos_config = cargar_datos_json("config.json")
+        datos_config["resolucion"]["ancho"] = ancho
+        datos_config["resolucion"]["alto"] = alto
+        guardar_datos_json("config.json", datos_config)
         self._msg_texto = f"Resolucion aplicada: {label}"
         self._msg_timer = 2.5
 

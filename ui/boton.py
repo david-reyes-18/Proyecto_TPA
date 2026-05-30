@@ -1,6 +1,7 @@
 import pygame
 from ui.widget import Widget
 from core.fuente import Fuente
+from core.manejador_sonidos import ManejadorSonidos
 
 
 class Boton(Widget):
@@ -60,6 +61,7 @@ class Boton(Widget):
         for evento in eventos:
             if evento.type == pygame.MOUSEBUTTONDOWN:
                 if self.hovered:
+                    ManejadorSonidos.reproducir("click.ogg")
                     self.command()
 
     def dibujar(self, superficie: pygame.Surface) -> None:

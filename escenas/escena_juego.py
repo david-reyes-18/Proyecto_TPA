@@ -1,13 +1,12 @@
 import pygame
 import pytmx
+from core.rutas import Rutas
+from core.fuente import Fuente
+from core.config import ESCALA_GLOB, DISTANCIA_INTERACCION
+from core.manejador_musica import ManejadorMusica
 from escenas.escena_base import EscenaBase
 from escenas.menu_principal import MenuPrincipal
 from jugador.jugador import Jugador
-from core.rutas import Rutas
-from core.fuente import Fuente
-
-ESCALA = 3
-DIST_INTERACCION = 60
 
 
 class EscenaJuego(EscenaBase):
@@ -18,8 +17,8 @@ class EscenaJuego(EscenaBase):
         # Cargar el mapa
         ruta_mapa = str(Rutas.mapa("mapa.tmx"))
         self.tmx_data = pytmx.load_pygame(ruta_mapa, pixelalpha=True)
-        self.tile_w = self.tmx_data.tilewidth  * ESCALA
-        self.tile_h = self.tmx_data.tileheight * ESCALA
+        self.tile_w = self.tmx_data.tilewidth  * ESCALA_GLOB
+        self.tile_h = self.tmx_data.tileheight * ESCALA_GLOB
         self.mapa_pixel_w = self.tmx_data.width  * self.tile_w
         self.mapa_pixel_h = self.tmx_data.height * self.tile_h
         self.superficie_mapa = self._renderizar_mapa()
@@ -50,6 +49,8 @@ class EscenaJuego(EscenaBase):
         # --- UI ---
         self.fuente_prompt  = Fuente.obtener(18)
         self.objeto_cercano = None
+        
+        ManejadorMusica.reproducir("littleroot_town.ogg")
  
     # ------------------------------------------------------------------
     # Helpers carga
@@ -76,8 +77,8 @@ class EscenaJuego(EscenaBase):
             if isinstance(capa, pytmx.TiledObjectGroup) and capa.name == nombre_grupo:
                 for obj in capa:
                     rects.append(pygame.Rect(
-                        int(obj.x * ESCALA), int(obj.y * ESCALA),
-                        int(obj.width * ESCALA), int(obj.height * ESCALA),
+                        int(obj.x * ESCALA_GLOB), int(obj.y * ESCALA_GLOB),
+                        int(obj.width * ESCALA_GLOB), int(obj.height * ESCALA_GLOB),
                     ))
         return rects
  
@@ -88,8 +89,8 @@ class EscenaJuego(EscenaBase):
                 for obj in capa:
                     if getattr(obj, "type", None) == tipo:
                         rects.append(pygame.Rect(
-                            int(obj.x * ESCALA), int(obj.y * ESCALA),
-                            int(obj.width * ESCALA), int(obj.height * ESCALA),
+                            int(obj.x * ESCALA_GLOB), int(obj.y * ESCALA_GLOB),
+                            int(obj.width * ESCALA_GLOB), int(obj.height * ESCALA_GLOB),
                         ))
         return rects
  
@@ -110,11 +111,11 @@ class EscenaJuego(EscenaBase):
                     continue
                 cfg = CONFIGS[nombre]
                 imagen_orig = pygame.image.load(str(Rutas.imagen(cfg["imagen"]))).convert_alpha()
-                ancho_dest  = int(obj.width  * ESCALA)
-                alto_dest   = int(obj.height * ESCALA)
+                ancho_dest  = int(obj.width  * ESCALA_GLOB)
+                alto_dest   = int(obj.height * ESCALA_GLOB)
                 objetos.append({
                     "superficie": pygame.transform.scale(imagen_orig, (ancho_dest, alto_dest)),
-                    "rect":       pygame.Rect(int(obj.x * ESCALA), int(obj.y * ESCALA), ancho_dest, alto_dest),
+                    "rect":       pygame.Rect(int(obj.x * ESCALA_GLOB), int(obj.y * ESCALA_GLOB), ancho_dest, alto_dest),
                     "nombre":     nombre,
                     "label":      cfg["label"],
                     "escena":     cfg["escena"],
@@ -144,9 +145,9 @@ class EscenaJuego(EscenaBase):
     def actualizar(self, dt: float):
         teclas = pygame.key.get_pressed()
         dx = dy = 0
-        if teclas[pygame.K_w]:    dy -= int(self.jugador.velocidad * dt)
-        if teclas[pygame.K_s]:  dy += int(self.jugador.velocidad * dt)
-        if teclas[pygame.K_a]:  dx -= int(self.jugador.velocidad * dt)
+        if teclas[pygame.K_w]: dy -= int(self.jugador.velocidad * dt)
+        if teclas[pygame.K_s]: dy += int(self.jugador.velocidad * dt)
+        if teclas[pygame.K_a]: dx -= int(self.jugador.velocidad * dt)
         if teclas[pygame.K_d]: dx += int(self.jugador.velocidad * dt)
         
         self.jugador.actualizar(dt, dx, dy, self.todos_obstaculos)
@@ -166,7 +167,7 @@ class EscenaJuego(EscenaBase):
             r = obj["rect"]
             cx = max(r.left, min(jx, r.right))
             cy = max(r.top,  min(jy, r.bottom))
-            if ((jx - cx) ** 2 + (jy - cy) ** 2) ** 0.5 <= DIST_INTERACCION:
+            if ((jx - cx) ** 2 + (jy - cy) ** 2) ** 0.5 <= DISTANCIA_INTERACCION:
                 self.objeto_cercano = obj
                 break
  

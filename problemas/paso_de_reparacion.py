@@ -5,7 +5,13 @@ from sistema.mensaje_sistema import MensajesSistema
 
 
 class PasoDeReparacion:
-    def __init__(self, descripcion_accion: str, explicacion: str, desafio: Desafio):
+    def __init__(
+            self, 
+            descripcion_accion: str, 
+            explicacion: str, 
+            desafio: Desafio
+        ) -> None:
+        
         self._descripcion_accion = descripcion_accion
         self._explicacion = explicacion
         self._desafio = desafio
