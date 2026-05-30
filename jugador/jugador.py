@@ -1,6 +1,7 @@
 import pygame
 from core.rutas import Rutas
 from core.config import *
+from core.manejador_sonidos import ManejadorSonidos
 
 
 class Jugador:
@@ -13,6 +14,9 @@ class Jugador:
         
         self.ancho: int = FRAME_ANCHO * ESCALA_JUGADOR
         self.alto: int = FRAME_ALTO * ESCALA_JUGADOR
+        
+        self._timer_pasos = 0.0
+        self._intervalo_pasos = 0.35  # segundos entre cada paso
         
         # Hitbox de los pies
         hitbox_pies: int = self.alto // 4
@@ -169,6 +173,14 @@ class Jugador:
         else:
             self.indice_corriendo = 0
             self.t_run = 0
+        
+        if self.moviendose:
+            self._timer_pasos -= dt
+            if self._timer_pasos <= 0:
+                ManejadorSonidos.reproducir("pasos.ogg")
+                self._timer_pasos = self._intervalo_pasos
+        else:
+            self._timer_pasos = 0
     
     
     def dibujar(
