@@ -3,18 +3,18 @@ from core.config import FPS
 from core.manejador_escenas import ManejadorEscenas
 from core.manejador_jsons import cargar_config_json
 from escenas.menu_principal import MenuPrincipal
+from jugador.jugador import Jugador
 
 
 class Juego:
-    
+
     """
     Aquí se ejecuta el mainloop principal del juego y el
     manejo  de escenas, asi como sus actualizaciones, dibujos
-    y maenejo de eventos
+    y manejo de eventos
     """
     
     def __init__(self):
-        pygame.init()
         
         datos_resolucion = cargar_config_json("resolucion")
         
@@ -26,21 +26,29 @@ class Juego:
         )
         
         pygame.display.set_caption("Innomath")
-        
+
         self.reloj = pygame.time.Clock()
         self.corriendo = True
         
         #Objeto que manejará las diferentes escenas
         self.manejador_escenas = ManejadorEscenas()
         
-        #Se inicializa en la escena del menú principal
+        # Crear el jugador (en posición inicial será establecida más tarde)
+        self.jugador = Jugador(0, 0)  # Position will be set from config
+
+        # Nombre del jugador (será cambiado más tarde)
+        self.player_name = "Jugador"
+        
+                # Se inicializa en la escena del menú principal
         self.manejador_escenas.cambiar_escena(
             MenuPrincipal(self)
         )
     
+    
     def run(self) -> None:
         
-        #Bucle principal del juegos
+        """Bucle principal del juegos"""
+        
         while self.corriendo:
             
             #El tiempo que tardó el frame anterior en aparecer
@@ -59,5 +67,5 @@ class Juego:
             
             #Actualiza la ventana
             pygame.display.flip()
-            
+        
         pygame.quit()

@@ -2,6 +2,7 @@ import pygame
 from core.rutas import Rutas
 from core.config import *
 from core.manejador_sonidos import ManejadorSonidos
+from sistema.inventario import Inventario
 
 
 class Jugador:
@@ -11,7 +12,6 @@ class Jugador:
     """
     
     def __init__(self, x: int, y: int):
-        
         self.ancho: int = FRAME_ANCHO * ESCALA_JUGADOR
         self.alto: int = FRAME_ALTO * ESCALA_JUGADOR
         
@@ -27,6 +27,7 @@ class Jugador:
             y + self.alto - hitbox_pies,
             self.ancho,
             hitbox_pies
+            
         )
         
         # Rect para el personaje
@@ -39,6 +40,14 @@ class Jugador:
         
         # Velocidad personaje
         self.velocidad: int = 100 * ESCALA_GLOB
+        
+        # Stats del jugador
+        self.dinero: int = 0
+        self.experiencia: int = 0
+        self.nivel: int = 1
+        
+        # Inventario del jugador (composition)
+        self.inventario = Inventario()
         
         # Sprites jugador para modo estatico y corriendo
         self.sprites_jugador_estatico: list = self._cargar_sprites_estatico()
@@ -53,6 +62,18 @@ class Jugador:
         self.indice_corriendo = 0
         
         self.t_run = 0.0
+
+    def agregar_dinero(self, cantidad: int) -> None:
+        """Agrega dinero al jugador"""
+        self.dinero += cantidad
+
+    def agregar_experiencia(self, cantidad: int) -> None:
+        """Agrega experiencia y sube de nivel si es necesario"""
+        self.experiencia += cantidad
+        # Cada 100 puntos de experiencia sube un nivel
+        while self.experiencia >= self.nivel * 100:
+            self.experiencia -= self.nivel * 100
+            self.nivel += 1
     
     # Cargar Sprites
     
@@ -115,7 +136,7 @@ class Jugador:
     ):
         
         self.moviendose: bool = dx != 0 or dy != 0
-
+        
         # Calcular en que dirección se está moviendo
         if dx < 0:
             self.direccion = "IZQUIERDA"
@@ -158,11 +179,11 @@ class Jugador:
                     self.hitbox.bottom = obstaculo.top
                 elif dy < 0:
                     self.hitbox.top = obstaculo.bottom
-
+        
         # Sincronizar sprite con hitbox
         self.rect.midbottom = self.hitbox.midbottom
         
-        # run
+        # Movimiento
         if self.moviendose:
             self.t_run += dt
             if self.t_run >= 1 / FPS_CORRIENDO:

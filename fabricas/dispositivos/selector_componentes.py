@@ -42,9 +42,9 @@ class SelectorComponentes():
     
     
     @staticmethod
-    def elegir_bateria(baterias: list[DatosBateria], salud: int) -> Bateria:
+    def elegir_bateria(baterias: list[DatosBateria], salud: int = 100) -> Bateria:
         bateria = random.choice(baterias)
-        return Bateria(bateria.voltaje_v, bateria.forma, bateria.capacidad_wh, salud, esta_conectada=True)
+        return Bateria(bateria.voltaje_v, bateria.forma, bateria.capacidad_wh, salud)
     
     
     @staticmethod

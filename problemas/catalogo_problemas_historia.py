@@ -292,7 +292,6 @@ class ProblemaNivel3_Bateria_Laptop(Problema):
             forma_bateria=FormaBateria.RECTANGULAR,
             capacidad_wh=54.0,
             salud=15,
-            esta_conectada=True,
         )
 
         pasos = [
@@ -910,7 +909,6 @@ class ProblemaNivel9_Bateria_Avanzado_Laptop(Problema):
             forma_bateria=FormaBateria.FORMA_L,
             capacidad_wh=72.0,
             salud=18,
-            esta_conectada=True,
         )
 
         pasos = [

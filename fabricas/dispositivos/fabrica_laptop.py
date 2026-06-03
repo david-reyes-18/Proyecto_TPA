@@ -34,7 +34,12 @@ class FabricaLaptop(FabricaDispositivo):
             gpu = SelectorComponentes.elegir_gpu(placa_datos, gpus),
             slots_ram = slots_ram,
             slots_ssd = slots_ssd,
-            bateria = SelectorComponentes.elegir_bateria(baterias),
+            # Get salud from problema's componente if it's a Bateria, otherwise default
+            bateria = SelectorComponentes.elegir_bateria(
+                baterias,
+                100 if not (hasattr(problema, 'componente_afectado') and hasattr(problema.componente_afectado, 'salud'))
+                else problema.componente_afectado.salud
+            ),
             pantalla = SelectorComponentes.elegir_pantalla(pantallas),
             placa_base = placa_base,
             problema = problema,

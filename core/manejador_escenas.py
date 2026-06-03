@@ -11,9 +11,11 @@ class ManejadorEscenas:
     
     def __init__(self) -> None:
         self.escena_actual: None | EscenaBase = None
+        self.escena_anterior: None | EscenaBase = None
     
     # Cambio de escena a una nueva
     def cambiar_escena(self, nueva_escena: EscenaBase) -> None:
+        self.escena_anterior = self.escena_actual
         self.escena_actual = nueva_escena
     
     # Recibe los eventos del usuario, como clicks o teclas del teclado

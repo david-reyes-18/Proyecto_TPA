@@ -8,10 +8,10 @@ FPS = 60
 
 # Posibles resoluciones de pantalla
 RESOLUCIONES = [
-    (800,  600,  "800 x 600"),
-    (1024, 768,  "1024 x 768"),
     (1200, 800,  "1200 x 800"),
-    (1280, 720,  "1280 x 720 (HD)")
+    (1280, 720,  "1280 x 720"),
+    (1366, 768, "1366 x 768"),
+    (1440, 900, "1440 x 900")
 ]
 
 # Escalas globales y por el jugador

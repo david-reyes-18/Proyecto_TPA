@@ -1,11 +1,11 @@
 {
     "volumen": {
-        "musica": 0.290625,
-        "sonidos": 1.0
+        "musica": 0.11875,
+        "sonidos": 0.028125
     },
     "posicion_jugador": {
-        "x": 0,
-        "y": 0
+        "x": 891,
+        "y": 341
     },
     "resolucion": {
         "ancho": 1200,
