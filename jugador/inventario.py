@@ -12,15 +12,17 @@ class Inventario:
     """
 
     def __init__(self):
-        self.laptops: List[Laptop] = [] # Laptops en proceso de reparación o completadas
-        self.componentes: List = [] # Componentes que el usuario posee
-        self.dinero: int = 0 # Dinero del jugador
-        self.experiencia: int = 0 # Experiencia del jugador
+        self.laptops: List[Laptop] = []  # Laptops en proceso de reparación o completadas
+        self.componentes: List = []      # Componentes que el usuario posee
+        self.dinero: int = 0             # Dinero del jugador
+        self.experiencia: int = 0        # Experiencia del jugador
         self.nivel: int = 1              # Nivel del jugador
 
     def agregar_laptop(self, laptop: Laptop):
         """Agrega una laptop al inventario"""
         self.laptops.append(laptop)
+        # Notificar a los suscriptores si se implementa un sistema de eventos
+        # Por ahora mantenemos la lógica simple
 
     def remover_laptop(self, indice: int) -> Laptop | None:
         """Remueve y retorna una laptop del inventario por índice"""
@@ -28,7 +30,7 @@ class Inventario:
             return self.laptops.pop(indice)
         return None
 
-    def get_laptop(self, indice: int) -> Laptop | None:
+    def obtener_laptop(self, indice: int) -> Laptop | None:
         """Obtiene una laptop sin removerla"""
         if 0 <= indice < len(self.laptops):
             return self.laptops[indice]
@@ -37,6 +39,9 @@ class Inventario:
     def agregar_dinero(self, cantidad: int):
         """Agrega dinero al jugador"""
         self.dinero += cantidad
+        # Asegurar que el dinero no sea negativo
+        if self.dinero < 0:
+            self.dinero = 0
 
     def agregar_experiencia(self, cantidad: int):
         """Agrega experiencia y sube de nivel si es necesario"""
@@ -46,13 +51,13 @@ class Inventario:
             self.experiencia -= self.nivel * 100
             self.nivel += 1
 
-    def get_estado(self) -> dict:
+    def obtener_estado(self) -> dict:
         """Retorna el estado actual del inventario para guardar/cargar"""
         return {
             "dinero": self.dinero,
             "experiencia": self.experiencia,
             "nivel": self.nivel,
-            "laptops_count": len(self.laptops)
+            "cantidad_laptops": len(self.laptops)
         }
 
     def cargar_estado(self, estado: dict):
@@ -63,21 +68,3 @@ class Inventario:
         # Las laptops se gestionan por separado según el juego
 
 
-class JugadorConInventario:
-    """
-    Extiende al jugador con capacidades de inventario
-    En una implementación completa, esto se integraría con la clase Jugador existente
-    """
-
-    def __init__(self):
-        self.inventario = Inventario()
-
-    def aceptar_trabajo(self, trabajo) -> bool:
-        """
-        Intenta aceptar un trabajo y agregar la laptop al inventario
-        Returns: True si se aceptó exitosamente
-        """
-        # Esto requeriría acceso al objeto juego para crear la laptop
-        # Por ahora retornamos False como placeholder
-        # La implementación real se haría desde la escena de correo
-        return False

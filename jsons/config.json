@@ -1,14 +1,14 @@
 {
     "volumen": {
-        "musica": 0.11875,
-        "sonidos": 0.028125
+        "musica": 0.0875,
+        "sonidos": 0.0875
     },
     "posicion_jugador": {
-        "x": 891,
+        "x": 908,
         "y": 341
     },
     "resolucion": {
-        "ancho": 1200,
-        "alto": 800
+        "ancho": 1280,
+        "alto": 720
     }
 }

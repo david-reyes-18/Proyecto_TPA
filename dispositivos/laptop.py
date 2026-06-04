@@ -110,8 +110,8 @@ class Laptop(Dispositivo):
             f"Laptop {self._modelo} | "
             f"CPU: {self._cpu.modelo} | "
             f"RAM: {self.ram_total_gb()} GB | "
-            f"SSD: {self._slots_ssd.capacidad_gb} GB | "
+            f"SSD: {self.almacenamiento_total_gb()} GB | "
             f"Pantalla: {self._pantalla.pulgadas}\" | "
             f"Batería: {self._bateria.salud}% salud | "
-            f"Problema: {self._problema.descripcion}"
+            f"Problema: {self._problema.descripcion_email}"
         )

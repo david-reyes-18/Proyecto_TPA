@@ -79,3 +79,15 @@ class Paleta:
     DECO_SEPARADOR               = pygame.Color("#1E3250")
     DECO_SELECCION               = pygame.Color("#1E4B8C")
     DECO_SELECCION_ALPHA         = 100
+
+    # Colores específicos para la escena de inventario (estilo Pokémon)
+    INVENTARIO_FONDO             = pygame.Color("#1E1E28")  # Fondo principal oscuro
+    INVENTARIO_PANEL             = pygame.Color("#282832")  # Fondos de paneles
+    INVENTARIO_BORDE             = pygame.Color("#3C3C46")  # Bordes y separadores
+    INVENTARIO_TEXTO             = pygame.Color("#C8C8C8")  # Texto normal
+    INVENTARIO_TEXTO_DESTACADO   = pygame.Color("#FFFFFF")  # Texto destacado/seleccionado
+    INVENTARIO_SELECCION         = pygame.Color("#4682B4")  # Color de selección (azul Pokémon)
+    INVENTARIO_CURSOR            = pygame.Color("#FFFFFF")    # Color del cursor de selección
+    INVENTARIO_TEXTO_DESCRIPCION = pygame.Color("#FFFFFF")  # Texto en área de descripción
+    INVENTARIO_TEXTO_PISTA       = pygame.Color("#B4B4B4")   # Texto de pistas/hints
+    INVENTARIO_SCROLL            = pygame.Color("#646478")       # Indicadores de scroll
