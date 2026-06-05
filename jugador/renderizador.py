@@ -1,24 +1,18 @@
-"""
-Componente responsable de renderizar al jugador: dibujar sprites (la carga se maneja ailleurs).
-"""
-
-
 import pygame
-from core.rutas import Rutas
 from core.config import *
-from core.sprite_loader import CargadorSprites
+from jugador.direcciones import Direcciones
+from core.cargador_sprites import CargadorSprites
 
 
 class Renderizador:
     """
-    Maneja el renderizado del jugador: dibujar al jugador en pantalla.
-    La carga de sprites se delega a CargadorSprites.
+    Maneja el renderizado del jugador, dibuja al jugador en pantalla.
     """
-
+    
     def __init__(self, ancho: int, alto: int):
         self.ancho = ancho
         self.alto = alto
-
+        
         # Delegamos la carga de sprites al CargadorSprites
         cargador_sprites = CargadorSprites(ancho, alto)
         self.sprites_jugador_estatico = cargador_sprites.cargar_sprites_estatico(
@@ -27,7 +21,7 @@ class Renderizador:
         self.sprites_jugador_corriendo = cargador_sprites.cargar_sprites_corriendo(
             "jugador/jugador_corriendo.png", DIRECCIONES, FRAMES_POR_DIRECCION
         )
-
+        
         # Estado de animación
         self.indice_estatico = 0
         self.indice_corriendo = 0
@@ -38,48 +32,6 @@ class Renderizador:
             superficie,
             (self.ancho, self.alto)
         )
-
-    def _cargar_sprites_estatico(self) -> list[pygame.Surface]:
-        spritesheet = pygame.image.load(
-            str(Rutas.imagen("jugador/jugador_estatico.png"))
-        ).convert_alpha()
-
-        frames = []
-
-        for i in range(FRAMES_ESTATICO):
-            frame = spritesheet.subsurface(
-                (i * FRAME_ANCHO, 0, FRAME_ANCHO, FRAME_ALTO)
-            )
-
-            frames.append(
-                self._escalar(frame)
-            )
-        return frames
-
-    def _cargar_sprites_corriendo(self) -> dict[str, list[pygame.Surface]]:
-        spritesheet = pygame.image.load(
-            str(Rutas.imagen("jugador/jugador_corriendo.png"))
-        ).convert_alpha()
-
-        animaciones = {}
-
-        for indice_direccion, direccion in enumerate(DIRECCIONES):
-            frames = []
-            for i in range(FRAMES_POR_DIRECCION):
-                frame_index = indice_direccion * FRAMES_POR_DIRECCION + i
-                frame = spritesheet.subsurface(
-                    (
-                        frame_index * FRAME_ANCHO,
-                        0,
-                        FRAME_ANCHO,
-                        FRAME_ALTO
-                    )
-                )
-                frames.append(
-                    self._escalar(frame)
-                )
-            animaciones[direccion] = frames
-        return animaciones
 
     def actualizar_animacion(
         self,
@@ -92,13 +44,13 @@ class Renderizador:
         Debe llamarse cada frame.
         """
         # Actualizar índice de sprite estático basado en dirección
-        if direccion == "IZQUIERDA":
+        if direccion == Direcciones.IZQUIERDA:
             self.indice_estatico = 2
-        elif direccion == "DERECHA":
+        elif direccion == Direcciones.DERECHA:
             self.indice_estatico = 0
-        elif direccion == "ARRIBA":
+        elif direccion == Direcciones.ARRIBA:
             self.indice_estatico = 1
-        elif direccion == "ABAJO":
+        elif direccion == Direcciones.ABAJO:
             self.indice_estatico = 3
 
         # Actualizar animación de carrera

@@ -27,13 +27,6 @@ class CargadorSprites:
     def cargar_sprites_estatico(self, ruta_relativa: str, frames: int) -> list[pygame.Surface]:
         """
         Carga una hoja de sprites horizontal para animación estática.
-
-        Args:
-            ruta_relativa: Ruta relativa a assets/images/ (ej. "jugador/jugador_estatico.png")
-            frames: Número de frames en la hoja
-
-        Returns:
-            Lista de objetos pygame.Surface escalados, uno por frame.
         """
         spritesheet = pygame.image.load(
             str(Rutas.imagen(ruta_relativa))
@@ -50,19 +43,6 @@ class CargadorSprites:
     def cargar_sprites_corriendo(self, ruta_relativa: str, direcciones: list[str], frames_por_direccion: int) -> dict[str, list[pygame.Surface]]:
         """
         Carga una hoja de sprites que contiene animaciones de carrera para múltiples direcciones.
-
-        Espera que la hoja esté organizada como:
-            [dir0_frame0, dir0_frame1, ..., dir0_frameN,
-             dir1_frame0, dir1_frame1, ..., dir1_frameN,
-             ...]
-
-        Args:
-            ruta_relativa: Ruta relativa a assets/images/
-            direcciones: Lista de cadenas de dirección en el orden en que aparecen en la hoja
-            frames_por_direccion: Número de frames por dirección
-
-        Returns:
-            Diccionario que asigna nombre de dirección -> lista de frames para esa dirección.
         """
         spritesheet = pygame.image.load(
             str(Rutas.imagen(ruta_relativa))
