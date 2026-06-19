@@ -1,14 +1,14 @@
 import random
 from fabricas.dispositivos.catalogo_componentes import (DatosPlacaBase, DatosCPU, DatosGPU, DatosBateria, DatosPantalla, DatosRAMModulo, DatosSSD,)
-from componentes.cpu.cpu import CPU
-from componentes.gpu.gpu import GPU
-from componentes.bateria.bateria import Bateria
-from componentes.pantalla.pantalla import Pantalla
-from componentes.ram.ram import RAM
-from componentes.ram.ram_slots import RAMSlot
-from componentes.ssd.ssd import SSD
-from componentes.ssd.ssd_slot import SSDSlot
-from componentes.placa_base import PlacaBase
+from dominio.entidades.componentes.cpu.cpu import CPU
+from dominio.entidades.componentes.gpu.gpu import GPU
+from dominio.entidades.componentes.bateria.bateria import Bateria
+from dominio.entidades.componentes.pantalla.pantalla import Pantalla
+from dominio.entidades.componentes.ram.ram import RAM
+from dominio.entidades.componentes.ram.ram_slots import RAMSlot
+from dominio.entidades.componentes.ssd.ssd import SSD
+from dominio.entidades.componentes.ssd.ssd_slot import SSDSlot
+from dominio.entidades.componentes.placa_base import PlacaBase
 
 class SelectorComponentes():
     

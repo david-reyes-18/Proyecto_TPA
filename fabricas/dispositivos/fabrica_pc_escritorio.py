@@ -1,10 +1,10 @@
 import random
 from fabricas.dispositivos.catalogo_componentes import CatalogoPCEscritorio
 from fabricas.dispositivos.fabrica_dispositivo import FabricaDispositivo
-from dispositivos.pc_escritorio import PCEscritorio
+from dominio.entidades.dispositivos.pc_escritorio import PCEscritorio
 from fabricas.dispositivos.selector_componentes import SelectorComponentes
-from componentes.placa_base import PlacaBase
-from problemas.problema import Problema
+from dominio.entidades.componentes.placa_base import PlacaBase
+from dominio.entidades.problemas.problema import Problema
 
 class FabricaEscritorio(FabricaDispositivo):
 

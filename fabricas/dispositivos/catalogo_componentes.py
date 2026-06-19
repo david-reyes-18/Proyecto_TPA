@@ -13,15 +13,15 @@ BUGFIX: import TipoPanel corregido (venía de pantalla.pantalla pero está en pa
 """
 
 from dataclasses import dataclass
-from componentes.cpu.socket import SocketCPU
-from componentes.gpu.tipo_gpu import TipoGPU
-from componentes.gpu.tipo_memoria_gpu import TipoMemoriaGPU
-from componentes.gpu.tipo_interfaz import InterfazGPU
-from componentes.ram.generacion_ram import GeneracionRAM
-from componentes.ram.formato_ram import FormatoRAM
-from componentes.ssd.interfaz_ssd import InterfazSSD
-from componentes.bateria.forma_bateria import FormaBateria
-from componentes.pantalla.tipo_panel import TipoPanel   # BUGFIX: antes era from componentes.pantalla.pantalla import TipoPanel
+from dominio.entidades.componentes.cpu.socket import SocketCPU
+from dominio.entidades.componentes.gpu.tipo_gpu import TipoGPU
+from dominio.entidades.componentes.gpu.tipo_memoria_gpu import TipoMemoriaGPU
+from dominio.entidades.componentes.gpu.tipo_interfaz import InterfazGPU
+from dominio.entidades.componentes.ram.generacion_ram import GeneracionRAM
+from dominio.entidades.componentes.ram.formato_ram import FormatoRAM
+from dominio.entidades.componentes.ssd.interfaz_ssd import InterfazSSD
+from dominio.entidades.componentes.bateria.forma_bateria import FormaBateria
+from dominio.entidades.componentes.pantalla.tipo_panel import TipoPanel   # BUGFIX: antes era from componentes.pantalla.pantalla import TipoPanel
 
 
 # ─────────────────────────────────────────────────────────────────────────────

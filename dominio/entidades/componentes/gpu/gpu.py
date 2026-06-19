@@ -1,0 +1,125 @@
+from __future__ import annotations
+from dominio.entidades.componentes.base.componente import Componente
+from dominio.entidades.componentes.base.reemplazable import Reemplazable
+from dominio.valores.resultado_operaciones import ResultadoOperacion
+from dominio.valores.codigo_operacion import CodigoOperacion
+from dominio.valores.mensaje_sistema import MensajesSistema
+from dominio.entidades.componentes.gpu.tipo_gpu import TipoGPU
+from dominio.entidades.componentes.gpu.tipo_memoria_gpu import TipoMemoriaGPU
+from dominio.entidades.componentes.gpu.tipo_interfaz import InterfazGPU
+
+
+class GPU(Componente, Reemplazable):
+    
+    """
+    Modelamiento de una GPU de laptop y pc de escritorio
+    """
+    
+    def __init__(
+            self, 
+            modelo: str, 
+            memoria_gb: int, 
+            tipo_memoria: TipoMemoriaGPU, 
+            tipo_gpu: TipoGPU,
+            interfaz: InterfazGPU,
+            tdp_watts: int
+        ):
+        
+        
+        # La GPU será reemplazable solamente si su interfaz es PCIe, dado a que 
+        # esta interfaces para pc de escritorios son tarjetas dedicadas
+        
+        es_reemplazable = (interfaz == InterfazGPU.PCIE)
+        
+        super().__init__("GPU", es_reemplazable = es_reemplazable, es_reparable = False)
+        self._modelo = modelo
+        self._memoria_gb = memoria_gb
+        self._tipo_memoria = tipo_memoria
+        self._tipo_gpu = tipo_gpu
+        self._interfaz = interfaz
+        self._tdp_watts = tdp_watts
+    
+    
+    #   Propiedades
+    
+    @property
+    def modelo(self) -> str:
+        return self._modelo
+
+    @property
+    def memoria_gb(self) -> int:
+        return self._memoria_gb
+
+    @property
+    def tipo_memoria(self) -> TipoMemoriaGPU:
+        return self._tipo_memoria
+
+    @property
+    def tipo_gpu(self) -> TipoGPU:
+        return self._tipo_gpu
+    
+    @property
+    def interfaz(self) -> InterfazGPU:
+        return self._interfaz
+    
+    @property
+    def tdp_watts(self) -> int:
+        return self._tdp_watts
+    
+    
+    #   Metodos
+    
+    
+    def es_compatible_con(self, nueva_gpu: GPU) -> bool:
+        return self._interfaz == nueva_gpu.interfaz
+    
+    def reemplazar(self, nueva_gpu: GPU, costo: int) -> ResultadoOperacion:
+        if not self._es_reemplazable:
+            return ResultadoOperacion(
+                exito_operacion=False,
+                codigo_operacion=CodigoOperacion.NO_REEMPLAZABLE,
+                mensaje_sistema=MensajesSistema.NO_REEMPLAZABLE
+            )
+
+        if self._esta_funcionando:
+            return ResultadoOperacion(
+                exito_operacion=False,
+                codigo_operacion=CodigoOperacion.COMPONENTE_FUNCIONAL,
+                mensaje_sistema=MensajesSistema.COMPONENTE_FUNCIONAL
+            )
+
+        if not self.es_compatible_con(nueva_gpu):
+            return ResultadoOperacion(
+                exito_operacion=False,
+                codigo_operacion=CodigoOperacion.GPU_INCOMPATIBLE,
+                mensaje_sistema=MensajesSistema.GPU_INCOMPATIBLE
+            )
+
+        self._modelo = nueva_gpu.modelo
+        self._memoria_gb = nueva_gpu.memoria_gb
+        self._tipo_memoria = nueva_gpu.tipo_memoria
+        self._tipo_gpu = nueva_gpu.tipo_gpu
+        self._interfaz = nueva_gpu.interfaz
+        self._tdp_watts = nueva_gpu.tdp_watts
+        self._esta_funcionando = True
+
+        return ResultadoOperacion(
+            exito_operacion=True,
+            codigo_operacion=CodigoOperacion.EXITO_REEMPLAZO,
+            mensaje_sistema=MensajesSistema.EXITO_REEMPLAZO,
+            costo=costo
+        )
+
+    def diagnosticar(self) -> ResultadoOperacion:
+        if not self._esta_funcionando:
+            return ResultadoOperacion(
+                exito_operacion=False,
+                codigo_operacion=CodigoOperacion.GPU_FALLA,
+                mensaje_sistema=MensajesSistema.GPU_FALLA
+            )
+
+        return ResultadoOperacion(
+            exito_operacion=True,
+            codigo_operacion=CodigoOperacion.COMPONENTE_FUNCIONAL,
+            mensaje_sistema=MensajesSistema.COMPONENTE_FUNCIONAL
+        )

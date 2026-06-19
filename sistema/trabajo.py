@@ -4,8 +4,8 @@ Sistema de trabajos y correos para el modo historia
 
 from __future__ import annotations
 from typing import TYPE_CHECKING
-from problemas.problema import Problema
-from dispositivos.laptop import Laptop
+from dominio.entidades.problemas.problema import Problema
+from dominio.entidades.dispositivos.laptop import Laptop
 from fabricas.dispositivos.fabrica_laptop import FabricaLaptop
 
 
@@ -85,7 +85,7 @@ class EmailUsuario:
 
     def _generar_trabajos_iniciales(self):
         """Genera trabajos iniciales desde el catálogo de problemas historia"""
-        from problemas.catalogo_problemas_historia import CatalogoProblemasHistoria
+        from dominio.entidades.problemas.catalogo_problemas_historia import CatalogoProblemasHistoria
 
         # Tomar los primeros 3 problemas para trabajos iniciales
         problemas_iniciales = CatalogoProblemasHistoria.obtener_todos()[:3]

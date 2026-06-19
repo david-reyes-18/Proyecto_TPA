@@ -1,5 +1,8 @@
+import sys
 import pygame
-from core.juego import Juego
+from presentacion.juego import Juego
+
+sys.dont_write_bytecode = True
 
 def main():
     pygame.init()

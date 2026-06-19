@@ -11,22 +11,22 @@ _<CAT>_<COMP>_<TIPO>_<NIV>
 Ej: _MAT_CPU_BOOL_F  → Matemático / CPU / Booleano / Fácil
 """
 
-from desafios.dificultad_desafio import NivelDificultad
-from desafios.componente_tematico import ComponenteTematico
-from desafios.categoria_desafio import CategoriaDesafio
-from desafios.tipo_desafio.nombre_tipo_desafio import NombreTipoDesafio
+from dominio.entidades.desafios.dificultad_desafio import NivelDificultad
+from dominio.entidades.desafios.componente_tematico import ComponenteTematico
+from dominio.entidades.desafios.categoria_desafio import CategoriaDesafio
+from dominio.entidades.desafios.tipo_desafio.nombre_tipo_desafio import NombreTipoDesafio
 
-from desafios.desafio_matematico.desafio_matematico_booleano  import DesafioMatematicoBooleano
-from desafios.desafio_matematico.desafio_matematico_multiple  import DesafioMatematicoMultiple
-from desafios.desafio_matematico.desafio_matematico_escritura import DesafioMatematicoEscritura
+from dominio.entidades.desafios.desafio_matematico.desafio_matematico_booleano  import DesafioMatematicoBooleano
+from dominio.entidades.desafios.desafio_matematico.desafio_matematico_multiple  import DesafioMatematicoMultiple
+from dominio.entidades.desafios.desafio_matematico.desafio_matematico_escritura import DesafioMatematicoEscritura
 
-from desafios.desafio_logico.desafio_logico_booleano   import DesafioLogicoBooleano
-from desafios.desafio_logico.desafio_logico_multiple   import DesafioLogicoMultiple
-from desafios.desafio_logico.desafio_logico_escritura  import DesafioLogicoEscritura
+from dominio.entidades.desafios.desafio_logico.desafio_logico_booleano   import DesafioLogicoBooleano
+from dominio.entidades.desafios.desafio_logico.desafio_logico_multiple   import DesafioLogicoMultiple
+from dominio.entidades.desafios.desafio_logico.desafio_logico_escritura  import DesafioLogicoEscritura
 
-from desafios.desafio_tecnologico.desafio_tecnologico_booleano   import DesafioTecnologicoBooleano
-from desafios.desafio_tecnologico.desafio_tecnologico_multiple   import DesafioTecnologicoMultiple
-from desafios.desafio_tecnologico.desafio_tecnologico_escritura  import DesafioTecnologicoEscritura
+from dominio.entidades.desafios.desafio_tecnologico.desafio_tecnologico_booleano   import DesafioTecnologicoBooleano
+from dominio.entidades.desafios.desafio_tecnologico.desafio_tecnologico_multiple   import DesafioTecnologicoMultiple
+from dominio.entidades.desafios.desafio_tecnologico.desafio_tecnologico_escritura  import DesafioTecnologicoEscritura
 
 F = NivelDificultad.FACIL
 M = NivelDificultad.MEDIA

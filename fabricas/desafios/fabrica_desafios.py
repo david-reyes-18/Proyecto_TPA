@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
-from desafios.categoria_desafio import CategoriaDesafio
-from desafios.componente_tematico import ComponenteTematico
-from desafios.tipo_desafio.nombre_tipo_desafio import NombreTipoDesafio
-from desafios.dificultad_desafio import NivelDificultad
-from desafios.desafio import Desafio
+from dominio.entidades.desafios.categoria_desafio import CategoriaDesafio
+from dominio.entidades.desafios.componente_tematico import ComponenteTematico
+from dominio.entidades.desafios.tipo_desafio.nombre_tipo_desafio import NombreTipoDesafio
+from dominio.entidades.desafios.dificultad_desafio import NivelDificultad
+from dominio.entidades.desafios.desafio import Desafio
 
 class FabricaDesafios(ABC):
     @staticmethod

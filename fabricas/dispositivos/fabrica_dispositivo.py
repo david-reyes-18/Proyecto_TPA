@@ -1,10 +1,10 @@
 import random
 from abc import ABC, abstractmethod
-from problemas.problema import Problema
-from dispositivos.dispositivo import Dispositivo
+from dominio.entidades.problemas.problema import Problema
+from dominio.entidades.dispositivos.dispositivo import Dispositivo
 from fabricas.dispositivos.catalogo_componentes import DatosPlacaBase, DatosCPU, DatosGPU
-from componentes.cpu.cpu import CPU
-from componentes.gpu.gpu import GPU
+from dominio.entidades.componentes.cpu.cpu import CPU
+from dominio.entidades.componentes.gpu.gpu import GPU
 
 class FabricaDispositivo(ABC):
     
