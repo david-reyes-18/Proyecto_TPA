@@ -7,9 +7,8 @@ from presentacion.ui.componentes.label import Label
 from infraestructura.texto.fuente import Fuente
 from infraestructura.recursos.rutas import Rutas
 from presentacion.escenas.email_usuario import EmailUsuario
-from dominio.servicios.gestor_trabajos import Trabajo
-from dominio.entidades.jugador.inventario import Inventario
-from dominio.entidades.dispositivos.laptop import Laptop
+from dominio.servicios.gestor_trabajos import ServicioGestorTrabajos
+from dominio.entidades.dispositivos.dispositivo import Dispositivo
 
 
 if TYPE_CHECKING:
@@ -24,6 +23,7 @@ class EscenaCorreo(EscenaBase):
 
         # Estado de la escena
         self.email_usuario = EmailUsuario()
+        self.gestor_trabajos = ServicioGestorTrabajos()
         self.inventario = juego.jugador.inventario
         self.seleccionado = 0
         self.correo_abierto: dict | None = None
@@ -144,24 +144,24 @@ class EscenaCorreo(EscenaBase):
         if not trabajo or trabajo.aceptado:
             return
 
-        laptop = trabajo.aceptar(self.juego)
-        if laptop:
-            self.inventario.agregar_laptop(laptop)
-            self.juego.jugador.dinero += trabajo.recompensa_dinero
-            self.juego.jugador.agregar_experiencia(trabajo.recompensa_experiencia)
-            trabajo.completar()
+        dispositivo = self.gestor_trabajos.aceptar(trabajo, self.inventario)
+        if dispositivo:
+            # El trabajo queda "activo" para que EscenaTaller sepa qué
+            # dispositivo reparar al entrar. La recompensa (dinero/XP) se
+            # otorga recién al completar la reparación en el taller, no aquí.
+            self.juego.trabajo_activo = trabajo
 
             # Iniciar efectos visuales y auditivos
-            self._iniciar_animacion_aceptacion(laptop, trabajo.recompensa_dinero, trabajo.recompensa_experiencia)
+            self._iniciar_animacion_aceptacion(dispositivo, trabajo.recompensa_dinero, trabajo.recompensa_experiencia)
             if self.sonido_aceptar:
                 self.sonido_aceptar.play()
 
-    def _iniciar_animacion_aceptacion(self, laptop: Laptop, dinero: int, xp: int) -> None:
+    def _iniciar_animacion_aceptacion(self, dispositivo: Dispositivo, dinero: int, xp: int) -> None:
         """Inicia la animación de aceptación y establece el mensaje."""
-        self.animacion_laptop = laptop
+        self.animacion_laptop = dispositivo
         self.temporizador_animacion = 90  # 1.5 segundos a 60 FPS
         self.escala_animacion = 1.0
-        self.mensaje_aceptacion = f"¡Trabajo aceptado! +${dinero} +{xp} XP"
+        self.mensaje_aceptacion = f"¡Trabajo aceptado! +${dinero} +{xp} XP al completar la reparación"
         self.temporizador_mensaje = 180  # 3 segundos
 
     # --- Actualización y renderizado ---

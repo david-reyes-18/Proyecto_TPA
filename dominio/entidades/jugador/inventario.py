@@ -24,6 +24,21 @@ class Inventario:
         # Notificar a los suscriptores si se implementa un sistema de eventos
         # Por ahora mantenemos la lógica simple
 
+    def agregar_dispositivo(self, dispositivo) -> None:
+        """
+        Agrega cualquier Dispositivo (Laptop o PCEscritorio) al inventario.
+        Alias usado por ServicioGestorTrabajos; internamente reutiliza la
+        misma lista que agregar_laptop.
+        """
+        self.laptops.append(dispositivo)
+
+    def obtener_dispositivo_pendiente(self):
+        """Devuelve el primer dispositivo del inventario que aún no está reparado."""
+        for dispositivo in self.laptops:
+            if not dispositivo.esta_reparado:
+                return dispositivo
+        return None
+
     def remover_laptop(self, indice: int) -> Laptop | None:
         """Remueve y retorna una laptop del inventario por índice"""
         if 0 <= indice < len(self.laptops):
@@ -66,5 +81,3 @@ class Inventario:
         self.experiencia = estado.get("experiencia", 0)
         self.nivel = estado.get("nivel", 1)
         # Las laptops se gestionan por separado según el juego
-
-

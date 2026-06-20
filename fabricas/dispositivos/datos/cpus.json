@@ -1,0 +1,921 @@
+{
+  "laptop": {
+    "basica": [
+      {
+        "modelo": "Intel Celeron N4020",
+        "nucleos": 2,
+        "frecuencia_ghz": 2.8,
+        "socket": "BGA",
+        "tdp_watts": 6
+      },
+      {
+        "modelo": "Intel Celeron N4500",
+        "nucleos": 2,
+        "frecuencia_ghz": 2.8,
+        "socket": "BGA",
+        "tdp_watts": 6
+      },
+      {
+        "modelo": "Intel Celeron N5100",
+        "nucleos": 4,
+        "frecuencia_ghz": 2.8,
+        "socket": "BGA",
+        "tdp_watts": 6
+      },
+      {
+        "modelo": "Intel Celeron N5105",
+        "nucleos": 4,
+        "frecuencia_ghz": 2.9,
+        "socket": "BGA",
+        "tdp_watts": 6
+      },
+      {
+        "modelo": "Intel Pentium Silver N5030",
+        "nucleos": 4,
+        "frecuencia_ghz": 3.1,
+        "socket": "BGA",
+        "tdp_watts": 6
+      },
+      {
+        "modelo": "Intel Pentium Silver N6000",
+        "nucleos": 4,
+        "frecuencia_ghz": 3.3,
+        "socket": "BGA",
+        "tdp_watts": 6
+      },
+      {
+        "modelo": "Intel Core i3-1005G1",
+        "nucleos": 2,
+        "frecuencia_ghz": 3.4,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core i3-1115G4",
+        "nucleos": 2,
+        "frecuencia_ghz": 4.1,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core i3-1215U",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.4,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core i3-1315U",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.5,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel N100",
+        "nucleos": 4,
+        "frecuencia_ghz": 3.4,
+        "socket": "BGA",
+        "tdp_watts": 6
+      },
+      {
+        "modelo": "Intel N200",
+        "nucleos": 4,
+        "frecuencia_ghz": 3.7,
+        "socket": "BGA",
+        "tdp_watts": 6
+      },
+      {
+        "modelo": "AMD Athlon Silver 3050U",
+        "nucleos": 2,
+        "frecuencia_ghz": 3.2,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Athlon Gold 3150U",
+        "nucleos": 2,
+        "frecuencia_ghz": 3.3,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 3 3250U",
+        "nucleos": 2,
+        "frecuencia_ghz": 3.5,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 3 5300U",
+        "nucleos": 4,
+        "frecuencia_ghz": 3.8,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 3 7320U",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.1,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 3 8300U",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.9,
+        "socket": "BGA",
+        "tdp_watts": 15
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "Intel Core i5-10210U",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.2,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core i5-1135G7",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.2,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "Intel Core i5-1235U",
+        "nucleos": 10,
+        "frecuencia_ghz": 4.4,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core i5-1240P",
+        "nucleos": 12,
+        "frecuencia_ghz": 4.4,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "Intel Core i5-1335U",
+        "nucleos": 10,
+        "frecuencia_ghz": 4.6,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core i5-1340P",
+        "nucleos": 12,
+        "frecuencia_ghz": 4.6,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "Intel Core i5-1345U",
+        "nucleos": 10,
+        "frecuencia_ghz": 4.7,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core i7-1165G7",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.7,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "Intel Core i7-1255U",
+        "nucleos": 10,
+        "frecuencia_ghz": 4.7,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core i7-1260P",
+        "nucleos": 12,
+        "frecuencia_ghz": 4.7,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "Intel Core i7-1360P",
+        "nucleos": 13,
+        "frecuencia_ghz": 5.0,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "Intel Core i7-1365U",
+        "nucleos": 10,
+        "frecuencia_ghz": 5.2,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core Ultra 5 125U",
+        "nucleos": 12,
+        "frecuencia_ghz": 4.9,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "Intel Core Ultra 5 125H",
+        "nucleos": 14,
+        "frecuencia_ghz": 4.5,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "Intel Core Ultra 7 155U",
+        "nucleos": 12,
+        "frecuencia_ghz": 5.1,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 5 4500U",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.0,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 5 5500U",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.0,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 5 5600U",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.2,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 5 7530U",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.5,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 5 7540U",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.9,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "AMD Ryzen 5 8540U",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.9,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 7 5700U",
+        "nucleos": 8,
+        "frecuencia_ghz": 4.3,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 7 7730U",
+        "nucleos": 8,
+        "frecuencia_ghz": 4.5,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      {
+        "modelo": "AMD Ryzen 7 7745U",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.1,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "AMD Ryzen 7 8840U",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.1,
+        "socket": "BGA",
+        "tdp_watts": 28
+      },
+      {
+        "modelo": "AMD Ryzen 7 8845U",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.1,
+        "socket": "BGA",
+        "tdp_watts": 28
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "Intel Core i7-12700H",
+        "nucleos": 14,
+        "frecuencia_ghz": 4.7,
+        "socket": "BGA",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "Intel Core i7-13700H",
+        "nucleos": 14,
+        "frecuencia_ghz": 5.0,
+        "socket": "BGA",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "Intel Core i7-14700HX",
+        "nucleos": 20,
+        "frecuencia_ghz": 5.5,
+        "socket": "BGA",
+        "tdp_watts": 55
+      },
+      {
+        "modelo": "Intel Core i9-12900H",
+        "nucleos": 20,
+        "frecuencia_ghz": 5.0,
+        "socket": "BGA",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "Intel Core i9-13900H",
+        "nucleos": 20,
+        "frecuencia_ghz": 5.4,
+        "socket": "BGA",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "Intel Core i9-13900HX",
+        "nucleos": 24,
+        "frecuencia_ghz": 5.6,
+        "socket": "BGA",
+        "tdp_watts": 55
+      },
+      {
+        "modelo": "Intel Core i9-14900HX",
+        "nucleos": 24,
+        "frecuencia_ghz": 5.8,
+        "socket": "BGA",
+        "tdp_watts": 55
+      },
+      {
+        "modelo": "Intel Core Ultra 9 185H",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.1,
+        "socket": "BGA",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "Intel Core Ultra 9 285HX",
+        "nucleos": 24,
+        "frecuencia_ghz": 5.5,
+        "socket": "BGA",
+        "tdp_watts": 55
+      },
+      {
+        "modelo": "AMD Ryzen 7 6800H",
+        "nucleos": 8,
+        "frecuencia_ghz": 4.7,
+        "socket": "BGA",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "AMD Ryzen 7 7745HX",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.1,
+        "socket": "BGA",
+        "tdp_watts": 55
+      },
+      {
+        "modelo": "AMD Ryzen 7 8845HS",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.1,
+        "socket": "BGA",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "AMD Ryzen 9 6900HX",
+        "nucleos": 8,
+        "frecuencia_ghz": 4.9,
+        "socket": "BGA",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "AMD Ryzen 9 7940HX",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.4,
+        "socket": "BGA",
+        "tdp_watts": 55
+      },
+      {
+        "modelo": "AMD Ryzen 9 7945HX",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.4,
+        "socket": "BGA",
+        "tdp_watts": 55
+      },
+      {
+        "modelo": "AMD Ryzen 9 8945HS",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.2,
+        "socket": "BGA",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "AMD Ryzen AI Max 395",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.1,
+        "socket": "BGA",
+        "tdp_watts": 55
+      },
+      {
+        "modelo": "AMD Ryzen AI Max+ 395",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.1,
+        "socket": "BGA",
+        "tdp_watts": 55
+      }
+    ]
+  },
+  "pc_escritorio": {
+    "basica": [
+      {
+        "modelo": "Intel Celeron G5925",
+        "nucleos": 2,
+        "frecuencia_ghz": 3.6,
+        "socket": "LGA1200",
+        "tdp_watts": 58
+      },
+      {
+        "modelo": "Intel Celeron G6900",
+        "nucleos": 2,
+        "frecuencia_ghz": 3.4,
+        "socket": "LGA1700",
+        "tdp_watts": 46
+      },
+      {
+        "modelo": "Intel Pentium Gold G6400",
+        "nucleos": 2,
+        "frecuencia_ghz": 4.0,
+        "socket": "LGA1200",
+        "tdp_watts": 58
+      },
+      {
+        "modelo": "Intel Pentium Gold G7400",
+        "nucleos": 2,
+        "frecuencia_ghz": 3.7,
+        "socket": "LGA1700",
+        "tdp_watts": 46
+      },
+      {
+        "modelo": "Intel Core i3-10100",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.3,
+        "socket": "LGA1200",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i3-10100F",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.3,
+        "socket": "LGA1200",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i3-10300",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.4,
+        "socket": "LGA1200",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i3-12100",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.3,
+        "socket": "LGA1700",
+        "tdp_watts": 60
+      },
+      {
+        "modelo": "Intel Core i3-12100F",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.3,
+        "socket": "LGA1700",
+        "tdp_watts": 58
+      },
+      {
+        "modelo": "Intel Core i3-13100",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.5,
+        "socket": "LGA1700",
+        "tdp_watts": 60
+      },
+      {
+        "modelo": "Intel Core i3-13100F",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.5,
+        "socket": "LGA1700",
+        "tdp_watts": 58
+      },
+      {
+        "modelo": "AMD Athlon 3000G",
+        "nucleos": 2,
+        "frecuencia_ghz": 3.5,
+        "socket": "AM4",
+        "tdp_watts": 35
+      },
+      {
+        "modelo": "AMD Ryzen 3 3200G",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.0,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 3 4300G",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.0,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 3 5300G",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.2,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 5 4500",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.1,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 3 8300G",
+        "nucleos": 4,
+        "frecuencia_ghz": 4.9,
+        "socket": "AM5",
+        "tdp_watts": 65
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "Intel Core i5-10400",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.3,
+        "socket": "LGA1200",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i5-11400",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.4,
+        "socket": "LGA1200",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i5-12400",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.4,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i5-12400F",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.4,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i5-13400",
+        "nucleos": 10,
+        "frecuencia_ghz": 4.6,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i5-13400F",
+        "nucleos": 10,
+        "frecuencia_ghz": 4.6,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i5-13500",
+        "nucleos": 14,
+        "frecuencia_ghz": 4.8,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i5-14400",
+        "nucleos": 10,
+        "frecuencia_ghz": 4.7,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i5-14400F",
+        "nucleos": 10,
+        "frecuencia_ghz": 4.7,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i7-12700",
+        "nucleos": 12,
+        "frecuencia_ghz": 4.9,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i7-12700F",
+        "nucleos": 12,
+        "frecuencia_ghz": 4.9,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i7-13700",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.2,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "Intel Core i7-14700",
+        "nucleos": 20,
+        "frecuencia_ghz": 5.4,
+        "socket": "LGA1700",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 5 5600",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.4,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 5 5600G",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.4,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 5 5600X",
+        "nucleos": 6,
+        "frecuencia_ghz": 4.6,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 5 5700X",
+        "nucleos": 8,
+        "frecuencia_ghz": 4.6,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 5 7600",
+        "nucleos": 6,
+        "frecuencia_ghz": 5.1,
+        "socket": "AM5",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 5 7600X",
+        "nucleos": 6,
+        "frecuencia_ghz": 5.3,
+        "socket": "AM5",
+        "tdp_watts": 105
+      },
+      {
+        "modelo": "AMD Ryzen 5 9600X",
+        "nucleos": 6,
+        "frecuencia_ghz": 5.4,
+        "socket": "AM5",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 7 5700G",
+        "nucleos": 8,
+        "frecuencia_ghz": 4.6,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 7 5700X",
+        "nucleos": 8,
+        "frecuencia_ghz": 4.6,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 7 5800X",
+        "nucleos": 8,
+        "frecuencia_ghz": 4.7,
+        "socket": "AM4",
+        "tdp_watts": 105
+      },
+      {
+        "modelo": "AMD Ryzen 7 7700",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.3,
+        "socket": "AM5",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 7 7700X",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.4,
+        "socket": "AM5",
+        "tdp_watts": 105
+      },
+      {
+        "modelo": "AMD Ryzen 7 9700X",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.5,
+        "socket": "AM5",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 5 8600G",
+        "nucleos": 6,
+        "frecuencia_ghz": 5.0,
+        "socket": "AM5",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Ryzen 7 8700G",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.1,
+        "socket": "AM5",
+        "tdp_watts": 65
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "Intel Core i7-12700K",
+        "nucleos": 12,
+        "frecuencia_ghz": 5.0,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i7-12700KF",
+        "nucleos": 12,
+        "frecuencia_ghz": 5.0,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i7-13700K",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.4,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i7-13700KF",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.4,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i7-14700K",
+        "nucleos": 20,
+        "frecuencia_ghz": 5.6,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i7-14700KF",
+        "nucleos": 20,
+        "frecuencia_ghz": 5.6,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i9-12900K",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.2,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i9-13900K",
+        "nucleos": 24,
+        "frecuencia_ghz": 5.8,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i9-13900KF",
+        "nucleos": 24,
+        "frecuencia_ghz": 5.8,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i9-14900K",
+        "nucleos": 24,
+        "frecuencia_ghz": 6.0,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core i9-14900KF",
+        "nucleos": 24,
+        "frecuencia_ghz": 6.0,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "Intel Core Ultra 9 285K",
+        "nucleos": 24,
+        "frecuencia_ghz": 5.7,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "AMD Ryzen 7 7800X3D",
+        "nucleos": 8,
+        "frecuencia_ghz": 5.0,
+        "socket": "AM5",
+        "tdp_watts": 120
+      },
+      {
+        "modelo": "AMD Ryzen 9 5900X",
+        "nucleos": 12,
+        "frecuencia_ghz": 4.8,
+        "socket": "AM4",
+        "tdp_watts": 105
+      },
+      {
+        "modelo": "AMD Ryzen 9 5950X",
+        "nucleos": 16,
+        "frecuencia_ghz": 4.9,
+        "socket": "AM4",
+        "tdp_watts": 105
+      },
+      {
+        "modelo": "AMD Ryzen 9 7900X",
+        "nucleos": 12,
+        "frecuencia_ghz": 5.6,
+        "socket": "AM5",
+        "tdp_watts": 170
+      },
+      {
+        "modelo": "AMD Ryzen 9 7900X3D",
+        "nucleos": 12,
+        "frecuencia_ghz": 5.6,
+        "socket": "AM5",
+        "tdp_watts": 120
+      },
+      {
+        "modelo": "AMD Ryzen 9 7950X",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.7,
+        "socket": "AM5",
+        "tdp_watts": 170
+      },
+      {
+        "modelo": "AMD Ryzen 9 7950X3D",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.7,
+        "socket": "AM5",
+        "tdp_watts": 120
+      },
+      {
+        "modelo": "AMD Ryzen 9 9950X",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.7,
+        "socket": "AM5",
+        "tdp_watts": 170
+      },
+      {
+        "modelo": "AMD Ryzen 9 9900X",
+        "nucleos": 12,
+        "frecuencia_ghz": 5.6,
+        "socket": "AM5",
+        "tdp_watts": 120
+      },
+      {
+        "modelo": "AMD Ryzen 9 9950X3D",
+        "nucleos": 16,
+        "frecuencia_ghz": 5.7,
+        "socket": "AM5",
+        "tdp_watts": 170
+      }
+    ]
+  }
+}

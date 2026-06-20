@@ -1,9 +1,13 @@
 import pygame
+from typing import TYPE_CHECKING
 from infraestructura.config import FPS, FRAME_ANCHO, FRAME_ALTO, ESCALA_JUGADOR
 from presentacion.manejador_escenas import ManejadorEscenas
 from infraestructura.recursos.manejador_jsons import cargar_config_json
 from presentacion.escenas.escena_menu import MenuPrincipal
 from dominio.entidades.jugador.jugador import Jugador
+
+if TYPE_CHECKING:
+    from dominio.servicios.gestor_trabajos import Trabajo
 
 
 class Juego:
@@ -34,6 +38,10 @@ class Juego:
         ancho_jugador = FRAME_ANCHO * ESCALA_JUGADOR
         alto_jugador  = FRAME_ALTO  * ESCALA_JUGADOR
         self.jugador = Jugador(0, 0, ancho=ancho_jugador, alto=alto_jugador)
+
+        # Trabajo aceptado desde el correo, pendiente de reparar en el taller.
+        # EscenaTaller lo lee para saber qué dispositivo mostrar.
+        self.trabajo_activo: "Trabajo | None" = None
 
         # Se inicializa en la escena del menú principal
         self.manejador_escenas.cambiar_escena(MenuPrincipal(self))

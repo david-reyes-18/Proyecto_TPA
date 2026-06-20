@@ -1,6 +1,10 @@
 from abc import ABC, abstractmethod
 from dominio.entidades.componentes.base.componente import Componente
 from dominio.entidades.problemas.paso_de_reparacion import PasoDeReparacion
+from dominio.entidades.problemas.perfil_dispositivo import (
+    PerfilDispositivo,
+    inferir_perfil_desde_nombre,
+)
 
 class Problema(ABC):
     def __init__(
@@ -9,13 +13,19 @@ class Problema(ABC):
         descripcion_email: str, 
         componente_afectado: Componente, 
         pasos_reparacion: list[PasoDeReparacion],
+        perfil_dispositivo: PerfilDispositivo | None = None,
     ):
         
         self._nombre = nombre
         self._descripcion_email = descripcion_email
         self._componente_afectado = componente_afectado
         self._pasos_de_reparacion = pasos_reparacion
-        
+
+        # Si el problema concreto no declara su perfil explícitamente,
+        # se infiere a partir del nombre (compatibilidad con catálogos
+        # que todavía no lo declaran de forma explícita).
+        self._perfil_dispositivo = perfil_dispositivo or inferir_perfil_desde_nombre(nombre)
+
         self._cantidad_pasos = len(self._pasos_de_reparacion)
         self._indice_actual = 0
     
@@ -45,4 +55,7 @@ class Problema(ABC):
     @property
     def indice_actual(self) -> int:
         return self._indice_actual
-    
+
+    @property
+    def perfil_dispositivo(self) -> PerfilDispositivo:
+        return self._perfil_dispositivo
