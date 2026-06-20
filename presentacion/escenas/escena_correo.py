@@ -6,7 +6,8 @@ from presentacion.ui.componentes.frame import Frame
 from presentacion.ui.componentes.label import Label
 from infraestructura.texto.fuente import Fuente
 from infraestructura.recursos.rutas import Rutas
-from sistema.trabajo import EmailUsuario, Trabajo
+from presentacion.escenas.email_usuario import EmailUsuario
+from dominio.servicios.gestor_trabajos import Trabajo
 from dominio.entidades.jugador.inventario import Inventario
 from dominio.entidades.dispositivos.laptop import Laptop
 

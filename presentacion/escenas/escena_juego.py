@@ -5,7 +5,7 @@ import pytmx
 from infraestructura.recursos.rutas import Rutas
 from infraestructura.texto.fuente import Fuente
 from presentacion.temas.colores import Paleta
-from infraestructura.config import ESCALA_GLOB, DISTANCIA_INTERACCION, FRAME_ALTO, FRAME_ANCHO
+from infraestructura.config import ESCALA_GLOB, DISTANCIA_INTERACCION, FRAME_ALTO, FRAME_ANCHO, ESCALA_JUGADOR
 from infraestructura.recursos.manejador_jsons import cargar_config_json, cargar_datos_json, guardar_datos_json
 from infraestructura.audio.manejador_musica import ManejadorMusica
 from presentacion.escenas.escena_base import EscenaBase
@@ -62,10 +62,16 @@ class EscenaJuego(EscenaBase):
         # Jugador
         posicion = cargar_config_json("posicion_jugador")
         
+        ancho_jugador = FRAME_ANCHO * ESCALA_JUGADOR
+        alto_jugador  = FRAME_ALTO  * ESCALA_JUGADOR
+
         self.jugador = Jugador(
             x=posicion["x"] if posicion["x"] != 0 else self.ancho_tile * 7,
             y=posicion["y"] if posicion["y"] != 0 else self.altura_tile * 10,
+            ancho=ancho_jugador,
+            alto=alto_jugador,
         )
+        self.jugador.velocidad = 100 * ESCALA_GLOB
         
         # Cámara
         ancho, alto = juego.pantalla.get_size()
@@ -107,7 +113,7 @@ class EscenaJuego(EscenaBase):
         
         # Labeles
         self.label_nombre = Label(
-            text=self.juego.player_name,
+            text="Jugador",
             text_color=Paleta.TEXTO_PRINCIPAL,
             rel_x=0.1,
             **estilo_labeles
@@ -352,7 +358,7 @@ class EscenaJuego(EscenaBase):
                 break
         
         # Actualizar textos de los labels de la barra superior
-        self.label_nombre.text = self.juego.player_name
+        self.label_nombre.text = "Jugador"
         self.label_dinero.text = f"${self.juego.jugador.dinero}"
         self.label_xp.text = f"XP: {self.juego.jugador.experiencia}"
     
