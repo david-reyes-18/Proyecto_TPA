@@ -1,0 +1,151 @@
+{
+  "MATEMATICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Una pantalla 1920×1080 tiene más píxeles que una 1280×720. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Una tasa de refresco de 144 Hz produce más fotogramas por segundo que 60 Hz. ¿Verdadero?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Una pantalla de 15\" puede reemplazarse por una de 17\" en la misma laptop. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "¿Cuántos píxeles totales tiene una resolución 1920×1080?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Una pantalla de 60 Hz muestra un nuevo fotograma cada:",
+        "dificultad": "DIFICIL"
+      },
+      {
+        "texto": "¿Cuántos fotogramas por segundo puede mostrar una pantalla de 144 Hz?",
+        "dificultad": "FACIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Una pantalla de 60 Hz muestra ¿cuántos fotogramas por segundo?",
+        "dificultad": "FACIL",
+        "respuesta": 60,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "¿Cuántos píxeles tiene una pantalla 2560×1440? (en millones, con 1 decimal)",
+        "dificultad": "DIFICIL",
+        "respuesta": 3.7,
+        "tolerancia": 0.1
+      },
+      {
+        "texto": "Una pantalla de 144 Hz muestra cuántos FPS máximos?",
+        "dificultad": "FACIL",
+        "respuesta": 144,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "¿Cuántos millones de píxeles tiene una resolución 3840×2160?",
+        "dificultad": "DIFICIL",
+        "respuesta": 8.3,
+        "tolerancia": 0.1
+      }
+    ]
+  },
+  "LOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Si la pantalla de una laptop está rota, ¿el sistema permite reemplazarla?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "¿Puede instalarse una pantalla de 17\" en un chasis diseñado para 15\"?",
+        "dificultad": "FACIL",
+        "respuesta": false
+      },
+      {
+        "texto": "Una pantalla IPS tiene mejores ángulos de visión que una TN. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "Al reemplazar la pantalla de una laptop, ¿qué medida debe coincidir obligatoriamente?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "¿Para qué tipo de usuario es más recomendable un panel OLED?",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Una pantalla mide 15 pulgadas y otra 17 pulgadas. ¿Cuántas pulgadas de diferencia hay?",
+        "dificultad": "FACIL",
+        "respuesta": 2,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una pantalla 60 Hz actualiza cada 16.7 ms. ¿Cuántas veces por segundo actualiza?",
+        "dificultad": "DIFICIL",
+        "respuesta": 60,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "TECNOLOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Los paneles TN tienen tiempos de respuesta más rápidos que los IPS en general. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "Los paneles VA ofrecen mejor contraste que los IPS. ¿Verdadero?",
+        "dificultad": "DIFICIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Los paneles OLED usan retroiluminación LED igual que los LCD. ¿Correcto?",
+        "dificultad": "DIFICIL",
+        "respuesta": false
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "¿Qué tipo de panel es más común en laptops gaming de entrada por rapidez y bajo costo?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "¿Qué ventaja principal tiene un panel IPS frente a un TN?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "¿Cuál es la resolución conocida como Full HD?",
+        "dificultad": "FACIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Full HD tiene 1920 píxeles horizontales. ¿Cuántos tiene Quad HD (2560×1440)?",
+        "dificultad": "FACIL",
+        "respuesta": 2560,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una pantalla OLED tiene tiempo de respuesta de 1 ms y una IPS 5 ms. ¿Cuántos ms más rápida es la OLED?",
+        "dificultad": "MEDIA",
+        "respuesta": 4,
+        "tolerancia": 0.0
+      }
+    ]
+  }
+}

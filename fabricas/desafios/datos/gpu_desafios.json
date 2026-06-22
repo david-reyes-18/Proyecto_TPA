@@ -1,0 +1,146 @@
+{
+  "MATEMATICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Una GPU con 8 GB GDDR6 tiene más VRAM que una con 6 GB GDDR6X. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Una GPU con TDP 300 W siempre rinde mejor que una con TDP 250 W. ¿Verdadero?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      },
+      {
+        "texto": "El ancho de banda de memoria de una GPU afecta su rendimiento en texturas. ¿Correcto?",
+        "dificultad": "DIFICIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "Una GPU con TDP 350 W funciona 8 horas al día. ¿Cuántos kWh consume?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Una GPU tiene bus de 256 bits y opera a 2000 MHz GDDR6. El ancho de banda aproximado es:",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Una GPU con TDP de 200 W funciona 5 horas. ¿Cuántos Wh consume?",
+        "dificultad": "MEDIA",
+        "respuesta": 1000,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una GPU consume 250 W durante 4 horas. ¿Cuántos Wh consume?",
+        "dificultad": "FACIL",
+        "respuesta": 1000,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una GPU tiene 12 GB VRAM y otra 8 GB. ¿Cuántos GB más tiene la primera?",
+        "dificultad": "MEDIA",
+        "respuesta": 4,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "LOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Una GPU integrada comparte la RAM del sistema en lugar de tener VRAM dedicada. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Si la GPU está funcionando correctamente, ¿el sistema permite reemplazarla?",
+        "dificultad": "FACIL",
+        "respuesta": false
+      },
+      {
+        "texto": "Una GPU dedicada PCIe puede reemplazarse en una PC de escritorio si está dañada. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "Una GPU con interfaz MXM en laptop puede reemplazarse por el usuario sin soldadura. ¿Verdadero?",
+        "dificultad": "DIFICIL",
+        "respuesta": false
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "El usuario tiene una laptop con GPU dedicada MXM que falla. ¿Cuál es la acción correcta?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Para que una GPU nueva sea compatible con la placa base, deben coincidir:",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Una GPU usa 220 W y la fuente tiene 650 W libres. ¿Cuántos watts libres quedan?",
+        "dificultad": "FACIL",
+        "respuesta": 430,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una GPU entrega 120 FPS y otra 80 FPS. ¿Cuál es la diferencia de FPS?",
+        "dificultad": "DIFICIL",
+        "respuesta": 40,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "TECNOLOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "GDDR6X es un tipo de memoria más rápida que GDDR6. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "Una GPU integrada tiene su propio banco de memoria física separada de la RAM. ¿Verdadero?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      },
+      {
+        "texto": "PCIe x16 es la interfaz estándar para GPUs dedicadas en PCs de escritorio. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "¿Qué interfaz usan las GPUs dedicadas en PCs de escritorio?",
+        "dificultad": "FACIL"
+      },
+      {
+        "texto": "¿Cuál de estos tipos de memoria GPU tiene mayor ancho de banda?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "¿Qué significa iGPU?",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "PCIe x16 tiene 16 líneas PCIe. ¿Cuántas líneas tiene PCIe x8?",
+        "dificultad": "FACIL",
+        "respuesta": 8,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una GPU GDDR6X tiene 21 Gbps y una GDDR6 14 Gbps. ¿Cuántos Gbps más tiene GDDR6X?",
+        "dificultad": "MEDIA",
+        "respuesta": 7,
+        "tolerancia": 0.0
+      }
+    ]
+  }
+}

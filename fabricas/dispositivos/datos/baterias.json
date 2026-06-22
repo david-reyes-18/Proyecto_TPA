@@ -1,0 +1,110 @@
+{
+  "laptop": {
+    "basica": [
+      {
+        "voltaje_v": 11.4,
+        "capacidad_wh": 38.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 11.4,
+        "capacidad_wh": 41.5,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 11.4,
+        "capacidad_wh": 45.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 10.8,
+        "capacidad_wh": 42.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 10.8,
+        "capacidad_wh": 48.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 7.6,
+        "capacidad_wh": 38.0,
+        "forma": "RECTANGULAR"
+      }
+    ],
+    "gamer": [
+      {
+        "voltaje_v": 15.4,
+        "capacidad_wh": 72.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 15.4,
+        "capacidad_wh": 80.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 15.4,
+        "capacidad_wh": 86.0,
+        "forma": "IRREGULAR"
+      },
+      {
+        "voltaje_v": 15.4,
+        "capacidad_wh": 90.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 20.0,
+        "capacidad_wh": 99.9,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 15.4,
+        "capacidad_wh": 76.0,
+        "forma": "FORMA_L"
+      },
+      {
+        "voltaje_v": 15.4,
+        "capacidad_wh": 83.0,
+        "forma": "RECTANGULAR"
+      }
+    ],
+    "intermedia": [
+      {
+        "voltaje_v": 11.4,
+        "capacidad_wh": 52.5,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 15.2,
+        "capacidad_wh": 56.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 15.4,
+        "capacidad_wh": 63.5,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 15.4,
+        "capacidad_wh": 70.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 11.4,
+        "capacidad_wh": 72.0,
+        "forma": "FORMA_L"
+      },
+      {
+        "voltaje_v": 15.4,
+        "capacidad_wh": 60.0,
+        "forma": "RECTANGULAR"
+      },
+      {
+        "voltaje_v": 11.4,
+        "capacidad_wh": 67.0,
+        "forma": "FORMA_L"
+      }
+    ]
+  }
+}

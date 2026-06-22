@@ -1,0 +1,151 @@
+{
+  "MATEMATICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Dos módulos RAM de 8 GB en dual channel suman 16 GB de capacidad. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Una RAM de 3200 MHz transfiere exactamente 3 200 datos por segundo. ¿Verdadero?",
+        "dificultad": "DIFICIL",
+        "respuesta": false
+      },
+      {
+        "texto": "DDR5 tiene mayor ancho de banda que DDR4 a la misma frecuencia de reloj. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "Un equipo tiene 4 slots RAM, cada módulo es de 16 GB. ¿Cuánta RAM máxima puede tener?",
+        "dificultad": "FACIL"
+      },
+      {
+        "texto": "RAM a 3200 MT/s con bus de 64 bits. El ancho de banda pico es aproximadamente:",
+        "dificultad": "DIFICIL"
+      },
+      {
+        "texto": "Un sistema tiene 8 GB de RAM. El SO usa 2 GB y cada app usa 1.5 GB. ¿Cuántas apps pueden abrirse simultáneamente?",
+        "dificultad": "MEDIA"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Un sistema tiene 2 módulos de 8 GB y 1 módulo de 16 GB. ¿Cuántos GB totales?",
+        "dificultad": "FACIL",
+        "respuesta": 32,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Si la RAM DDR4 opera a 1600 MHz de reloj real, ¿cuál es su velocidad efectiva en MT/s?",
+        "dificultad": "DIFICIL",
+        "respuesta": 3200,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Tres módulos RAM de 16 GB. ¿Cuántos GB totales hay?",
+        "dificultad": "FACIL",
+        "respuesta": 48,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "DDR4 trabaja a 1800 MHz reales. ¿Cuál es su velocidad efectiva en MT/s?",
+        "dificultad": "DIFICIL",
+        "respuesta": 3600,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "LOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Si instalas un módulo DDR5 en una placa que solo soporta DDR4, ¿funcionará?",
+        "dificultad": "FACIL",
+        "respuesta": false
+      },
+      {
+        "texto": "La RAM SO-DIMM se usa principalmente en laptops. ¿Verdadero?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "La RAM LPDDR soldada en una laptop puede reemplazarse fácilmente por el usuario. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "Un técnico instala un módulo DDR4 SO-DIMM en una placa que acepta DDR5 SO-DIMM. ¿Qué ocurre?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Para aprovechar el dual channel, los módulos RAM deben instalarse en:",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Una placa tiene 4 slots RAM y ya usa 3. ¿Cuántos slots quedan libres?",
+        "dificultad": "FACIL",
+        "respuesta": 1,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Si dual channel duplica el ancho de banda y single channel entrega 25 GB/s, ¿cuánto entrega dual channel?",
+        "dificultad": "DIFICIL",
+        "respuesta": 50,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "TECNOLOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "DDR significa Double Data Rate. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Un módulo SO-DIMM tiene el mismo tamaño físico que un DIMM estándar. ¿Verdadero?",
+        "dificultad": "FACIL",
+        "respuesta": false
+      },
+      {
+        "texto": "La RAM DDR5 introduce dos canales independientes de 32 bits por módulo. ¿Correcto?",
+        "dificultad": "DIFICIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "¿Qué formato de RAM se usa en PCs de escritorio convencionales?",
+        "dificultad": "FACIL"
+      },
+      {
+        "texto": "¿Cuál generación de RAM es la más reciente de estas opciones?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "¿Qué ventaja principal ofrece el modo dual channel?",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "DDR5 divide el módulo en 2 canales de 32 bits. ¿Cuántos bits totales tiene el módulo?",
+        "dificultad": "FACIL",
+        "respuesta": 64,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una RAM DDR5-6400 es cuántos MT/s más rápida que DDR4-3200?",
+        "dificultad": "MEDIA",
+        "respuesta": 3200,
+        "tolerancia": 0.0
+      }
+    ]
+  }
+}

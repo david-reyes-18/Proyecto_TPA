@@ -1,0 +1,454 @@
+{
+  "aleatorios": [
+    {
+      "nombre": "SSD SATA con rendimiento degradado – PC",
+      "descripcion_email": "El SSD SATA de 500 GB funciona a 200 MB/s cuando debería alcanzar 550 MB/s. Firmware desactualizado y caché saturada degradan el rendimiento.",
+      "componente_afectado": {
+        "nombre": "SSD",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "SSD",
+        "capacidad_gb": 500,
+        "velocidad_lectura_mbps": 550,
+        "velocidad_escritura_mbps": 520,
+        "interfaz": "SATA"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Actualizar el firmware del SSD",
+          "explicacion": "El fabricante publica actualizaciones que corrigen bugs de rendimiento.",
+          "desafio": {
+            "enunciado": "¿Los SSDs no tienen partes móviles, lo que los hace más resistentes a golpes?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Ejecutar TRIM para recuperar celdas marcadas como usadas",
+          "explicacion": "TRIM libera celdas vacías para que el controlador pueda escribir en ellas directamente.",
+          "desafio": {
+            "enunciado": "¿Cuál es la velocidad máxima aproximada de un SSD SATA III?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "200 MB/s",
+              "550 MB/s",
+              "3500 MB/s",
+              "7000 MB/s"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Verificar velocidades con CrystalDiskMark",
+          "explicacion": "Tras el firmware y el TRIM, las velocidades deben volver a 500+ MB/s de lectura.",
+          "desafio": {
+            "enunciado": "El SSD ahora lee a 530 MB/s. ¿Cuántos segundos tarda en leer 5.3 GB?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 10,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "SSD NVMe no reconocido tras reinstalar SO – Laptop",
+      "descripcion_email": "Tras reinstalar Windows, el SSD M.2 NVMe aparece en BIOS pero el instalador no lo detecta. El modo SATA está habilitado en lugar de NVMe.",
+      "componente_afectado": {
+        "nombre": "SSD",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "SSD",
+        "capacidad_gb": 1000,
+        "velocidad_lectura_mbps": 7000,
+        "velocidad_escritura_mbps": 5100,
+        "interfaz": "M2_NVME"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Cambiar el modo SATA a NVMe en la configuración BIOS",
+          "explicacion": "El slot M.2 puede operar en modo SATA o NVMe; debe configurarse según el SSD instalado.",
+          "desafio": {
+            "enunciado": "¿NVMe utiliza el bus PCIe para comunicarse con la CPU?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Verificar que el instalador detecta el SSD NVMe",
+          "explicacion": "Tras cambiar el modo, el instalador de Windows debe listar el SSD disponible.",
+          "desafio": {
+            "enunciado": "¿Un SSD M.2 NVMe puede instalarse en un slot M.2 que solo soporta SATA?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Verificar velocidades finales del SSD NVMe",
+          "explicacion": "Con el SO instalado y el modo correcto, el SSD debe alcanzar sus velocidades nominales.",
+          "desafio": {
+            "enunciado": "Un SSD NVMe con 7000 MB/s de lectura es más rápido que uno SATA con 550 MB/s. ¿Correcto?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "SSD al 95% de capacidad – PC extremadamente lenta",
+      "descripcion_email": "La PC va muy lenta porque el SSD de 256 GB está al 95% de su capacidad. Con menos del 5% libre, el controlador no puede hacer garbage collection.",
+      "componente_afectado": {
+        "nombre": "SSD",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "SSD",
+        "capacidad_gb": 256,
+        "velocidad_lectura_mbps": 560,
+        "velocidad_escritura_mbps": 510,
+        "interfaz": "SATA"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Liberar espacio eliminando archivos innecesarios",
+          "explicacion": "Mantener al menos 15-20% libre para un rendimiento óptimo del SSD.",
+          "desafio": {
+            "enunciado": "El SSD tiene 256 GB y está al 95% lleno. ¿Cuántos GB libres hay?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 12,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Reemplazar por SSD de mayor capacidad si no hay archivos prescindibles",
+          "explicacion": "Si no hay espacio que liberar, migrar a un SSD de 512 GB o más.",
+          "desafio": {
+            "enunciado": "¿Qué consecuencia tiene un SSD con menos del 5% de espacio libre?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "El SSD falla inmediatamente",
+              "El rendimiento de escritura se degrada severamente",
+              "Aumenta la velocidad de lectura",
+              "El sistema operativo lo formatea automáticamente"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Ejecutar TRIM y verificar velocidades de escritura",
+          "explicacion": "Después de liberar espacio, TRIM recupera las celdas y el rendimiento mejora.",
+          "desafio": {
+            "enunciado": "Ahora el SSD tiene 100 GB libres de 256 GB. ¿Qué porcentaje libre representa?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 39,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Sectores dañados detectados en diagnóstico – Laptop",
+      "descripcion_email": "En una revisión de rutina se detectó que el SSD M.2 SATA tiene un 32% de sectores dañados. El sistema lo marca como no funcional.",
+      "componente_afectado": {
+        "nombre": "SSD",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "SSD",
+        "capacidad_gb": 256,
+        "velocidad_lectura_mbps": 550,
+        "velocidad_escritura_mbps": 500,
+        "interfaz": "M2_SATA"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar porcentaje de sectores dañados con CrystalDiskInfo",
+          "explicacion": "Más del 30% de sectores dañados indica que el SSD debe reemplazarse.",
+          "desafio": {
+            "enunciado": "¿Si el SSD supera el 30% de sectores dañados el sistema lo considera fuera de servicio?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Hacer backup urgente de los datos antes del reemplazo",
+          "explicacion": "Un SSD dañado puede fallar en cualquier momento; el backup es la prioridad.",
+          "desafio": {
+            "enunciado": "¿Cuál es la acción MÁS urgente cuando se detectan sectores dañados en el SSD?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "Formatear el SSD para limpiar los sectores",
+              "Hacer backup de los datos inmediatamente",
+              "Continuar usando el equipo hasta que falle",
+              "Reinstalar el sistema operativo"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Instalar SSD M.2 SATA de reemplazo de igual o mayor capacidad",
+          "explicacion": "El nuevo SSD M.2 SATA debe caber en el mismo slot M.2 SATA de la laptop.",
+          "desafio": {
+            "enunciado": "¿Un SSD con interfaz SATA puede conectarse a un slot M.2 si la placa tiene M.2 SATA?",
+            "tipo": "BOOLEANO",
+            "dificultad": "DIFICIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Restaurar backup y verificar integridad de archivos",
+          "explicacion": "Comprobar que todos los archivos importantes se recuperaron correctamente.",
+          "desafio": {
+            "enunciado": "El nuevo SSD SATA lee a 550 MB/s. ¿Cuántos segundos tarda en leer 5.5 GB de backup?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 10,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "SSD NVMe en slot M.2 SATA – No reconocido (PC)",
+      "descripcion_email": "Se instaló un SSD M.2 NVMe en un slot M.2 que solo soporta SATA; el BIOS no detecta el dispositivo. El slot es M.2 SATA, no NVMe.",
+      "componente_afectado": {
+        "nombre": "SSD",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "SSD",
+        "capacidad_gb": 1000,
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 2800,
+        "interfaz": "M2_NVME"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar la interfaz soportada por el slot M.2 de la placa",
+          "explicacion": "El manual de la placa indica si el slot soporta SATA, NVMe o ambos.",
+          "desafio": {
+            "enunciado": "¿Un SSD M.2 NVMe funcionará en un slot M.2 que solo soporta SATA?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Retirar el SSD NVMe del slot SATA incompatible",
+          "explicacion": "El SSD encaja físicamente pero no es funcional al ser el protocolo incompatible.",
+          "desafio": {
+            "enunciado": "¿Un SSD SATA y un SSD M.2 NVMe tienen el mismo protocolo de comunicación?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Instalar un SSD M.2 SATA compatible en el slot",
+          "explicacion": "El reemplazo debe ser M.2 SATA para que funcione en ese slot específico.",
+          "desafio": {
+            "enunciado": "¿Cuál de estas interfaces es compatible con un slot M.2 SATA?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "M.2 NVMe PCIe 4.0",
+              "M.2 SATA",
+              "M.2 NVMe PCIe 3.0",
+              "SATA III externo"
+            ],
+            "indice_correcto": 1
+          }
+        }
+      ]
+    }
+  ],
+  "historias": [
+    {
+      "nombre": "SSD con sectores dañados – PC con pantallazos azules",
+      "descripcion_email": "Mi PC de escritorio muestra pantallazos azules frecuentes y los archivos se corrompen. El diagnóstico indica que el SSD M.2 NVMe tiene más del 30% de sus sectores dañados y debe reemplazarse.",
+      "componente_afectado": {
+        "nombre": "SSD",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "SSD",
+        "capacidad_gb": 512,
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 2300,
+        "interfaz": "M2_NVME"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Apagar el PC y desconectar el cable de alimentación",
+          "explicacion": "Siempre cortar la corriente antes de abrir el gabinete.",
+          "desafio": {
+            "enunciado": "¿Debe desconectarse el cable de alimentación antes de abrir el gabinete?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Ejecutar diagnóstico de sectores dañados",
+          "explicacion": "Herramientas como CrystalDiskInfo muestran el porcentaje de sectores dañados; si supera el 30% el SSD debe reemplazarse.",
+          "desafio": {
+            "enunciado": "¿Si el SSD tiene 35% de sectores dañados el sistema lo considera fuera de servicio?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Localizar el slot M.2 en la placa base y retirar el tornillo de sujeción",
+          "explicacion": "El SSD M.2 se sujeta con un único tornillo en el extremo opuesto al conector; sin retirarlo el módulo no puede extraerse.",
+          "desafio": {
+            "enunciado": "¿Un SSD M.2 NVMe usa el bus PCIe para comunicarse con la CPU?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Retirar el SSD dañado e instalar el nuevo",
+          "explicacion": "El nuevo SSD debe tener capacidad ≥ la del original; un NVMe más lento puede instalarse pero limitará el rendimiento.",
+          "desafio": {
+            "enunciado": "El técnico quiere instalar un SSD de 256 GB donde había uno de 512 GB dañado. ¿Qué ocurre?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "Se instala sin problemas",
+              "El sistema rechaza por capacidad insuficiente",
+              "Funciona a la mitad de velocidad",
+              "El sistema lo acepta con advertencia de tamaño"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Calcular tiempo de copia de respaldo al nuevo SSD",
+          "explicacion": "Conocer la velocidad de escritura del SSD permite estimar cuánto tardará la clonación o restauración de datos.",
+          "desafio": {
+            "enunciado": "El nuevo SSD escribe a 2300 MB/s. ¿Cuántos segundos tarda en escribir 11.5 GB?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 5,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Verificar que el BIOS detecta el nuevo SSD",
+          "explicacion": "Entrar al BIOS/UEFI y confirmar que el nuevo dispositivo aparece en la lista de almacenamiento antes de instalar el SO.",
+          "desafio": {
+            "enunciado": "¿Cuál es la interfaz más rápida para un SSD en un PC moderno?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "SATA III",
+              "M.2 SATA",
+              "M.2 NVMe PCIe 4.0",
+              "USB 3.2"
+            ],
+            "indice_correcto": 2
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "SSD SATA lento – Migración a NVMe en laptop",
+      "descripcion_email": "Mi laptop de trabajo tarda 2 minutos en arrancar y los programas se abren muy lento. El SSD SATA de 128 GB está casi lleno y su velocidad de 500 MB/s ya no es suficiente. Se migra a un NVMe de 512 GB.",
+      "componente_afectado": {
+        "nombre": "SSD",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "SSD",
+        "capacidad_gb": 128,
+        "velocidad_lectura_mbps": 500,
+        "velocidad_escritura_mbps": 350,
+        "interfaz": "M2_SATA"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Verificar si la laptop tiene slot M.2 NVMe disponible",
+          "explicacion": "Algunas laptops tienen dos slots M.2: uno SATA y otro NVMe. Si solo hay uno, el SSD actual debe retirarse para instalar el NVMe.",
+          "desafio": {
+            "enunciado": "¿Un SSD M.2 NVMe puede instalarse en un slot M.2 que solo soporta SATA?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Clonar el SSD SATA al nuevo NVMe con software de clonación",
+          "explicacion": "Herramientas como Macrium Reflect o Clonezilla copian el SO y los datos al nuevo SSD; el tiempo depende de la cantidad de datos.",
+          "desafio": {
+            "enunciado": "El SSD SATA actual tiene 100 GB de datos. Clonando a 350 MB/s de escritura, ¿cuántos segundos aproximados tarda?",
+            "tipo": "ESCRITURA",
+            "dificultad": "DIFICIL",
+            "respuesta": 286,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Retirar el SSD SATA e instalar el NVMe en el slot M.2",
+          "explicacion": "El M.2 NVMe se inserta a 30° en el slot, se baja y se asegura con el tornillo M2×3 mm en el extremo del módulo.",
+          "desafio": {
+            "enunciado": "¿Qué protocolo de comunicación usa un SSD NVMe?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "AHCI sobre SATA",
+              "NVMe sobre PCIe",
+              "SCSI sobre USB",
+              "IDE sobre PATA"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Comparar las velocidades teóricas del nuevo SSD",
+          "explicacion": "El NVMe PCIe 3.0 alcanza ~3500 MB/s de lectura vs 500 MB/s del SATA; eso se traduce en arranques y cargas de aplicaciones 5–7× más rápidos.",
+          "desafio": {
+            "enunciado": "Un SSD NVMe con 3500 MB/s de lectura es más rápido que un SATA con 550 MB/s. ¿Correcto?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Arrancar desde el nuevo NVMe y validar el sistema",
+          "explicacion": "Configurar el orden de arranque en BIOS para que el NVMe sea el primer dispositivo; verificar que el SO arranca correctamente.",
+          "desafio": {
+            "enunciado": "¿Los SSDs no tienen partes móviles, lo que los hace más resistentes a golpes que los HDDs?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Calcular cuánto tiempo tarda en leer 7 GB con el nuevo NVMe",
+          "explicacion": "Con 3500 MB/s de lectura el nuevo SSD lee 7 GB en 2 segundos; el SATA anterior tardaba más de 14 segundos para la misma operación.",
+          "desafio": {
+            "enunciado": "El nuevo NVMe lee a 3500 MB/s. ¿Cuántos segundos tarda en leer 7 GB?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 2,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

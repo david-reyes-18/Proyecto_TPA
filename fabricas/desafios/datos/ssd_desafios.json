@@ -1,0 +1,151 @@
+{
+  "MATEMATICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Un SSD NVMe con 3500 MB/s de lectura es más rápido que un SSD SATA con 550 MB/s. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Copiar 7 GB a un SSD SATA de 500 MB/s tarda aproximadamente 14 segundos. ¿Verdadero?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "Un SSD de 1 TB tiene exactamente 1 000 000 000 000 bytes según los fabricantes. ¿Correcto?",
+        "dificultad": "DIFICIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "Un SSD SATA transfiere a 550 MB/s. ¿Cuántos segundos tarda en copiar 2.75 GB?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Un SSD NVMe lee a 3000 MB/s. ¿Cuánto tiempo tarda en leer 9 GB?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Si un SSD tiene 30% de sectores dañados, ¿qué ocurre según el sistema?",
+        "dificultad": "FACIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Un SSD SATA escribe a 520 MB/s. ¿Cuántos segundos tarda en escribir 5.2 GB?",
+        "dificultad": "MEDIA",
+        "respuesta": 10,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "¿A qué porcentaje de sectores dañados el SSD deja de funcionar según el sistema?",
+        "dificultad": "FACIL",
+        "respuesta": 30,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Un SSD NVMe lee a 3500 MB/s. ¿Cuántos segundos tarda en leer 7 GB?",
+        "dificultad": "FACIL",
+        "respuesta": 2,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Un SSD escribe a 7000 MB/s. ¿Cuántos GB escribe en 4 segundos?",
+        "dificultad": "DIFICIL",
+        "respuesta": 28,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "LOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "¿Se puede instalar un SSD M.2 NVMe en un slot M.2 que solo soporta SATA?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      },
+      {
+        "texto": "Si un SSD está funcionando correctamente, ¿el sistema permite reemplazarlo?",
+        "dificultad": "FACIL",
+        "respuesta": false
+      },
+      {
+        "texto": "Un SSD con interfaz SATA puede conectarse a un slot M.2 si la placa tiene M.2 SATA. ¿Verdadero?",
+        "dificultad": "DIFICIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "El SSD está dañado. El técnico quiere reemplazarlo por uno de menor capacidad. ¿Qué pasa?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Para verificar si un SSD está dañado, lo más lógico es:",
+        "dificultad": "FACIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Un SSD tiene 4 TB y ya ocupa 3 TB. ¿Cuántos TB quedan libres?",
+        "dificultad": "FACIL",
+        "respuesta": 1,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Un SSD SATA tarda 10 s en copiar un archivo. Un NVMe es 5 veces más rápido. ¿Cuánto tarda el NVMe?",
+        "dificultad": "DIFICIL",
+        "respuesta": 2,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "TECNOLOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "NVMe utiliza el bus PCIe para comunicarse con la CPU. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "Un SSD SATA y un SSD M.2 NVMe tienen el mismo protocolo de comunicación. ¿Verdadero?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      },
+      {
+        "texto": "Los SSDs no tienen partes móviles, lo que los hace más resistentes a golpes que los HDDs. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "¿Cuál de estas interfaces SSD es la más rápida?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "¿Qué significa NVMe?",
+        "dificultad": "DIFICIL"
+      },
+      {
+        "texto": "¿Cuál es la velocidad máxima aproximada de un SSD SATA III?",
+        "dificultad": "FACIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "PCIe 4.0 x4 duplica el ancho de banda de PCIe 3.0 x4. Si PCIe 3.0 entrega 4 GB/s, ¿cuánto entrega PCIe 4.0?",
+        "dificultad": "FACIL",
+        "respuesta": 8,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Un SSD SATA alcanza 550 MB/s y un NVMe 7000 MB/s. ¿Cuántas veces más rápido es el NVMe?",
+        "dificultad": "DIFICIL",
+        "respuesta": 12.7,
+        "tolerancia": 0.1
+      }
+    ]
+  }
+}

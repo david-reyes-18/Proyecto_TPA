@@ -1,0 +1,245 @@
+{
+  "aleatorios": [
+    {
+      "nombre": "Retroiluminación parpadeante – Panel TN (Laptop)",
+      "descripcion_email": "La pantalla parpadea constantemente, especialmente con brillo bajo. El inversor o el cable LVDS puede estar dañado, o el panel mismo.",
+      "componente_afectado": {
+        "nombre": "Pantalla",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "Pantalla",
+        "pulgadas": 14,
+        "resolucion": "1366x768",
+        "tipo_panel": "TN",
+        "tasa_refresco_hz": 60
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Conectar monitor externo para aislar si el problema es el panel o la GPU",
+          "explicacion": "Si el externo no parpadea, el problema es el panel interno o su cable.",
+          "desafio": {
+            "enunciado": "Si el monitor externo no parpadea pero el interno sí, ¿el problema es el panel interno o su cable?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Revisar y reconectar el cable EDP/LVDS del panel",
+          "explicacion": "Un cable flojo o dañado puede causar parpadeo intermitente.",
+          "desafio": {
+            "enunciado": "¿Qué tipo de panel es más común en laptops de entrada por bajo costo?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "IPS",
+              "VA",
+              "OLED",
+              "TN"
+            ],
+            "indice_correcto": 3
+          }
+        },
+        {
+          "descripcion_accion": "Reemplazar el panel TN por uno IPS si el cable no era el problema",
+          "explicacion": "Un panel IPS de 14\" 1920×1080 mejora notablemente la calidad de imagen.",
+          "desafio": {
+            "enunciado": "¿Los paneles IPS ofrecen mejores ángulos de visión que los TN?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Píxeles muertos en panel IPS – Laptop",
+      "descripcion_email": "Aparecieron 5 píxeles muertos en el centro de la pantalla IPS de 15\". Son visibles sobre fondos blancos y afectan la productividad.",
+      "componente_afectado": {
+        "nombre": "Pantalla",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "Pantalla",
+        "pulgadas": 15,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 144
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar que son píxeles muertos y no suciedad en el vidrio",
+          "explicacion": "Limpiar la pantalla con paño de microfibra; si persisten, son píxeles muertos.",
+          "desafio": {
+            "enunciado": "¿Los píxeles muertos pueden eliminarse limpiando la pantalla con paño?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Intentar herramienta de recuperación de píxeles (JScreenFix)",
+          "explicacion": "Algunos píxeles atascados (no muertos) pueden recuperarse con señal de alta frecuencia.",
+          "desafio": {
+            "enunciado": "¿Los paneles IPS tienen mejores colores y ángulos que los TN?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Reemplazar el panel IPS de 15\" 1080p 144 Hz si los píxeles no se recuperan",
+          "explicacion": "El nuevo panel debe tener el mismo tamaño, resolución aproximada y conector EDP compatible.",
+          "desafio": {
+            "enunciado": "¿Cuántos píxeles totales tiene una resolución 1920×1080?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 2073600,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Imagen solo en mitad de pantalla – Fallo de TCON (Laptop)",
+      "descripcion_email": "La mitad superior de la pantalla está completamente negra. En monitor externo la imagen es correcta; el panel VA tiene el controlador TCON dañado.",
+      "componente_afectado": {
+        "nombre": "Pantalla",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "Pantalla",
+        "pulgadas": 17,
+        "resolucion": "2560x1440",
+        "tipo_panel": "VA",
+        "tasa_refresco_hz": 165
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar el fallo en el panel con monitor externo",
+          "explicacion": "Imagen correcta en monitor externo confirma que la GPU y el cable EDP son correctos.",
+          "desafio": {
+            "enunciado": "Si el monitor externo muestra imagen completa pero el interno solo la mitad, ¿el problema es el panel?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Reemplazar el panel VA de 17\" 2560×1440 165 Hz",
+          "explicacion": "El TCON dañado no es reparable por separado; debe reemplazarse el panel completo.",
+          "desafio": {
+            "enunciado": "¿Los paneles VA ofrecen mejor contraste que los IPS?",
+            "tipo": "BOOLEANO",
+            "dificultad": "DIFICIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Verificar la tasa de refresco del nuevo panel con software",
+          "explicacion": "Confirmar que el nuevo panel opera a 165 Hz en la configuración de pantalla del SO.",
+          "desafio": {
+            "enunciado": "¿Cuántos fotogramas por segundo puede mostrar un panel de 165 Hz como máximo?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 165,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "historias": [
+    {
+      "nombre": "Pantalla IPS rota – Laptop con líneas y manchas tras caída",
+      "descripcion_email": "Mi laptop cayó al suelo y la pantalla muestra líneas de color y una mancha negra que crece. El panel IPS de 15\" está físicamente dañado y debe reemplazarse por uno compatible.",
+      "componente_afectado": {
+        "nombre": "Pantalla",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "Pantalla",
+        "pulgadas": 15,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 60
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar que el daño es en el panel y no en el cable de video",
+          "explicacion": "Conectar un monitor externo; si la imagen sale bien, el problema es el panel interno y no la GPU ni la placa base.",
+          "desafio": {
+            "enunciado": "Si la laptop muestra imagen correcta en un monitor externo, ¿el problema es el panel interno?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Conseguir panel IPS de 15\" de reemplazo con mismo conector",
+          "explicacion": "El panel debe coincidir en pulgadas y tipo de conector (30-pin o 40-pin EDP); la resolución y Hz pueden variar si el conector es compatible.",
+          "desafio": {
+            "enunciado": "¿Qué medida es OBLIGATORIA que coincida al reemplazar la pantalla de una laptop?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "La resolución exacta",
+              "El tamaño en pulgadas",
+              "La tasa de refresco",
+              "El tipo de panel"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Retirar la bisel y desmontar el panel roto",
+          "explicacion": "El bisel suele estar fijado con clips de plástico; se levanta con una pala de plástico para no rayar. El panel va atornillado al marco.",
+          "desafio": {
+            "enunciado": "¿Qué ventaja tiene un panel IPS frente a uno TN?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "Mayor tasa de refresco siempre",
+              "Mejores ángulos de visión y reproducción de color",
+              "Menor consumo eléctrico",
+              "Mayor brillo máximo siempre"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Desconectar el cable EDP del panel roto",
+          "explicacion": "El cable EDP es muy delgado; tirar del conector con cuidado usando una pinza de punta fina para no romper la cinta adhesiva.",
+          "desafio": {
+            "enunciado": "¿Los paneles IPS tienen mejores ángulos de visión que los TN?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Instalar el nuevo panel y conectar el cable EDP",
+          "explicacion": "Conectar primero el cable EDP, verificar que encaja con un clic suave, luego encender para probar antes de cerrar el bisel.",
+          "desafio": {
+            "enunciado": "El nuevo panel tiene resolución 1920×1080. ¿Cuántos píxeles totales tiene?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 2073600,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Encender y verificar imagen sin líneas ni manchas",
+          "explicacion": "Ejecutar un test de píxeles muertos (pantalla completamente blanca, roja, verde, azul, negra) para confirmar que el panel es correcto.",
+          "desafio": {
+            "enunciado": "¿Una pantalla de 60 Hz muestra 60 fotogramas por segundo como máximo?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        }
+      ]
+    }
+  ]
+}

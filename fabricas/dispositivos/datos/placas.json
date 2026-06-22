@@ -1,0 +1,709 @@
+{
+  "laptop": {
+    "basica": [
+      {
+        "modelo": "Intel N-Series Mobile Platform (N100/N200)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "DDR4",
+        "formato_ram": "SO_DIMM",
+        "velocidad_maxima_ram_mhz": 3200,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 16,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "INTEGRADA",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "AMD Mendocino / Barcelo-R Mobile",
+        "socket_compatible": "BGA",
+        "generacion_ram": "DDR4",
+        "formato_ram": "SO_DIMM",
+        "velocidad_maxima_ram_mhz": 3200,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 16,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "INTEGRADA",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "Intel Alder Lake-U Low Power (LPDDR4X)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "LPDDR4X",
+        "formato_ram": "LPDDR",
+        "velocidad_maxima_ram_mhz": 4267,
+        "n_slots_ram": 1,
+        "capacidad_maxima_ram_gb": 8,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "INTEGRADA",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "Intel Jasper Lake Mobile (N5095/N6005)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "DDR4",
+        "formato_ram": "SO_DIMM",
+        "velocidad_maxima_ram_mhz": 2933,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 16,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "INTEGRADA",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "AMD Hawk Point Lite (Ryzen 3 8000 Serie)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "LPDDR5",
+        "formato_ram": "LPDDR",
+        "velocidad_maxima_ram_mhz": 5500,
+        "n_slots_ram": 1,
+        "capacidad_maxima_ram_gb": 16,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "INTEGRADA",
+        "cantidad_slots_gpu": 0
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "Intel Raptor Lake-HX Gaming Mobile (DDR5)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "DDR5",
+        "formato_ram": "SO_DIMM",
+        "velocidad_maxima_ram_mhz": 5600,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 64,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_SATA"
+          }
+        ],
+        "interfaz_gpu": "MXM",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "AMD Dragon Range / Storm Peak Gaming Mobile (DDR5)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "DDR5",
+        "formato_ram": "SO_DIMM",
+        "velocidad_maxima_ram_mhz": 5600,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 64,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "MXM",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "Intel Core Ultra 9 HX (Series 2, Arrow Lake-HX)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "DDR5",
+        "formato_ram": "SO_DIMM",
+        "velocidad_maxima_ram_mhz": 6400,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 96,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "MXM",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "AMD Strix Halo (Ryzen AI Max, LPDDR5X Soldada)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "LPDDR5",
+        "formato_ram": "LPDDR",
+        "velocidad_maxima_ram_mhz": 8000,
+        "n_slots_ram": 1,
+        "capacidad_maxima_ram_gb": 128,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "INTEGRADA",
+        "cantidad_slots_gpu": 0
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "Intel Raptor Lake-U/P Mobile (DDR5 SO-DIMM)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "DDR5",
+        "formato_ram": "SO_DIMM",
+        "velocidad_maxima_ram_mhz": 4800,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 32,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "MXM",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "AMD Phoenix / Rembrandt Mobile (DDR5 SO-DIMM)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "DDR5",
+        "formato_ram": "SO_DIMM",
+        "velocidad_maxima_ram_mhz": 4800,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 32,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "MXM",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "Intel Meteor Lake-U Mobile (LPDDR5X)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "LPDDR5",
+        "formato_ram": "LPDDR",
+        "velocidad_maxima_ram_mhz": 6400,
+        "n_slots_ram": 1,
+        "capacidad_maxima_ram_gb": 32,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "MXM",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "AMD Hawk Point (Ryzen 5/7 8000 Serie, DDR5)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "DDR5",
+        "formato_ram": "SO_DIMM",
+        "velocidad_maxima_ram_mhz": 5600,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 64,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          }
+        ],
+        "interfaz_gpu": "MXM",
+        "cantidad_slots_gpu": 0
+      },
+      {
+        "modelo": "Intel Core Ultra 5/7 (Series 1, Meteor Lake-P)",
+        "socket_compatible": "BGA",
+        "generacion_ram": "LPDDR5",
+        "formato_ram": "LPDDR",
+        "velocidad_maxima_ram_mhz": 7467,
+        "n_slots_ram": 1,
+        "capacidad_maxima_ram_gb": 32,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_SATA"
+          }
+        ],
+        "interfaz_gpu": "MXM",
+        "cantidad_slots_gpu": 0
+      }
+    ]
+  },
+  "pc_escritorio": {
+    "basica": [
+      {
+        "modelo": "Intel H610 Micro-ATX (DDR4)",
+        "socket_compatible": "LGA1700",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 3200,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 32,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      },
+      {
+        "modelo": "Intel B660 ATX (DDR4)",
+        "socket_compatible": "LGA1700",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 3600,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 64,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_SATA"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      },
+      {
+        "modelo": "Intel H510 Micro-ATX (DDR4, LGA1200)",
+        "socket_compatible": "LGA1200",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 2933,
+        "n_slots_ram": 2,
+        "capacidad_maxima_ram_gb": 32,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      },
+      {
+        "modelo": "Intel B560 ATX (DDR4, LGA1200)",
+        "socket_compatible": "LGA1200",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 4600,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 64,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_SATA"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      },
+      {
+        "modelo": "AMD A520 Micro-ATX (DDR4, AM4)",
+        "socket_compatible": "AM4",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 4600,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 128,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      },
+      {
+        "modelo": "AMD B450 ATX (DDR4, AM4)",
+        "socket_compatible": "AM4",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 3600,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 64,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "Intel Z790 ATX (DDR5, LGA1700)",
+        "socket_compatible": "LGA1700",
+        "generacion_ram": "DDR5",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 7600,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 192,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 2
+      },
+      {
+        "modelo": "Intel Z790 ATX (DDR4, LGA1700)",
+        "socket_compatible": "LGA1700",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 6400,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 128,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 2
+      },
+      {
+        "modelo": "AMD X670E ATX (DDR5, AM5)",
+        "socket_compatible": "AM5",
+        "generacion_ram": "DDR5",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 6600,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 192,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 2
+      },
+      {
+        "modelo": "AMD X870E ATX (DDR5, AM5)",
+        "socket_compatible": "AM5",
+        "generacion_ram": "DDR5",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 8000,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 256,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 2
+      },
+      {
+        "modelo": "AMD X570 ATX (DDR4, AM4)",
+        "socket_compatible": "AM4",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 5100,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 128,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 2
+      },
+      {
+        "modelo": "Intel Z890 ATX (DDR5, LGA1851)",
+        "socket_compatible": "LGA1700",
+        "generacion_ram": "DDR5",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 9200,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 256,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 2
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "Intel B760 ATX (DDR5, LGA1700)",
+        "socket_compatible": "LGA1700",
+        "generacion_ram": "DDR5",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 6000,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 128,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      },
+      {
+        "modelo": "Intel B760 ATX (DDR4, LGA1700)",
+        "socket_compatible": "LGA1700",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 5000,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 128,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      },
+      {
+        "modelo": "AMD B550 ATX (DDR4, AM4)",
+        "socket_compatible": "AM4",
+        "generacion_ram": "DDR4",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 5100,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 128,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      },
+      {
+        "modelo": "AMD B650 ATX (DDR5, AM5)",
+        "socket_compatible": "AM5",
+        "generacion_ram": "DDR5",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 6000,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 128,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      },
+      {
+        "modelo": "AMD B650E ATX (DDR5, AM5)",
+        "socket_compatible": "AM5",
+        "generacion_ram": "DDR5",
+        "formato_ram": "DIMM",
+        "velocidad_maxima_ram_mhz": 6400,
+        "n_slots_ram": 4,
+        "capacidad_maxima_ram_gb": 128,
+        "slots_ssd": [
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "M2_NVME"
+          },
+          {
+            "interfaz": "SATA"
+          }
+        ],
+        "interfaz_gpu": "PCIE",
+        "cantidad_slots_gpu": 1
+      }
+    ]
+  }
+}

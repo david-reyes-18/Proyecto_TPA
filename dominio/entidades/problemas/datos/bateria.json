@@ -1,0 +1,391 @@
+{
+  "aleatorios": [
+    {
+      "nombre": "Batería que no carga más del 60% – Laptop",
+      "descripcion_email": "La laptop siempre muestra la batería al 60% aunque esté conectada horas. La salud es del 28%; el sistema la considera dañada.",
+      "componente_afectado": {
+        "nombre": "Bateria",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": false,
+        "tipo": "Bateria",
+        "voltaje_v": 11.1,
+        "forma_bateria": "RECTANGULAR",
+        "capacidad_wh": 45.0,
+        "salud": 28
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Verificar salud con BatteryInfoView",
+          "explicacion": "Con 28% de salud la batería está por debajo del umbral del 30%; debe reemplazarse.",
+          "desafio": {
+            "enunciado": "¿Una batería con salud del 28% debe reemplazarse según los criterios del sistema?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Reemplazar la batería por una RECTANGULAR de 11.1 V",
+          "explicacion": "Mismo voltaje y misma forma son obligatorios para el reemplazo.",
+          "desafio": {
+            "enunciado": "¿Qué parámetros son obligatorios al reemplazar una batería?",
+            "tipo": "MULTIPLE",
+            "dificultad": "DIFICIL",
+            "alternativas": [
+              "Solo la capacidad en Wh",
+              "Voltaje y forma de la batería",
+              "Solo el voltaje",
+              "Marca y modelo exacto"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Verificar autonomía con la nueva batería de 60 Wh",
+          "explicacion": "Con 60 Wh y 15 W de consumo, la laptop debería durar 4 horas.",
+          "desafio": {
+            "enunciado": "La nueva batería tiene 60 Wh y el sistema consume 15 W. ¿Cuántas horas dura?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 4,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Batería con voltaje incorrecto instalada – Laptop",
+      "descripcion_email": "Tras comprar una batería de reemplazo se instaló una de 12.6 V en un equipo que requiere 11.1 V. El sistema la rechaza por voltaje incorrecto.",
+      "componente_afectado": {
+        "nombre": "Bateria",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "Bateria",
+        "voltaje_v": 12.6,
+        "forma_bateria": "RECTANGULAR",
+        "capacidad_wh": 56.0,
+        "salud": 95
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar que el sistema rechaza la batería por voltaje incorrecto",
+          "explicacion": "Una batería de 12.6 V puede dañar permanentemente la placa base del equipo.",
+          "desafio": {
+            "enunciado": "¿Puede instalarse una batería de 12.6 V en un equipo diseñado para 11.1 V?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Retirar la batería incorrecta antes de encender el equipo",
+          "explicacion": "Si el equipo se enciende con la batería incorrecta puede sufrir daños irreversibles.",
+          "desafio": {
+            "enunciado": "¿El voltaje nominal de una celda de litio típica es de 3.7 V?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Instalar batería correcta de 11.1 V con la misma forma",
+          "explicacion": "Adquirir la batería correcta con voltaje de 11.1 V (3 celdas en serie a 3.7 V cada una).",
+          "desafio": {
+            "enunciado": "Cada celda de litio tiene 3.7 V. ¿Qué voltaje total entregan 3 celdas en serie?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 11.1,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Indicador de batería descalibrado – Apaga sola al 40%",
+      "descripcion_email": "La laptop se apaga abruptamente cuando el indicador marca 40%. La batería tiene salud del 35% y el medidor del SO está descalibrado.",
+      "componente_afectado": {
+        "nombre": "Bateria",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "Bateria",
+        "voltaje_v": 11.1,
+        "forma_bateria": "FORMA_L",
+        "capacidad_wh": 48.0,
+        "salud": 35
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Verificar salud real con software especializado",
+          "explicacion": "La salud del 35% explica por qué la capacidad efectiva es baja.",
+          "desafio": {
+            "enunciado": "La batería original era de 48 Wh y tiene salud del 35%. ¿Cuántos Wh efectivos quedan?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 16,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Determinar si la batería aún supera el umbral mínimo del 30%",
+          "explicacion": "Con salud del 35% la batería está por encima del umbral; puede decidirse reemplazarla igualmente.",
+          "desafio": {
+            "enunciado": "¿Una batería con salud del 35% supera el umbral mínimo del 30% del sistema?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Reemplazar la batería FORMA_L por una de igual voltaje y forma",
+          "explicacion": "Con salud marginal y comportamiento errático, lo más prudente es el reemplazo.",
+          "desafio": {
+            "enunciado": "Una batería en forma de 'L' corresponde al tipo:",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "RECTANGULAR",
+              "FORMA_L",
+              "IRREGULAR",
+              "CILÍNDRICA"
+            ],
+            "indice_correcto": 1
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Cargador dañado – Batería sin carga aunque está en buen estado",
+      "descripcion_email": "La batería tiene 80% de salud pero nunca carga. El diagnóstico descarta la batería y apunta al cargador como causa.",
+      "componente_afectado": {
+        "nombre": "Bateria",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "Bateria",
+        "voltaje_v": 11.1,
+        "forma_bateria": "RECTANGULAR",
+        "capacidad_wh": 72.0,
+        "salud": 80
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Probar con un cargador alternativo conocido como bueno",
+          "explicacion": "Si con el cargador alternativo carga, el problema es el cargador original.",
+          "desafio": {
+            "enunciado": "¿Una batería con salud del 80% puede considerarse funcional?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Verificar el voltaje de salida del cargador con multímetro",
+          "explicacion": "Un cargador dañado puede mostrar voltaje incorrecto o nulo en su salida.",
+          "desafio": {
+            "enunciado": "Si la batería es buena pero no carga, ¿cuál es el primer elemento a verificar?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "Reinstalar el sistema operativo",
+              "El cargador y el conector de carga",
+              "La RAM del equipo",
+              "El SSD del equipo"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Calcular autonomía real con la batería al 80% de salud",
+          "explicacion": "Con 80% de salud la batería retiene 57.6 Wh de los 72 Wh originales.",
+          "desafio": {
+            "enunciado": "Batería de 72 Wh con salud del 80%. ¿Cuántos Wh efectivos tiene?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 57,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "historias": [
+    {
+      "nombre": "Batería hinchada – Laptop con chasis deformado",
+      "descripcion_email": "Mi laptop ya no enciende con batería, el touchpad se levanta y hay una protuberancia visible bajo el chasis. La batería está hinchada y su salud es de apenas el 15%; necesita reemplazarse urgentemente.",
+      "componente_afectado": {
+        "nombre": "Bateria",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": false,
+        "tipo": "Bateria",
+        "voltaje_v": 11.1,
+        "forma_bateria": "RECTANGULAR",
+        "capacidad_wh": 54.0,
+        "salud": 15
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Evaluar visualmente la batería para detectar hinchazón",
+          "explicacion": "Una batería hinchada es peligrosa (riesgo de incendio); debe manipularse con precaución y no perforarla.",
+          "desafio": {
+            "enunciado": "¿Una batería hinchada (swollen) es segura de seguir usando?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Verificar el porcentaje de salud de la batería",
+          "explicacion": "Con software (BatteryInfoView, coconutBattery) se comprueba la salud; bajo 30% el sistema la marca como fuera de servicio.",
+          "desafio": {
+            "enunciado": "¿Una batería con salud del 15% debe reemplazarse según los criterios del sistema?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Desconectar el conector de la batería de la placa base",
+          "explicacion": "El conector tipo ZIF o JST debe desconectarse tirando del conector y nunca del cable para no dañar los pines.",
+          "desafio": {
+            "enunciado": "Al desconectar la batería de la placa, ¿de qué parte se debe tirar?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "Del cable directamente",
+              "Del conector plástico",
+              "Del cable y el conector a la vez",
+              "No importa"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Instalar la batería de reemplazo con voltaje y forma correctos",
+          "explicacion": "El voltaje y la forma deben coincidir exactamente; una batería de 12.6 V en lugar de 11.1 V puede dañar la placa.",
+          "desafio": {
+            "enunciado": "¿Puede instalarse una batería de 12.6 V en un equipo diseñado para 11.1 V?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Calcular la nueva autonomía con la batería instalada",
+          "explicacion": "Con la capacidad nueva y el consumo conocido se estima la autonomía real del equipo para validar la reparación.",
+          "desafio": {
+            "enunciado": "La nueva batería tiene 54 Wh y la laptop consume 18 W. ¿Cuántas horas de autonomía?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 3,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Hacer un ciclo completo de carga y verificar la salud reportada",
+          "explicacion": "Cargar al 100% y descargar al 20% una vez calibra el indicador del SO y permite confirmar que la nueva batería funciona correctamente.",
+          "desafio": {
+            "enunciado": "¿Qué indica el porcentaje de 'salud' de una batería?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "El nivel de carga actual",
+              "La capacidad máxima restante respecto a la original",
+              "La temperatura de la batería",
+              "El voltaje instantáneo"
+            ],
+            "indice_correcto": 1
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Batería agotada – Laptop que dura 20 minutos y apaga sola",
+      "descripcion_email": "Mi laptop ultrafina se descarga en 20 minutos desde el 100% y se apaga de golpe al llegar al 5%. La batería con forma de L tiene una salud del 18% y voltaje irregular; necesita reemplazo urgente.",
+      "componente_afectado": {
+        "nombre": "Bateria",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": false,
+        "tipo": "Bateria",
+        "voltaje_v": 11.4,
+        "forma_bateria": "FORMA_L",
+        "capacidad_wh": 72.0,
+        "salud": 18
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Medir el voltaje real de la batería con multímetro",
+          "explicacion": "Una batería de 11.4 V nominal que mide solo 8 V en reposo está profundamente descargada o tiene celdas dañadas.",
+          "desafio": {
+            "enunciado": "¿El voltaje nominal de una celda de litio típica es de 3.7 V?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Verificar la salud con software especializado (BatteryInfoView)",
+          "explicacion": "La salud del 18% indica que la batería retiene menos de 1/5 de su capacidad original; el sistema la marca como no funcional.",
+          "desafio": {
+            "enunciado": "La batería original era de 72 Wh y tiene salud del 18%. ¿Cuántos Wh efectivos quedan?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 12,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Identificar la forma especial FORMA_L del compartimento",
+          "explicacion": "Esta laptop tiene chasis delgado con batería en forma de L; el reemplazo DEBE tener la misma forma para encajar en el chasis.",
+          "desafio": {
+            "enunciado": "Una batería con forma en 'L' corresponde al tipo:",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "RECTANGULAR",
+              "FORMA_L",
+              "IRREGULAR",
+              "CILÍNDRICA"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Adquirir batería de reemplazo con igual voltaje y forma L",
+          "explicacion": "El voltaje debe coincidir exactamente (11.4 V); la nueva capacidad puede ser igual o mayor si la forma encaja.",
+          "desafio": {
+            "enunciado": "¿Puede instalarse una batería de voltaje diferente si tiene la misma forma?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Instalar la nueva batería y verificar conexión al BMS",
+          "explicacion": "El conector del BMS (Battery Management System) debe encajar correctamente; un BMS roto impide la carga aunque la batería sea nueva.",
+          "desafio": {
+            "enunciado": "¿Las baterías modernas de laptop usan tecnología de Ion de Litio principalmente?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Calcular la nueva autonomía con la batería de reemplazo de 80 Wh",
+          "explicacion": "Con la nueva batería de 80 Wh y el consumo del sistema, se puede estimar cuánto durará antes de necesitar el cargador.",
+          "desafio": {
+            "enunciado": "La nueva batería tiene 80 Wh y el sistema consume 20 W. ¿Cuántas horas de autonomía?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 4,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

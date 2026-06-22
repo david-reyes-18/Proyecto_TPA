@@ -1,0 +1,409 @@
+{
+  "aleatorios": [
+    {
+      "nombre": "CPU BGA soldada – No reemplazable (diagnóstico de laptop)",
+      "descripcion_email": "El cliente quiere actualizar el CPU de su laptop ultradelgada. El CPU está soldado (BGA) y no puede reemplazarse sin equipo especializado.",
+      "componente_afectado": {
+        "nombre": "CPU",
+        "es_reemplazable": false,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "CPU",
+        "modelo": "Core i5-1235U",
+        "nucleos": 10,
+        "frecuencia_ghz": 1.3,
+        "socket": "BGA",
+        "tdp_watts": 15
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Identificar si el CPU es BGA (soldado) o ZIF (socket)",
+          "explicacion": "En laptops ultradelgadas el CPU es BGA; en laptops gaming algunas tienen socket.",
+          "desafio": {
+            "enunciado": "¿Un CPU soldado (BGA) en una laptop puede reemplazarse sin equipo especializado?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Informar al cliente que el upgrade de CPU no es viable",
+          "explicacion": "La única opción es adquirir un equipo con el CPU deseado de fábrica.",
+          "desafio": {
+            "enunciado": "¿Cuál de estos sockets es exclusivo de laptops (CPUs soldados)?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "AM4",
+              "LGA1700",
+              "BGA",
+              "AM5"
+            ],
+            "indice_correcto": 2
+          }
+        },
+        {
+          "descripcion_accion": "Calcular la diferencia de hilos entre el CPU actual y el deseado",
+          "explicacion": "El cliente consideraba un Core i7 de 12 núcleos; comparar el rendimiento teórico.",
+          "desafio": {
+            "enunciado": "El CPU actual tiene 10 núcleos con Hyper-Threading. ¿Cuántos hilos lógicos expone?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 20,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "CPU incompatible con socket – Ryzen 7000 en placa AM4",
+      "descripcion_email": "El cliente compró un Ryzen 9 7900X creyendo que era compatible con su placa AM4. El CPU es AM5 y no puede instalarse en el socket AM4.",
+      "componente_afectado": {
+        "nombre": "CPU",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "CPU",
+        "modelo": "Ryzen 9 7900X",
+        "nucleos": 12,
+        "frecuencia_ghz": 4.7,
+        "socket": "AM5",
+        "tdp_watts": 170
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar la incompatibilidad de sockets AM4 vs AM5",
+          "explicacion": "AM4 y AM5 son sockets diferentes; físicamente el CPU no encaja.",
+          "desafio": {
+            "enunciado": "¿Un Ryzen 7000 puede instalarse en un socket AM4 sin adaptador?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Evaluar si actualizar la placa base a AM5 o cambiar el CPU",
+          "explicacion": "Migrar a AM5 es más costoso (placa + RAM DDR5); puede ser mejor comprar un Ryzen 5000.",
+          "desafio": {
+            "enunciado": "¿En qué placa puede instalarse un Ryzen 9 7900X (AM5)?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "Placa con socket AM4",
+              "Placa con socket LGA1700",
+              "Placa con socket AM5",
+              "Placa con socket BGA"
+            ],
+            "indice_correcto": 2
+          }
+        },
+        {
+          "descripcion_accion": "Instalar CPU AM4 compatible (Ryzen 5000) en la placa existente",
+          "explicacion": "Un Ryzen 7 5800X AM4 es una alternativa potente compatible con la placa actual.",
+          "desafio": {
+            "enunciado": "El Ryzen 7 5800X tiene 8 núcleos con SMT. ¿Cuántos hilos lógicos expone?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 16,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Pasta térmica seca – CPU a 90°C en reposo (PC)",
+      "descripcion_email": "La PC tiene 5 años y el CPU marca 90°C incluso en el escritorio. La pasta térmica se secó y debe reemplazarse urgentemente.",
+      "componente_afectado": {
+        "nombre": "CPU",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "CPU",
+        "modelo": "Core i7-10700K",
+        "nucleos": 8,
+        "frecuencia_ghz": 3.8,
+        "socket": "LGA1200",
+        "tdp_watts": 125
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Retirar el disipador y limpiar la pasta vieja",
+          "explicacion": "Limpiar con alcohol isopropílico al 99% en CPU y base del disipador.",
+          "desafio": {
+            "enunciado": "¿La pasta térmica mejora la conductividad entre el CPU y el disipador?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Aplicar nueva pasta térmica de calidad",
+          "explicacion": "Aplicar una cantidad del tamaño de un guisante en el centro del IHS del CPU.",
+          "desafio": {
+            "enunciado": "¿Un CPU sobrecalentado puede reducir su frecuencia automáticamente?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Verificar temperatura bajo carga completa",
+          "explicacion": "Con la pasta nueva y el disipador bien montado, la temperatura debe bajar a <75°C bajo carga.",
+          "desafio": {
+            "enunciado": "El CPU tiene TDP de 125 W y el disipador soporta 200 W. ¿Cuántos W de margen hay?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 75,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Calcular el consumo energético en 8 horas de uso intensivo",
+          "explicacion": "Conocer el consumo ayuda a dimensionar la fuente de poder correctamente.",
+          "desafio": {
+            "enunciado": "El CPU consume 125 W durante 8 horas. ¿Cuántos Wh consume?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 1000,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Socket LGA con pines doblados – Intel (PC)",
+      "descripcion_email": "Al instalar el CPU con una herramienta incorrecta se doblaron pines del socket LGA1700. El sistema no arranca y el LED de CPU está encendido.",
+      "componente_afectado": {
+        "nombre": "CPU",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "CPU",
+        "modelo": "Core i9-13900K",
+        "nucleos": 24,
+        "frecuencia_ghz": 3.0,
+        "socket": "LGA1700",
+        "tdp_watts": 125
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Inspeccionar los pines del socket LGA1700 con lupa",
+          "explicacion": "Los sockets LGA tienen los pines en la placa base, no en el CPU.",
+          "desafio": {
+            "enunciado": "¿Qué generación de Intel usa el socket LGA1700?",
+            "tipo": "MULTIPLE",
+            "dificultad": "DIFICIL",
+            "alternativas": [
+              "8ª–9ª gen",
+              "10ª–11ª gen",
+              "12ª–14ª gen",
+              "6ª–7ª gen"
+            ],
+            "indice_correcto": 2
+          }
+        },
+        {
+          "descripcion_accion": "Intentar enderezar los pines con aguja fina bajo iluminación directa",
+          "explicacion": "Con paciencia, los pines levemente inclinados pueden recuperarse; los rotos no.",
+          "desafio": {
+            "enunciado": "¿Si el socket LGA tiene pines rotos (no solo doblados) puede repararse sin cambiar la placa?",
+            "tipo": "BOOLEANO",
+            "dificultad": "DIFICIL",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Reinstalar el CPU y verificar que el POST lo reconoce",
+          "explicacion": "Tras enderezar los pines, instalar el CPU sin forzar y verificar el arranque.",
+          "desafio": {
+            "enunciado": "El Core i9-13900K tiene 24 núcleos con Hyper-Threading. ¿Cuántos hilos lógicos?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 48,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "historias": [
+    {
+      "nombre": "CPU en throttling – PC lenta con temperaturas críticas",
+      "descripcion_email": "Mi PC de escritorio va muy lenta; el CPU Ryzen 5 5600X marca 100°C incluso en tareas simples y el sistema se congela. Primero se intentará reemplazar la pasta térmica; si falla el CPU, se instalará uno nuevo.",
+      "componente_afectado": {
+        "nombre": "CPU",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "CPU",
+        "modelo": "Ryzen 5 5600X",
+        "nucleos": 6,
+        "frecuencia_ghz": 3.7,
+        "socket": "AM4",
+        "tdp_watts": 65
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Monitorear temperaturas con HWMonitor bajo carga",
+          "explicacion": "Si la temperatura supera los 95°C el CPU hace throttling automático reduciendo su frecuencia para protegerse.",
+          "desafio": {
+            "enunciado": "¿Un CPU con sobrecalentamiento puede reducir su frecuencia automáticamente?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Retirar el disipador y limpiar la pasta térmica vieja",
+          "explicacion": "La pasta envejecida pierde conductividad; se limpia con alcohol isopropílico al 99% en ambas superficies (CPU y base del disipador).",
+          "desafio": {
+            "enunciado": "¿La pasta térmica mejora la transferencia de calor entre el CPU y el disipador?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Aplicar nueva pasta térmica y reinstalar el disipador",
+          "explicacion": "Se aplica una pequeña cantidad (tamaño de un guisante) en el centro del IHS; el disipador la distribuirá al presionar.",
+          "desafio": {
+            "enunciado": "Tras aplicar pasta nueva el CPU sigue a 100°C bajo carga leve. ¿Qué implica?",
+            "tipo": "MULTIPLE",
+            "dificultad": "DIFICIL",
+            "alternativas": [
+              "La pasta necesita más tiempo para curar",
+              "El problema es del SO, no del hardware",
+              "El CPU puede estar dañado y necesitar reemplazo",
+              "El disipador es decorativo"
+            ],
+            "indice_correcto": 2
+          }
+        },
+        {
+          "descripcion_accion": "Verificar compatibilidad del CPU de reemplazo con el socket AM4",
+          "explicacion": "El socket AM4 es compatible con Ryzen 1000 a 5000; un Ryzen 7000 usa AM5 y no encajará.",
+          "desafio": {
+            "enunciado": "¿Un Ryzen 7000 puede instalarse en un socket AM4 sin adaptador?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Instalar el nuevo CPU en el socket AM4",
+          "explicacion": "Alinear la flecha del CPU con la del socket, bajar la palanca ZIF y fijarla; nunca forzar el CPU si no cae por gravedad.",
+          "desafio": {
+            "enunciado": "El nuevo Ryzen 5 5600X tiene 6 núcleos con SMT. ¿Cuántos hilos lógicos expone al SO?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 12,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Calcular capacidad térmica disponible del disipador",
+          "explicacion": "El disipador debe soportar el TDP del nuevo CPU; si el disipador soporta 125 W y el CPU tiene 65 W TDP, hay margen.",
+          "desafio": {
+            "enunciado": "El CPU tiene TDP de 65 W y el disipador soporta 150 W. ¿Cuántos W de margen hay?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 85,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Socket dañado – PC que no arranca tras mala instalación del CPU",
+      "descripcion_email": "Mi PC no arranca y el LED de diagnóstico de la placa indica fallo de CPU. Al inspeccionar el socket AM5 se encontraron pines doblados tras una instalación incorrecta del Ryzen 7 7700X. Se repararán los pines y se reinstalará el CPU correctamente.",
+      "componente_afectado": {
+        "nombre": "CPU",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "CPU",
+        "modelo": "Ryzen 7 7700X",
+        "nucleos": 8,
+        "frecuencia_ghz": 4.5,
+        "socket": "AM5",
+        "tdp_watts": 105
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Diagnosticar si el CPU es reconocido en el POST",
+          "explicacion": "Si la placa no pasa el POST y el LED de diagnóstico indica 'CPU', el problema puede ser el socket dañado o el CPU incompatible.",
+          "desafio": {
+            "enunciado": "¿Qué socket usan los procesadores Ryzen 7000 de AMD?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "AM4",
+              "LGA1700",
+              "LGA1200",
+              "AM5"
+            ],
+            "indice_correcto": 3
+          }
+        },
+        {
+          "descripcion_accion": "Inspeccionar visualmente los pines del socket AM5",
+          "explicacion": "Los sockets LGA tienen pines en la placa, no en el CPU; un pin doblado puede causar fallo de contacto o cortocircuito.",
+          "desafio": {
+            "enunciado": "¿En el socket AM5 (LGA), los pines están en la placa base y no en el CPU?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Intentar enderezar los pines doblados con pinza de punta fina",
+          "explicacion": "Con mucha precaución y buena iluminación, un pin levemente doblado puede recuperarse; si está roto el socket debe reemplazarse.",
+          "desafio": {
+            "enunciado": "Si los pines del socket están rotos (no solo doblados), ¿cuál es la solución correcta?",
+            "tipo": "MULTIPLE",
+            "dificultad": "DIFICIL",
+            "alternativas": [
+              "Aplicar soldadura en el pin roto",
+              "Reemplazar la placa base completa",
+              "Continuar usando el equipo con el pin roto",
+              "Instalar un CPU de socket diferente"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Instalar el CPU Ryzen 7 7700X en el socket AM5 reparado",
+          "explicacion": "Alinear el triángulo del CPU con el del socket, bajar la palanca de retención; en AM5 el CPU cae por gravedad sin forzar.",
+          "desafio": {
+            "enunciado": "¿El socket AM5 es compatible con CPUs Ryzen de la serie 1000-5000?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Calcular los hilos lógicos del nuevo CPU",
+          "explicacion": "El Ryzen 7 7700X tiene 8 núcleos físicos con SMT (Simultaneous Multi-Threading), exponiendo 16 hilos lógicos al sistema operativo.",
+          "desafio": {
+            "enunciado": "El Ryzen 7 7700X tiene 8 núcleos con SMT (2 hilos por núcleo). ¿Cuántos hilos lógicos?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 16,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Calcular el consumo energético máximo en carga sostenida",
+          "explicacion": "El TDP de 105 W indica el consumo térmico de diseño; con overboost el CPU puede superar eso temporalmente.",
+          "desafio": {
+            "enunciado": "El CPU consume 105 W durante 8 horas continuas. ¿Cuántos Wh consume?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 840,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

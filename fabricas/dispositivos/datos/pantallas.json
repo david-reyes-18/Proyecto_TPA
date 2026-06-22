@@ -1,0 +1,172 @@
+{
+  "laptop": {
+    "basica": [
+      {
+        "pulgadas": 14.0,
+        "resolucion": "1366x768",
+        "tipo_panel": "TN",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 14.0,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 15.6,
+        "resolucion": "1366x768",
+        "tipo_panel": "TN",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 15.6,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 15.6,
+        "resolucion": "1600x900",
+        "tipo_panel": "TN",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 11.6,
+        "resolucion": "1366x768",
+        "tipo_panel": "TN",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 13.3,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 60
+      }
+    ],
+    "gamer": [
+      {
+        "pulgadas": 15.6,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 144
+      },
+      {
+        "pulgadas": 15.6,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 240
+      },
+      {
+        "pulgadas": 15.6,
+        "resolucion": "2560x1440",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 165
+      },
+      {
+        "pulgadas": 16.0,
+        "resolucion": "2560x1600",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 240
+      },
+      {
+        "pulgadas": 16.0,
+        "resolucion": "2560x1600",
+        "tipo_panel": "OLED",
+        "tasa_refresco_hz": 240
+      },
+      {
+        "pulgadas": 17.3,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 144
+      },
+      {
+        "pulgadas": 17.3,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 360
+      },
+      {
+        "pulgadas": 17.3,
+        "resolucion": "2560x1440",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 165
+      },
+      {
+        "pulgadas": 18.0,
+        "resolucion": "2560x1600",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 240
+      },
+      {
+        "pulgadas": 16.0,
+        "resolucion": "3840x2400",
+        "tipo_panel": "OLED",
+        "tasa_refresco_hz": 120
+      },
+      {
+        "pulgadas": 14.0,
+        "resolucion": "2560x1600",
+        "tipo_panel": "OLED",
+        "tasa_refresco_hz": 165
+      }
+    ],
+    "intermedia": [
+      {
+        "pulgadas": 14.0,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 14.0,
+        "resolucion": "2560x1600",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 90
+      },
+      {
+        "pulgadas": 14.0,
+        "resolucion": "2880x1800",
+        "tipo_panel": "OLED",
+        "tasa_refresco_hz": 90
+      },
+      {
+        "pulgadas": 15.6,
+        "resolucion": "1920x1080",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 15.6,
+        "resolucion": "1920x1200",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 16.0,
+        "resolucion": "2560x1600",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 120
+      },
+      {
+        "pulgadas": 16.0,
+        "resolucion": "1920x1200",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 13.3,
+        "resolucion": "2560x1600",
+        "tipo_panel": "OLED",
+        "tasa_refresco_hz": 60
+      },
+      {
+        "pulgadas": 14.5,
+        "resolucion": "2560x1600",
+        "tipo_panel": "IPS",
+        "tasa_refresco_hz": 120
+      }
+    ]
+  }
+}

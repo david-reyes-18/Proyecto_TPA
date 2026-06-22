@@ -1,0 +1,207 @@
+{
+  "MATEMATICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Un procesador a 3.5 GHz ejecuta 3 500 000 000 ciclos por segundo. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Un CPU de 4 núcleos con Hyper-Threading expone 8 hilos lógicos al SO. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "Un CPU con TDP de 65 W consume exactamente 65 W en todo momento. ¿Verdadero?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      },
+      {
+        "texto": "Duplicar los núcleos siempre duplica el rendimiento de cualquier aplicación. ¿Correcto?",
+        "dificultad": "DIFICIL",
+        "respuesta": false
+      },
+      {
+        "texto": "Un proceso de fabricación de 5 nm es más pequeño que uno de 7 nm. ¿Verdadero?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "Un CPU a 4.2 GHz ejecuta ¿cuántos ciclos de reloj por segundo?",
+        "dificultad": "FACIL"
+      },
+      {
+        "texto": "Un CPU de 8 núcleos puede completar 1 tarea por núcleo por segundo. ¿Cuántas tareas completa en 3 segundos?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Un CPU con TDP 125 W funciona 24 horas. ¿Cuántos Wh consume como máximo?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "La latencia de caché L1 es 1 ns y la de RAM es 100 ns. ¿Cuántas veces más rápida es la caché?",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Un CPU a 3.0 GHz, ¿cuántos millones de ciclos por segundo ejecuta?",
+        "dificultad": "FACIL",
+        "respuesta": 3000,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Un CPU de 6 núcleos con Hyper-Threading, ¿cuántos hilos lógicos expone al SO?",
+        "dificultad": "MEDIA",
+        "respuesta": 12,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Si un proceso tarda 8 s en 1 núcleo, ¿cuántos segundos tardaría idealmente en 4 núcleos?",
+        "dificultad": "MEDIA",
+        "respuesta": 2,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Un CPU opera a 2 500 MHz. Expresa esa frecuencia en GHz.",
+        "dificultad": "DIFICIL",
+        "respuesta": 2.5,
+        "tolerancia": 0.01
+      },
+      {
+        "texto": "Un CPU opera a 3200 MHz. ¿Cuántos GHz son?",
+        "dificultad": "FACIL",
+        "respuesta": 3.2,
+        "tolerancia": 0.01
+      },
+      {
+        "texto": "Un CPU de 8 núcleos con 2 hilos por núcleo. ¿Cuántos hilos lógicos tiene?",
+        "dificultad": "MEDIA",
+        "respuesta": 16,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Si un CPU ejecuta 4.5 GHz, ¿cuántos millones de ciclos ejecuta por segundo?",
+        "dificultad": "MEDIA",
+        "respuesta": 4500,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una caché L1 tarda 1 ns y la RAM 120 ns. ¿Cuántas veces más rápida es la caché?",
+        "dificultad": "DIFICIL",
+        "respuesta": 120,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "LOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Si el socket del CPU nuevo es diferente al de la placa base, ¿puede instalarse sin adaptador?",
+        "dificultad": "FACIL",
+        "respuesta": false
+      },
+      {
+        "texto": "La pasta térmica mejora la conductividad entre el CPU y el disipador. ¿Verdadero?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Un CPU soldado (BGA) en una laptop puede reemplazarse sin equipo especializado. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      },
+      {
+        "texto": "Si el CPU está sobrecalentado, el SO puede reducir su frecuencia automáticamente. ¿Verdadero?",
+        "dificultad": "DIFICIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "El técnico va a reemplazar un CPU en una laptop. ¿Cuál es el primer paso lógico?",
+        "dificultad": "FACIL"
+      },
+      {
+        "texto": "Un CPU con socket AM4, ¿en qué placa base puede instalarse?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Para diagnosticar si el CPU está fallando, ¿qué herramienta es más adecuada?",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Un CPU genera 90 W y el disipador soporta 120 W. ¿Cuántos watts sobran de capacidad térmica?",
+        "dificultad": "FACIL",
+        "respuesta": 30,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Un CPU de 4 núcleos tarda 12 s. Idealmente, ¿cuánto tarda usando 6 núcleos?",
+        "dificultad": "DIFICIL",
+        "respuesta": 8,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "TECNOLOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "El socket LGA1700 de Intel es compatible con CPUs Ryzen de AMD. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": false
+      },
+      {
+        "texto": "Hyper-Threading permite que un núcleo físico ejecute dos hilos simultáneamente. ¿Verdadero?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "Un Ryzen 7000 puede instalarse en una placa con socket AM4 sin adaptador. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      },
+      {
+        "texto": "La caché L3 es más lenta que la L1 pero tiene mayor capacidad. ¿Verdadero?",
+        "dificultad": "DIFICIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "¿Cuál de estos sockets es exclusivo de laptops (CPUs soldados)?",
+        "dificultad": "FACIL"
+      },
+      {
+        "texto": "¿Qué significa TDP en el contexto de un CPU?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "Los Ryzen 7000 de AMD utilizan el socket:",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "¿Qué generación de Intel usa el socket LGA1700?",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "¿Cuántos hilos lógicos expone un CPU de 12 núcleos con Hyper-Threading?",
+        "dificultad": "FACIL",
+        "respuesta": 24,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Un Ryzen 7000 usa memoria DDR5 a 6000 MT/s. ¿Cuántos MT/s más rápidos son respecto a DDR4-3200?",
+        "dificultad": "MEDIA",
+        "respuesta": 2800,
+        "tolerancia": 0.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "MATEMATICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Una batería de 72 Wh dura el doble que una de 36 Wh en las mismas condiciones. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "Si el sistema consume 18 W y la batería tiene 54 Wh, ¿dura exactamente 3 horas?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "Una batería con salud del 25% puede reemplazarse según el sistema del juego. ¿Correcto?",
+        "dificultad": "DIFICIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "Una laptop consume 15 W y su batería tiene 60 Wh. ¿Cuántas horas de autonomía tiene?",
+        "dificultad": "FACIL"
+      },
+      {
+        "texto": "Una batería de 11.1 V y 4400 mAh tiene una capacidad aproximada en Wh de:",
+        "dificultad": "DIFICIL"
+      },
+      {
+        "texto": "Si una batería tiene salud del 60%, su capacidad efectiva de 80 Wh originales es:",
+        "dificultad": "MEDIA"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Una laptop usa 20 W y la batería tiene 100 Wh. ¿Cuántas horas dura?",
+        "dificultad": "FACIL",
+        "respuesta": 5,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "¿Por debajo de qué porcentaje de salud el sistema considera la batería dañada?",
+        "dificultad": "MEDIA",
+        "respuesta": 30,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una batería de 80 Wh alimenta un sistema de 20 W. ¿Cuántas horas dura?",
+        "dificultad": "FACIL",
+        "respuesta": 4,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una batería de 60 Wh tiene salud del 50%. ¿Cuál es su capacidad efectiva?",
+        "dificultad": "MEDIA",
+        "respuesta": 30,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "LOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Antes de reemplazar la batería de una laptop, ¿se debe desconectar primero?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "¿Puede instalarse una batería de voltaje diferente si tiene la misma forma?",
+        "dificultad": "MEDIA",
+        "respuesta": false
+      },
+      {
+        "texto": "Una batería con salud al 15% puede usarse indefinidamente sin riesgo. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": false
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "El técnico quiere instalar una batería de 12.6 V en un equipo que usa 11.1 V. ¿Resultado?",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "¿Qué parámetros deben coincidir obligatoriamente al reemplazar una batería?",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Una batería tiene 15% de carga y luego carga 25%. ¿Qué porcentaje final tiene?",
+        "dificultad": "FACIL",
+        "respuesta": 40,
+        "tolerancia": 0.0
+      },
+      {
+        "texto": "Una batería original es de 90 Wh y la nueva de 72 Wh. ¿Cuántos Wh menos tiene la nueva?",
+        "dificultad": "DIFICIL",
+        "respuesta": 18,
+        "tolerancia": 0.0
+      }
+    ]
+  },
+  "TECNOLOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "Las baterías de laptop modernas son mayormente de Ion de Litio. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      },
+      {
+        "texto": "El voltaje nominal de una celda de litio típica es de 3.7 V. ¿Verdadero?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "Una batería hinchada (swollen) es segura de continuar usando. ¿Correcto?",
+        "dificultad": "FACIL",
+        "respuesta": false
+      }
+    ],
+    "MULTIPLE": [
+      {
+        "texto": "¿Qué unidad se usa para medir la capacidad de energía de una batería de laptop?",
+        "dificultad": "FACIL"
+      },
+      {
+        "texto": "Una batería de laptop con forma en 'L' es de tipo:",
+        "dificultad": "MEDIA"
+      },
+      {
+        "texto": "¿Qué indica el porcentaje de 'salud' de una batería?",
+        "dificultad": "DIFICIL"
+      }
+    ],
+    "ESCRITURA": [
+      {
+        "texto": "Cada celda de litio tiene 3.7 V. ¿Qué voltaje total entregan 3 celdas en serie?",
+        "dificultad": "FACIL",
+        "respuesta": 11.1,
+        "tolerancia": 0.01
+      },
+      {
+        "texto": "Una batería de 500 ciclos ha perdido 20% de salud. ¿Qué porcentaje de salud conserva?",
+        "dificultad": "MEDIA",
+        "respuesta": 80,
+        "tolerancia": 0.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,778 @@
+{
+  "laptop": {
+    "basica": [
+      {
+        "modelo": "Intel UHD Graphics 600",
+        "memoria_gb": 0,
+        "tipo_memoria": "LPDDR4X",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "Intel UHD Graphics 620",
+        "memoria_gb": 0,
+        "tipo_memoria": "LPDDR4X",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "Intel UHD Graphics 730",
+        "memoria_gb": 0,
+        "tipo_memoria": "DDR4",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "Intel UHD Graphics 750",
+        "memoria_gb": 0,
+        "tipo_memoria": "DDR4",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "Intel Iris Xe Graphics (80 EU)",
+        "memoria_gb": 0,
+        "tipo_memoria": "LPDDR4X",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "Intel Iris Xe Graphics (96 EU)",
+        "memoria_gb": 0,
+        "tipo_memoria": "LPDDR4X",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "AMD Radeon Graphics Vega 3",
+        "memoria_gb": 0,
+        "tipo_memoria": "DDR4",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "AMD Radeon Graphics Vega 6",
+        "memoria_gb": 0,
+        "tipo_memoria": "DDR4",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "AMD Radeon 610M",
+        "memoria_gb": 0,
+        "tipo_memoria": "LPDDR5",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "AMD Radeon 740M",
+        "memoria_gb": 0,
+        "tipo_memoria": "LPDDR5",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "AMD Radeon 760M",
+        "memoria_gb": 0,
+        "tipo_memoria": "LPDDR5",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      },
+      {
+        "modelo": "Intel Arc Graphics (Meteor Lake)",
+        "memoria_gb": 0,
+        "tipo_memoria": "LPDDR5",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "NVIDIA RTX 3070 Ti Laptop",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 125
+      },
+      {
+        "modelo": "NVIDIA RTX 3080 Laptop",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 150
+      },
+      {
+        "modelo": "NVIDIA RTX 3080 Ti Laptop",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 150
+      },
+      {
+        "modelo": "NVIDIA RTX 4060 Laptop",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 115
+      },
+      {
+        "modelo": "NVIDIA RTX 4070 Laptop",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 115
+      },
+      {
+        "modelo": "NVIDIA RTX 4070 Ti Laptop",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 150
+      },
+      {
+        "modelo": "NVIDIA RTX 4080 Laptop",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 150
+      },
+      {
+        "modelo": "NVIDIA RTX 4090 Laptop",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 175
+      },
+      {
+        "modelo": "NVIDIA RTX 5070 Laptop",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR7",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 115
+      },
+      {
+        "modelo": "NVIDIA RTX 5080 Laptop",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR7",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 150
+      },
+      {
+        "modelo": "AMD Radeon RX 6700M",
+        "memoria_gb": 10,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 100
+      },
+      {
+        "modelo": "AMD Radeon RX 6800M",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 145
+      },
+      {
+        "modelo": "AMD Radeon RX 6850M XT",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 145
+      },
+      {
+        "modelo": "AMD Radeon RX 7900M",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 150
+      },
+      {
+        "modelo": "AMD Radeon RX 9070M",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 150
+      },
+      {
+        "modelo": "AMD Radeon 890M (iGPU Strix Halo)",
+        "memoria_gb": 0,
+        "tipo_memoria": "LPDDR5",
+        "tipo_gpu": "INTEGRADA",
+        "interfaz": "INTEGRADA",
+        "tdp_watts": 0
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "NVIDIA GeForce MX450",
+        "memoria_gb": 2,
+        "tipo_memoria": "GDDR5",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 35
+      },
+      {
+        "modelo": "NVIDIA GeForce MX550",
+        "memoria_gb": 2,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 35
+      },
+      {
+        "modelo": "NVIDIA RTX 2050 Laptop",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 45
+      },
+      {
+        "modelo": "NVIDIA RTX 3050 Laptop",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 60
+      },
+      {
+        "modelo": "NVIDIA RTX 3050 Ti Laptop",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 60
+      },
+      {
+        "modelo": "NVIDIA RTX 4050 Laptop",
+        "memoria_gb": 6,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 60
+      },
+      {
+        "modelo": "NVIDIA RTX 4060 Laptop",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 115
+      },
+      {
+        "modelo": "AMD Radeon RX 6500M",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 50
+      },
+      {
+        "modelo": "AMD Radeon RX 6600M",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 60
+      },
+      {
+        "modelo": "AMD Radeon RX 6650M",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 60
+      },
+      {
+        "modelo": "AMD Radeon RX 7600M XT",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 65
+      },
+      {
+        "modelo": "AMD Radeon RX 7700S",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 80
+      },
+      {
+        "modelo": "Intel Arc A370M",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 35
+      },
+      {
+        "modelo": "Intel Arc A530M",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 50
+      },
+      {
+        "modelo": "Intel Arc A550M",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 60
+      }
+    ]
+  },
+  "pc_escritorio": {
+    "basica": [
+      {
+        "modelo": "NVIDIA GeForce GT 1030",
+        "memoria_gb": 2,
+        "tipo_memoria": "DDR4",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 30
+      },
+      {
+        "modelo": "NVIDIA GeForce GTX 1050 Ti",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR5",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 75
+      },
+      {
+        "modelo": "NVIDIA GeForce GTX 1650",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR5",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 75
+      },
+      {
+        "modelo": "NVIDIA GeForce GTX 1650 Super",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 100
+      },
+      {
+        "modelo": "NVIDIA GeForce GTX 1660",
+        "memoria_gb": 6,
+        "tipo_memoria": "GDDR5",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 120
+      },
+      {
+        "modelo": "NVIDIA GeForce RTX 3050",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 130
+      },
+      {
+        "modelo": "NVIDIA GeForce RTX 3050 6GB",
+        "memoria_gb": 6,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 70
+      },
+      {
+        "modelo": "AMD Radeon RX 6400",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 53
+      },
+      {
+        "modelo": "AMD Radeon RX 6500 XT",
+        "memoria_gb": 4,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 55
+      },
+      {
+        "modelo": "AMD Radeon RX 6600",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 132
+      },
+      {
+        "modelo": "Intel Arc A380",
+        "memoria_gb": 6,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 75
+      },
+      {
+        "modelo": "Intel Arc A580",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 185
+      },
+      {
+        "modelo": "AMD Radeon RX 7600",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 165
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "NVIDIA RTX 3080",
+        "memoria_gb": 10,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 320
+      },
+      {
+        "modelo": "NVIDIA RTX 3080 Ti",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 350
+      },
+      {
+        "modelo": "NVIDIA RTX 3090",
+        "memoria_gb": 24,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 350
+      },
+      {
+        "modelo": "NVIDIA RTX 4070 Ti",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 285
+      },
+      {
+        "modelo": "NVIDIA RTX 4070 Ti Super",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 285
+      },
+      {
+        "modelo": "NVIDIA RTX 4080",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 320
+      },
+      {
+        "modelo": "NVIDIA RTX 4080 Super",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 320
+      },
+      {
+        "modelo": "NVIDIA RTX 4090",
+        "memoria_gb": 24,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 450
+      },
+      {
+        "modelo": "NVIDIA RTX 5070",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR7",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 250
+      },
+      {
+        "modelo": "NVIDIA RTX 5070 Ti",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR7",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 300
+      },
+      {
+        "modelo": "NVIDIA RTX 5080",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR7",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 360
+      },
+      {
+        "modelo": "NVIDIA RTX 5090",
+        "memoria_gb": 32,
+        "tipo_memoria": "GDDR7",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 575
+      },
+      {
+        "modelo": "AMD Radeon RX 6800 XT",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 300
+      },
+      {
+        "modelo": "AMD Radeon RX 6900 XT",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 300
+      },
+      {
+        "modelo": "AMD Radeon RX 7900 GRE",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 260
+      },
+      {
+        "modelo": "AMD Radeon RX 7900 XT",
+        "memoria_gb": 20,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 315
+      },
+      {
+        "modelo": "AMD Radeon RX 7900 XTX",
+        "memoria_gb": 24,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 355
+      },
+      {
+        "modelo": "AMD Radeon RX 9070 XT",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 304
+      },
+      {
+        "modelo": "AMD Radeon RX 9080",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 330
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "NVIDIA GeForce GTX 1660 Ti",
+        "memoria_gb": 6,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 120
+      },
+      {
+        "modelo": "NVIDIA RTX 2060",
+        "memoria_gb": 6,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 160
+      },
+      {
+        "modelo": "NVIDIA RTX 2060 Super",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 175
+      },
+      {
+        "modelo": "NVIDIA RTX 2070",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 175
+      },
+      {
+        "modelo": "NVIDIA RTX 3060",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 170
+      },
+      {
+        "modelo": "NVIDIA RTX 3060 Ti",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 200
+      },
+      {
+        "modelo": "NVIDIA RTX 3070",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 220
+      },
+      {
+        "modelo": "NVIDIA RTX 4060",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 115
+      },
+      {
+        "modelo": "NVIDIA RTX 4060 Ti",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 165
+      },
+      {
+        "modelo": "NVIDIA RTX 4070",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 200
+      },
+      {
+        "modelo": "NVIDIA RTX 5060 Ti",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR7",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 180
+      },
+      {
+        "modelo": "AMD Radeon RX 6700 XT",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 230
+      },
+      {
+        "modelo": "AMD Radeon RX 6750 XT",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 250
+      },
+      {
+        "modelo": "AMD Radeon RX 7700 XT",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 245
+      },
+      {
+        "modelo": "AMD Radeon RX 7800 XT",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 263
+      },
+      {
+        "modelo": "AMD Radeon RX 9060 XT",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 182
+      },
+      {
+        "modelo": "Intel Arc A750",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 225
+      },
+      {
+        "modelo": "Intel Arc A770",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 225
+      },
+      {
+        "modelo": "Intel Arc B580",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 190
+      },
+      {
+        "modelo": "Intel Arc B770",
+        "memoria_gb": 16,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 225
+      }
+    ]
+  }
+}

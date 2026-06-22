@@ -1,0 +1,325 @@
+{
+  "aleatorios": [
+    {
+      "nombre": "Ventiladores de GPU bloqueados – Throttling severo (PC)",
+      "descripcion_email": "Los ventiladores de la RTX 4070 no giran. La GPU hace throttling desde 95°C y el rendimiento cae un 60%.",
+      "componente_afectado": {
+        "nombre": "GPU",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "GPU",
+        "modelo": "RTX 4070",
+        "memoria_gb": 12,
+        "tipo_memoria": "GDDR6X",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 200
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar que los ventiladores no giran con software de monitoreo",
+          "explicacion": "GPU-Z muestra la velocidad de los fans en RPM; 0 RPM bajo carga indica fallo.",
+          "desafio": {
+            "enunciado": "¿Un CPU/GPU con sobrecalentamiento puede reducir su frecuencia automáticamente?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Retirar la GPU y limpiar los ventiladores con aire comprimido",
+          "explicacion": "El polvo acumulado puede bloquear los rodamientos de los ventiladores.",
+          "desafio": {
+            "enunciado": "¿Una GPU con TDP 300 W consume exactamente 300 W en todo momento?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Reemplazar el ventilador dañado si la limpieza no resuelve el problema",
+          "explicacion": "Los ventiladores de GPU se venden por separado; deben coincidir el conector y el tamaño.",
+          "desafio": {
+            "enunciado": "¿Las GPUs dedicadas de escritorio usan la interfaz PCIe x16?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Calcular el consumo energético de la GPU durante 6 horas de gaming",
+          "explicacion": "Con el ventilador reparado, la GPU puede operar a su TDP nominal sin throttling.",
+          "desafio": {
+            "enunciado": "La GPU consume 200 W durante 6 horas de gaming. ¿Cuántos Wh consume?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 1200,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "GPU dedicada sin señal – Sistema usa iGPU como fallback (PC)",
+      "descripcion_email": "El monitor conectado a la GPU dedicada no muestra imagen. El sistema arranca correctamente usando la salida HDMI de la placa base (iGPU).",
+      "componente_afectado": {
+        "nombre": "GPU",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "GPU",
+        "modelo": "RX 6600",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 132
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar que el monitor funciona conectándolo a la salida HDMI de la placa",
+          "explicacion": "Si hay imagen por la placa, el problema es la GPU dedicada o su conexión.",
+          "desafio": {
+            "enunciado": "¿Una GPU integrada comparte la RAM del sistema en lugar de tener VRAM dedicada?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Verificar que la GPU PCIe está bien asentada y con cables de alimentación",
+          "explicacion": "Una GPU PCIe mal asentada o sin los cables de poder no genera señal de video.",
+          "desafio": {
+            "enunciado": "¿Qué interfaz usan las GPUs dedicadas en PCs de escritorio?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "MXM",
+              "SATA",
+              "PCIe x16",
+              "USB4"
+            ],
+            "indice_correcto": 2
+          }
+        },
+        {
+          "descripcion_accion": "Reemplazar la GPU PCIe si el problema persiste tras reinsertar",
+          "explicacion": "Si la GPU dedicada continúa sin señal tras reinsertar y reconectar, está dañada.",
+          "desafio": {
+            "enunciado": "¿Una GPU dedicada PCIe puede reemplazarse en una PC de escritorio si está dañada?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "VRAM insuficiente para 4K – Upgrade de GPU (PC)",
+      "descripcion_email": "La GTX 1070 con 8 GB de GDDR5 ya no es suficiente para juegos en 4K. Texturas de alta resolución causan stuttering por falta de VRAM.",
+      "componente_afectado": {
+        "nombre": "GPU",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "GPU",
+        "modelo": "GTX 1070",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR5",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 150
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar que el stuttering es por saturación de VRAM",
+          "explicacion": "GPU-Z muestra el uso de VRAM en tiempo real; si llega al 100% hay saturación.",
+          "desafio": {
+            "enunciado": "La GPU tiene 8 GB de VRAM y los juegos 4K usan 10 GB. ¿Cuántos GB faltan?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 2,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Seleccionar GPU de reemplazo con ≥12 GB GDDR6 o superior",
+          "explicacion": "Una GPU moderna con 12-16 GB GDDR6X manejará 4K sin saturación de VRAM.",
+          "desafio": {
+            "enunciado": "¿Cuál de estos tipos de memoria GPU tiene mayor ancho de banda?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "GDDR5",
+              "GDDR6",
+              "GDDR6X",
+              "DDR4"
+            ],
+            "indice_correcto": 2
+          }
+        },
+        {
+          "descripcion_accion": "Verificar que la fuente tiene suficiente potencia para la nueva GPU",
+          "explicacion": "Una RTX 4080 consume hasta 320 W; la fuente debe tener margen suficiente.",
+          "desafio": {
+            "enunciado": "La nueva GPU consume 320 W y la fuente tiene 850 W. El resto del sistema usa 200 W. ¿Cuántos W libres?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 330,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "GPU MXM dedicada con fallo – Laptop gaming",
+      "descripcion_email": "La laptop gaming muestra artefactos y se reinicia durante los juegos. La GPU MXM dedicada está fallando y requiere técnico especializado.",
+      "componente_afectado": {
+        "nombre": "GPU",
+        "es_reemplazable": false,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "GPU",
+        "modelo": "RTX 3060 MXM",
+        "memoria_gb": 6,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "MXM",
+        "tdp_watts": 115
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar que la GPU MXM está fallando con stress-test",
+          "explicacion": "Ejecutar FurMark; si aparecen artefactos o el sistema se cuelga, la GPU es el problema.",
+          "desafio": {
+            "enunciado": "¿Una GPU MXM en laptop puede reemplazarse por el usuario sin equipo especializado?",
+            "tipo": "BOOLEANO",
+            "dificultad": "DIFICIL",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Derivar al técnico especializado con equipo de reflow/reball",
+          "explicacion": "La GPU MXM requiere equipo BGA especializado para su reemplazo; no es una reparación de usuario.",
+          "desafio": {
+            "enunciado": "Una laptop con GPU MXM que falla, ¿cuál es la acción correcta?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "Reemplazarla por cuenta propia",
+              "Llevarla a técnico especializado con equipo BGA",
+              "Instalar GPU PCIe externa",
+              "Formatear el SO"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Como alternativa temporal, usar solo la iGPU del procesador",
+          "explicacion": "Desactivar la GPU dedicada en el administrador de dispositivos y usar la iGPU integrada.",
+          "desafio": {
+            "enunciado": "¿Una GPU integrada (iGPU) comparte RAM con el sistema en lugar de VRAM dedicada?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        }
+      ]
+    }
+  ],
+  "historias": [
+    {
+      "nombre": "GPU con artefactos – PC gamer con apagados repentinos",
+      "descripcion_email": "Mi PC gamer muestra píxeles de colores aleatorios en pantalla y se apaga sola durante las partidas. La RTX 3070 está fallando por sobrecalentamiento y necesita reemplazarse por una GPU PCIe compatible.",
+      "componente_afectado": {
+        "nombre": "GPU",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "GPU",
+        "modelo": "RTX 3070",
+        "memoria_gb": 8,
+        "tipo_memoria": "GDDR6",
+        "tipo_gpu": "DEDICADA",
+        "interfaz": "PCIE",
+        "tdp_watts": 220
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Ejecutar stress-test de GPU para confirmar el fallo",
+          "explicacion": "Herramientas como FurMark generan carga máxima; si la GPU produce artefactos o el sistema se cuelga, el hardware está fallando.",
+          "desafio": {
+            "enunciado": "¿Qué herramienta es más adecuada para diagnosticar un fallo de GPU bajo carga?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "Multímetro en los pines PCIe",
+              "Software de stress-test (FurMark)",
+              "Observación visual",
+              "Test de memoria RAM"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Apagar el PC, desconectar la corriente y retirar la GPU",
+          "explicacion": "La GPU PCIe se fija con un tornillo en el bracket y una pestaña de seguridad en el slot PCIe x16; ambos deben liberarse.",
+          "desafio": {
+            "enunciado": "¿Las GPUs dedicadas de escritorio usan la interfaz PCIe x16?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Seleccionar GPU de reemplazo compatible con el slot PCIe",
+          "explicacion": "La nueva GPU debe usar interfaz PCIe; si necesita conectores de alimentación de 8-pin, la fuente debe tenerlos disponibles.",
+          "desafio": {
+            "enunciado": "¿Una GPU PCIe puede reemplazarse en una PC de escritorio sin soldadura?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Calcular consumo total del sistema con la nueva GPU",
+          "explicacion": "La fuente de poder debe tener suficiente potencia para el nuevo TDP; se suma el consumo de CPU + GPU + resto del sistema.",
+          "desafio": {
+            "enunciado": "La nueva GPU consume 250 W y la fuente tiene 750 W. El resto del sistema usa 200 W. ¿Cuántos W libres quedan?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 300,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Instalar la nueva GPU y conectar los cables de alimentación PCIe",
+          "explicacion": "Insertar la GPU con firmeza hasta que la pestaña de seguridad haga clic y conectar todos los cables de poder requeridos.",
+          "desafio": {
+            "enunciado": "¿Qué tipo de memoria usa una GPU de gama alta moderna?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "DDR4",
+              "GDDR5",
+              "GDDR6X",
+              "SO-DIMM DDR5"
+            ],
+            "indice_correcto": 2
+          }
+        },
+        {
+          "descripcion_accion": "Instalar drivers y verificar temperatura bajo carga",
+          "explicacion": "Instalar los drivers oficiales y monitorear con GPU-Z / HWMonitor que la temperatura bajo carga no supere los 85°C.",
+          "desafio": {
+            "enunciado": "Una GPU con TDP 300 W consume exactamente 300 W en todo momento. ¿Correcto?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        }
+      ]
+    }
+  ]
+}

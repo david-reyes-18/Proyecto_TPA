@@ -1,0 +1,44 @@
+{
+  "MATEMATICO": {
+    "BOOLEANO": [
+      {
+        "texto": "1 GB equivale exactamente a 1 000 MB en el sistema binario. ¿Correcto?",
+        "dificultad": "DIFICIL",
+        "respuesta": false
+      },
+      {
+        "texto": "Un equipo con 16 GB de RAM y 512 GB de SSD tiene más almacenamiento que memoria. ¿Verdadero?",
+        "dificultad": "FACIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [],
+    "ESCRITURA": []
+  },
+  "LOGICO": {
+    "BOOLEANO": [],
+    "MULTIPLE": [
+      {
+        "texto": "Antes de abrir cualquier equipo electrónico para repararlo, ¿qué debe hacerse primero?",
+        "dificultad": "FACIL"
+      }
+    ],
+    "ESCRITURA": []
+  },
+  "TECNOLOGICO": {
+    "BOOLEANO": [
+      {
+        "texto": "PCIe 4.0 ofrece el doble de ancho de banda que PCIe 3.0. ¿Correcto?",
+        "dificultad": "MEDIA",
+        "respuesta": true
+      },
+      {
+        "texto": "USB4 y Thunderbolt 4 comparten la misma especificación base. ¿Verdadero?",
+        "dificultad": "DIFICIL",
+        "respuesta": true
+      }
+    ],
+    "MULTIPLE": [],
+    "ESCRITURA": []
+  }
+}

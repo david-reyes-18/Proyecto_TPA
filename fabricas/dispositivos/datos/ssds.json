@@ -1,0 +1,466 @@
+{
+  "laptop": {
+    "basica": [
+      {
+        "modelo": "Kingston A400 M.2 SATA",
+        "capacidad_gb": 128,
+        "interfaz": "M2_SATA",
+        "velocidad_lectura_mbps": 500,
+        "velocidad_escritura_mbps": 320
+      },
+      {
+        "modelo": "Kingston A400 M.2 SATA",
+        "capacidad_gb": 256,
+        "interfaz": "M2_SATA",
+        "velocidad_lectura_mbps": 500,
+        "velocidad_escritura_mbps": 350
+      },
+      {
+        "modelo": "Samsung 870 EVO SATA",
+        "capacidad_gb": 256,
+        "interfaz": "SATA",
+        "velocidad_lectura_mbps": 560,
+        "velocidad_escritura_mbps": 530
+      },
+      {
+        "modelo": "Samsung 870 EVO SATA",
+        "capacidad_gb": 512,
+        "interfaz": "SATA",
+        "velocidad_lectura_mbps": 560,
+        "velocidad_escritura_mbps": 530
+      },
+      {
+        "modelo": "WD Blue SATA",
+        "capacidad_gb": 256,
+        "interfaz": "SATA",
+        "velocidad_lectura_mbps": 560,
+        "velocidad_escritura_mbps": 530
+      },
+      {
+        "modelo": "WD Blue M.2 SATA",
+        "capacidad_gb": 256,
+        "interfaz": "M2_SATA",
+        "velocidad_lectura_mbps": 540,
+        "velocidad_escritura_mbps": 500
+      },
+      {
+        "modelo": "Crucial BX500",
+        "capacidad_gb": 480,
+        "interfaz": "SATA",
+        "velocidad_lectura_mbps": 540,
+        "velocidad_escritura_mbps": 500
+      },
+      {
+        "modelo": "SK Hynix BC711 NVMe",
+        "capacidad_gb": 256,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 2500,
+        "velocidad_escritura_mbps": 1800
+      },
+      {
+        "modelo": "Micron 2400 NVMe",
+        "capacidad_gb": 256,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 4200,
+        "velocidad_escritura_mbps": 2500
+      },
+      {
+        "modelo": "Kingston NV2 NVMe",
+        "capacidad_gb": 256,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 2100
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "Samsung 990 Pro NVMe",
+        "capacidad_gb": 1024,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7450,
+        "velocidad_escritura_mbps": 6900
+      },
+      {
+        "modelo": "Samsung 990 Pro NVMe",
+        "capacidad_gb": 2048,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7450,
+        "velocidad_escritura_mbps": 6900
+      },
+      {
+        "modelo": "WD Black SN850X",
+        "capacidad_gb": 1024,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 6600
+      },
+      {
+        "modelo": "WD Black SN850X",
+        "capacidad_gb": 2048,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 6600
+      },
+      {
+        "modelo": "Seagate FireCuda 530",
+        "capacidad_gb": 1024,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 6900
+      },
+      {
+        "modelo": "Seagate FireCuda 530",
+        "capacidad_gb": 2048,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 6900
+      },
+      {
+        "modelo": "Corsair MP600 Pro",
+        "capacidad_gb": 1024,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7100,
+        "velocidad_escritura_mbps": 6800
+      },
+      {
+        "modelo": "Kingston Fury Renegade",
+        "capacidad_gb": 2048,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 7000
+      },
+      {
+        "modelo": "Samsung 990 EVO Plus",
+        "capacidad_gb": 2048,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7250,
+        "velocidad_escritura_mbps": 6300
+      },
+      {
+        "modelo": "Crucial T705",
+        "capacidad_gb": 2048,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 14100,
+        "velocidad_escritura_mbps": 12600
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "Samsung 980 NVMe",
+        "capacidad_gb": 256,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 3000
+      },
+      {
+        "modelo": "Samsung 980 NVMe",
+        "capacidad_gb": 512,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 3000
+      },
+      {
+        "modelo": "Samsung 980 Pro NVMe",
+        "capacidad_gb": 512,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7000,
+        "velocidad_escritura_mbps": 5000
+      },
+      {
+        "modelo": "Samsung 980 Pro NVMe",
+        "capacidad_gb": 1024,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7000,
+        "velocidad_escritura_mbps": 5000
+      },
+      {
+        "modelo": "WD Black SN770",
+        "capacidad_gb": 512,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 5150,
+        "velocidad_escritura_mbps": 4900
+      },
+      {
+        "modelo": "WD Black SN770",
+        "capacidad_gb": 1024,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 5150,
+        "velocidad_escritura_mbps": 4900
+      },
+      {
+        "modelo": "Kingston NV2",
+        "capacidad_gb": 512,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 2100
+      },
+      {
+        "modelo": "Crucial P3 Plus",
+        "capacidad_gb": 512,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 5000,
+        "velocidad_escritura_mbps": 4200
+      },
+      {
+        "modelo": "Crucial P3 Plus",
+        "capacidad_gb": 1024,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 5000,
+        "velocidad_escritura_mbps": 4200
+      },
+      {
+        "modelo": "SK Hynix Platinum P41",
+        "capacidad_gb": 512,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7000,
+        "velocidad_escritura_mbps": 6500
+      },
+      {
+        "modelo": "SK Hynix Platinum P41",
+        "capacidad_gb": 1024,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7000,
+        "velocidad_escritura_mbps": 6500
+      },
+      {
+        "modelo": "Lexar NM790",
+        "capacidad_gb": 1024,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7400,
+        "velocidad_escritura_mbps": 6500
+      }
+    ]
+  },
+  "pc_escritorio": {
+    "basica": [
+      {
+        "modelo": "Kingston A400 SATA",
+        "capacidad_gb": 240,
+        "interfaz": "SATA",
+        "velocidad_lectura_mbps": 500,
+        "velocidad_escritura_mbps": 320
+      },
+      {
+        "modelo": "Kingston A400 SATA",
+        "capacidad_gb": 480,
+        "interfaz": "SATA",
+        "velocidad_lectura_mbps": 500,
+        "velocidad_escritura_mbps": 350
+      },
+      {
+        "modelo": "WD Blue SATA",
+        "capacidad_gb": 500,
+        "interfaz": "SATA",
+        "velocidad_lectura_mbps": 560,
+        "velocidad_escritura_mbps": 530
+      },
+      {
+        "modelo": "Samsung 870 EVO SATA",
+        "capacidad_gb": 500,
+        "interfaz": "SATA",
+        "velocidad_lectura_mbps": 560,
+        "velocidad_escritura_mbps": 530
+      },
+      {
+        "modelo": "Crucial BX500 SATA",
+        "capacidad_gb": 480,
+        "interfaz": "SATA",
+        "velocidad_lectura_mbps": 540,
+        "velocidad_escritura_mbps": 500
+      },
+      {
+        "modelo": "Kingston NV2 NVMe",
+        "capacidad_gb": 500,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 2100
+      },
+      {
+        "modelo": "WD Blue SN570 NVMe",
+        "capacidad_gb": 500,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 3000
+      },
+      {
+        "modelo": "Crucial P3 NVMe",
+        "capacidad_gb": 500,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 3000
+      },
+      {
+        "modelo": "Lexar NM610 NVMe",
+        "capacidad_gb": 500,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 2100,
+        "velocidad_escritura_mbps": 1750
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "Samsung 990 Pro NVMe",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7450,
+        "velocidad_escritura_mbps": 6900
+      },
+      {
+        "modelo": "Samsung 990 Pro NVMe",
+        "capacidad_gb": 2000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7450,
+        "velocidad_escritura_mbps": 6900
+      },
+      {
+        "modelo": "Samsung 990 Pro NVMe",
+        "capacidad_gb": 4000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7450,
+        "velocidad_escritura_mbps": 6900
+      },
+      {
+        "modelo": "WD Black SN850X",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 6600
+      },
+      {
+        "modelo": "WD Black SN850X",
+        "capacidad_gb": 2000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 6600
+      },
+      {
+        "modelo": "Seagate FireCuda 530",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 6900
+      },
+      {
+        "modelo": "Seagate FireCuda 530",
+        "capacidad_gb": 2000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 6900
+      },
+      {
+        "modelo": "Corsair MP600 Pro XT",
+        "capacidad_gb": 2000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7100,
+        "velocidad_escritura_mbps": 6800
+      },
+      {
+        "modelo": "Kingston Fury Renegade",
+        "capacidad_gb": 4000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 7000
+      },
+      {
+        "modelo": "Crucial T705 PCIe 5.0",
+        "capacidad_gb": 2000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 14100,
+        "velocidad_escritura_mbps": 12600
+      },
+      {
+        "modelo": "Crucial T705 PCIe 5.0",
+        "capacidad_gb": 4000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 14100,
+        "velocidad_escritura_mbps": 12600
+      },
+      {
+        "modelo": "WD Black SN850X",
+        "capacidad_gb": 4000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7300,
+        "velocidad_escritura_mbps": 6600
+      },
+      {
+        "modelo": "Seagate FireCuda 540 PCIe5",
+        "capacidad_gb": 2000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 10000,
+        "velocidad_escritura_mbps": 9500
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "Samsung 980 NVMe",
+        "capacidad_gb": 500,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 3000
+      },
+      {
+        "modelo": "Samsung 980 NVMe",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3500,
+        "velocidad_escritura_mbps": 3000
+      },
+      {
+        "modelo": "Samsung 980 Pro NVMe",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7000,
+        "velocidad_escritura_mbps": 5000
+      },
+      {
+        "modelo": "WD Black SN770",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 5150,
+        "velocidad_escritura_mbps": 4900
+      },
+      {
+        "modelo": "WD Black SN770",
+        "capacidad_gb": 2000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 5150,
+        "velocidad_escritura_mbps": 4900
+      },
+      {
+        "modelo": "Seagate Barracuda 510",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 3400,
+        "velocidad_escritura_mbps": 3000
+      },
+      {
+        "modelo": "Crucial P5 Plus NVMe",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 6600,
+        "velocidad_escritura_mbps": 5000
+      },
+      {
+        "modelo": "SK Hynix Platinum P41",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7000,
+        "velocidad_escritura_mbps": 6500
+      },
+      {
+        "modelo": "Lexar NM790",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 7400,
+        "velocidad_escritura_mbps": 6500
+      },
+      {
+        "modelo": "Corsair MP600 Core",
+        "capacidad_gb": 1000,
+        "interfaz": "M2_NVME",
+        "velocidad_lectura_mbps": 4700,
+        "velocidad_escritura_mbps": 3900
+      }
+    ]
+  }
+}

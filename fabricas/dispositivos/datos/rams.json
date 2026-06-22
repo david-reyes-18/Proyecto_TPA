@@ -1,0 +1,487 @@
+{
+  "laptop": {
+    "basica": [
+      {
+        "modelo": "Samsung DDR4 SO-DIMM",
+        "capacidad_gb": 4,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Samsung DDR4 SO-DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Samsung DDR4 SO-DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Crucial DDR4 SO-DIMM",
+        "capacidad_gb": 4,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Crucial DDR4 SO-DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Kingston DDR4 SO-DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Micron DDR4 SO-DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Hynix DDR4 SO-DIMM",
+        "capacidad_gb": 4,
+        "velocidad_mhz": 2933,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Hynix DDR4 SO-DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 2933,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "LPDDR4X Soldada",
+        "capacidad_gb": 4,
+        "velocidad_mhz": 4267,
+        "generacion": "LPDDR4X",
+        "formato": "LPDDR"
+      },
+      {
+        "modelo": "LPDDR4X Soldada",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 4267,
+        "generacion": "LPDDR4X",
+        "formato": "LPDDR"
+      },
+      {
+        "modelo": "LPDDR5 Soldada",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 5500,
+        "generacion": "LPDDR5",
+        "formato": "LPDDR"
+      },
+      {
+        "modelo": "LPDDR5 Soldada",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 5500,
+        "generacion": "LPDDR5",
+        "formato": "LPDDR"
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "Samsung DDR5 SO-DIMM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Samsung DDR5 SO-DIMM",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "G.Skill Ripjaws DDR5",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "G.Skill Ripjaws DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Corsair Vengeance DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Kingston Fury DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Kingston Fury DDR5",
+        "capacidad_gb": 48,
+        "velocidad_mhz": 6400,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Crucial DDR5 SO-DIMM",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 6400,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "LPDDR5X Soldada 64GB",
+        "capacidad_gb": 64,
+        "velocidad_mhz": 8000,
+        "generacion": "LPDDR5",
+        "formato": "LPDDR"
+      },
+      {
+        "modelo": "LPDDR5X Soldada 128GB",
+        "capacidad_gb": 128,
+        "velocidad_mhz": 8000,
+        "generacion": "LPDDR5",
+        "formato": "LPDDR"
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "Samsung DDR5 SO-DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 4800,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Samsung DDR5 SO-DIMM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 4800,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Crucial DDR5 SO-DIMM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 4800,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Kingston DDR5 SO-DIMM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 4800,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Kingston DDR5 SO-DIMM",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 4800,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Corsair Vengeance DDR5",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Corsair Vengeance DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "Micron DDR5 SO-DIMM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 4800,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "G.Skill Ripjaws DDR5",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      {
+        "modelo": "LPDDR5 Soldada",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 6400,
+        "generacion": "LPDDR5",
+        "formato": "LPDDR"
+      },
+      {
+        "modelo": "LPDDR5 Soldada",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 6400,
+        "generacion": "LPDDR5",
+        "formato": "LPDDR"
+      },
+      {
+        "modelo": "LPDDR5X Soldada",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 7467,
+        "generacion": "LPDDR5",
+        "formato": "LPDDR"
+      },
+      {
+        "modelo": "LPDDR5X Soldada",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 7467,
+        "generacion": "LPDDR5",
+        "formato": "LPDDR"
+      }
+    ]
+  },
+  "pc_escritorio": {
+    "basica": [
+      {
+        "modelo": "Kingston ValueRAM DDR4",
+        "capacidad_gb": 4,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Kingston ValueRAM DDR4",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Kingston ValueRAM DDR4",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Crucial Basics DDR4",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Crucial Basics DDR4",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Corsair Vengeance DDR4",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Corsair Vengeance DDR4",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Patriot Viper DDR4",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "TeamGroup T-Force DDR4",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Hynix DDR4 DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Micron DDR4 DIMM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      }
+    ],
+    "gamer": [
+      {
+        "modelo": "G.Skill Trident Z5 DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 6000,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "G.Skill Trident Z5 DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 6400,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "G.Skill Trident Z5 DDR5",
+        "capacidad_gb": 48,
+        "velocidad_mhz": 6800,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Corsair Dominator Titanium DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 6000,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Corsair Dominator Titanium DDR5",
+        "capacidad_gb": 48,
+        "velocidad_mhz": 6400,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Kingston Fury Renegade DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 6400,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Kingston Fury Renegade DDR5",
+        "capacidad_gb": 48,
+        "velocidad_mhz": 6800,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "TeamGroup T-Force Xtreem DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 7200,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "TeamGroup T-Force Xtreem DDR5",
+        "capacidad_gb": 48,
+        "velocidad_mhz": 7600,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "G.Skill Trident Z5 Royal DDR5",
+        "capacidad_gb": 48,
+        "velocidad_mhz": 8000,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      }
+    ],
+    "intermedia": [
+      {
+        "modelo": "G.Skill Trident Z5 DDR5",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "G.Skill Trident Z5 DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Corsair Vengeance DDR5",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 5200,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Corsair Vengeance DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 5200,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Kingston Fury Beast DDR5",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Kingston Fury Beast DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 5600,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Crucial DDR5",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 4800,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Crucial DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 4800,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "TeamGroup T-Force DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 6000,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      },
+      {
+        "modelo": "Patriot Venom DDR5",
+        "capacidad_gb": 32,
+        "velocidad_mhz": 6000,
+        "generacion": "DDR5",
+        "formato": "DIMM"
+      }
+    ]
+  }
+}

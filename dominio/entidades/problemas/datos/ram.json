@@ -1,0 +1,470 @@
+{
+  "aleatorios": [
+    {
+      "nombre": "Módulo RAM no detectado tras golpe (Laptop)",
+      "descripcion_email": "El sistema reporta solo 4 GB de RAM cuando debería tener 8 GB. Tras un golpe uno de los módulos SO-DIMM DDR4 quedó mal asentado.",
+      "componente_afectado": {
+        "nombre": "RAM SO-DIMM DDR4 4 GB",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "RAM",
+        "capacidad_gb": 4,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Apagar la laptop y retirar la batería",
+          "explicacion": "Siempre cortar energía antes de manipular RAM.",
+          "desafio": {
+            "enunciado": "¿Se debe desconectar la batería antes de retirar la RAM?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Retirar y reinsertar el módulo mal asentado",
+          "explicacion": "Presionar hasta escuchar el doble clic de las pestañas.",
+          "desafio": {
+            "enunciado": "¿Qué ángulo adopta un módulo SO-DIMM al liberarse las pestañas?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "90°",
+              "45°",
+              "180°",
+              "0°"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Verificar que el sistema detecta 8 GB",
+          "explicacion": "El POST y el SO deben reportar la capacidad completa.",
+          "desafio": {
+            "enunciado": "Hay 2 módulos de 4 GB. ¿Cuántos GB en total debe reportar el sistema?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 8,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Error de paridad en canal A – PC",
+      "descripcion_email": "El sistema presenta pantallazos azules con error MEMORY_MANAGEMENT. El diagnóstico indica fallo en el módulo del canal A slot 1.",
+      "componente_afectado": {
+        "nombre": "RAM DIMM DDR4 16 GB",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "RAM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Ejecutar MemTest86 para identificar el módulo defectuoso",
+          "explicacion": "Probar un módulo a la vez; el que genera errores es el defectuoso.",
+          "desafio": {
+            "enunciado": "¿MemTest86 permite identificar qué módulo RAM específico está fallando?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Retirar el módulo defectuoso del slot 1 canal A",
+          "explicacion": "El módulo DIMM se retira presionando las pestañas blancas en ambos extremos.",
+          "desafio": {
+            "enunciado": "¿Qué formato de RAM se usa en PCs de escritorio convencionales?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "SO-DIMM",
+              "LPDDR",
+              "DIMM",
+              "MXM"
+            ],
+            "indice_correcto": 2
+          }
+        },
+        {
+          "descripcion_accion": "Instalar módulo DDR4 DIMM de reemplazo",
+          "explicacion": "El nuevo módulo debe ser DDR4 DIMM con velocidad igual o compatible.",
+          "desafio": {
+            "enunciado": "¿Un módulo DDR5 DIMM puede instalarse en un slot DDR4?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Calcular nuevo ancho de banda en dual channel",
+          "explicacion": "Reemplazado el módulo, el sistema vuelve a dual channel.",
+          "desafio": {
+            "enunciado": "¿DDR4-3200 tiene velocidad efectiva de 3200 MT/s?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "RAM incompatible instalada – Laptop no arranca",
+      "descripcion_email": "Tras comprar RAM nueva DDR5, la laptop no arranca. Se instaló un módulo DDR5 SO-DIMM en una placa que sólo acepta DDR4.",
+      "componente_afectado": {
+        "nombre": "RAM SO-DIMM DDR5 16 GB (incompatible)",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "RAM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 4800,
+        "generacion": "DDR5",
+        "formato": "SO_DIMM"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Identificar la generación de RAM soportada por la placa",
+          "explicacion": "El manual de la laptop especifica si usa DDR4 o DDR5; nunca mezclar generaciones.",
+          "desafio": {
+            "enunciado": "¿Un módulo DDR5 SO-DIMM es compatible físicamente con un slot DDR4 SO-DIMM?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Retirar el módulo DDR5 incompatible",
+          "explicacion": "Presionar las pestañas para liberar el módulo a 45° y extraerlo.",
+          "desafio": {
+            "enunciado": "¿Qué debe verificarse ANTES de comprar RAM de reemplazo?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "El color del módulo",
+              "La generación y el formato soportados por la placa",
+              "La marca del fabricante",
+              "El peso del módulo"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Instalar módulo DDR4 SO-DIMM correcto de 16 GB",
+          "explicacion": "El módulo correcto debe ser DDR4 SO-DIMM; encajará sin forzar.",
+          "desafio": {
+            "enunciado": "Si la laptop tenía 8 GB DDR4 y se agrega 1 módulo de 16 GB DDR4, ¿cuántos GB totales?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 24,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "RAM LPDDR soldada – No reemplazable (diagnóstico)",
+      "descripcion_email": "El cliente quiere ampliar la RAM de su laptop ultradelgada. El diagnóstico revela que la RAM LPDDR5 está soldada en la placa; no puede reemplazarse y se orienta al cliente sobre alternativas.",
+      "componente_afectado": {
+        "nombre": "RAM LPDDR5 16 GB (soldada)",
+        "es_reemplazable": false,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "RAM",
+        "capacidad_gb": 16,
+        "velocidad_mhz": 6400,
+        "generacion": "LPDDR5",
+        "formato": "LPDDR"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Verificar si la RAM es soldada (LPDDR) o modular (SO-DIMM)",
+          "explicacion": "Abrir el panel inferior; si no hay slots visibles, la RAM es LPDDR soldada.",
+          "desafio": {
+            "enunciado": "¿La RAM LPDDR soldada en una laptop puede reemplazarse fácilmente por el usuario?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Explicar al cliente las opciones disponibles",
+          "explicacion": "Si la RAM es soldada, la única opción es adquirir un equipo con más RAM de fábrica.",
+          "desafio": {
+            "enunciado": "¿Puede instalarse más RAM en una laptop con memoria LPDDR soldada?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Calcular la velocidad efectiva de la RAM LPDDR5 instalada",
+          "explicacion": "LPDDR5 a 6400 MT/s es significativamente más rápida que DDR4-3200.",
+          "desafio": {
+            "enunciado": "LPDDR5 opera a 6400 MT/s y DDR4-3200 a 3200 MT/s. ¿Cuántos MT/s más rápida es la LPDDR5?",
+            "tipo": "ESCRITURA",
+            "dificultad": "MEDIA",
+            "respuesta": 3200,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "Mezcla de RAM de distinta velocidad – PC inestable",
+      "descripcion_email": "La PC fue ensamblada con un módulo DDR4-3200 y otro DDR4-2666; el sistema es inestable y presenta cuelgues aleatorios.",
+      "componente_afectado": {
+        "nombre": "RAM DIMM DDR4 8 GB 2666 MHz",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "RAM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Identificar la velocidad de cada módulo instalado",
+          "explicacion": "Usar CPU-Z o el BIOS para ver la velocidad real de cada slot RAM.",
+          "desafio": {
+            "enunciado": "¿Mezclar módulos DDR4 de diferente velocidad puede causar inestabilidad?",
+            "tipo": "BOOLEANO",
+            "dificultad": "MEDIA",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Retirar el módulo de menor velocidad (DDR4-2666)",
+          "explicacion": "Para estabilizar el sistema, reemplazar el módulo más lento por uno de igual velocidad al existente.",
+          "desafio": {
+            "enunciado": "Al mezclar DDR4-3200 con DDR4-2666, ¿a qué velocidad operará el sistema?",
+            "tipo": "MULTIPLE",
+            "dificultad": "DIFICIL",
+            "alternativas": [
+              "3200 MHz (el más rápido)",
+              "2933 MHz (promedio)",
+              "2666 MHz (el más lento)",
+              "Depende del fabricante de la placa"
+            ],
+            "indice_correcto": 2
+          }
+        },
+        {
+          "descripcion_accion": "Instalar módulo DDR4-3200 homogéneo",
+          "explicacion": "Dos módulos de la misma velocidad aseguran estabilidad y posibilitan dual channel.",
+          "desafio": {
+            "enunciado": "Con 2 módulos de 8 GB en dual channel, ¿cuántos GB totales tiene el sistema?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 16,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Activar XMP y verificar estabilidad con MemTest86",
+          "explicacion": "Activar el perfil XMP en BIOS lleva la RAM a su velocidad nominal garantizada.",
+          "desafio": {
+            "enunciado": "DDR4 a 1600 MHz de reloj real equivale a 3200 MT/s efectivos. ¿Correcto?",
+            "tipo": "BOOLEANO",
+            "dificultad": "DIFICIL",
+            "respuesta": true
+          }
+        }
+      ]
+    }
+  ],
+  "historias": [
+    {
+      "nombre": "RAM defectuosa – Laptop no arranca",
+      "descripcion_email": "Mi laptop emite pitidos al encender y no llega al sistema operativo. El técnico confirmó que uno de los módulos RAM SO-DIMM DDR4 está dañado.",
+      "componente_afectado": {
+        "nombre": "RAM SO-DIMM DDR4 8 GB",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "RAM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 3200,
+        "generacion": "DDR4",
+        "formato": "SO_DIMM"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Apagar la laptop y desconectar el cargador",
+          "explicacion": "Antes de tocar cualquier componente interno hay que cortar toda fuente de energía para evitar descargas eléctricas.",
+          "desafio": {
+            "enunciado": "¿Es obligatorio apagar y desenchufar la laptop antes de abrir el panel inferior?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Retirar la batería interna",
+          "explicacion": "Aunque la laptop esté apagada, la batería puede suministrar corriente residual; desconectarla es el segundo paso de seguridad.",
+          "desafio": {
+            "enunciado": "¿Cuál es el segundo paso de seguridad antes de manipular la RAM?",
+            "tipo": "MULTIPLE",
+            "dificultad": "FACIL",
+            "alternativas": [
+              "Instalar el nuevo módulo directamente",
+              "Desconectar la batería interna",
+              "Formatear el disco duro",
+              "Actualizar el BIOS"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Identificar el slot RAM defectuoso con prueba swap",
+          "explicacion": "Si hay 2 slots, retirar un módulo a la vez y encender para identificar cuál causa los pitidos POST.",
+          "desafio": {
+            "enunciado": "¿Los pitidos durante el POST pueden indicar un problema de RAM?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Retirar el módulo defectuoso presionando las pestañas laterales",
+          "explicacion": "Las pestañas metálicas a ambos lados del slot se presionan simultáneamente; el módulo salta a 45° y se extrae.",
+          "desafio": {
+            "enunciado": "Al extraer un módulo SO-DIMM, ¿qué ángulo adopta al liberar las pestañas?",
+            "tipo": "MULTIPLE",
+            "dificultad": "MEDIA",
+            "alternativas": [
+              "90°",
+              "45°",
+              "180°",
+              "30°"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Instalar el nuevo módulo DDR4 SO-DIMM",
+          "explicacion": "El módulo nuevo debe ser DDR4 SO-DIMM compatible. Se inserta a 45° alineando la muesca y se presiona hasta que las pestañas hacen clic.",
+          "desafio": {
+            "enunciado": "¿Un módulo DDR5 SO-DIMM puede instalarse en un slot DDR4 SO-DIMM?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": false
+          }
+        },
+        {
+          "descripcion_accion": "Verificar capacidad total de RAM reconocida por el sistema",
+          "explicacion": "Al encender, el POST o el SO deben reportar la nueva capacidad total.",
+          "desafio": {
+            "enunciado": "La laptop tenía 8 GB y se instaló un segundo módulo de 8 GB. ¿Cuántos GB en total reporta el sistema?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 16,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "nombre": "RAM insuficiente – PC con swapping y lentitud extrema",
+      "descripcion_email": "Mi PC de trabajo con 8 GB DDR4 se queda sin memoria con tres programas abiertos y el HDD/SSD trabaja constantemente haciendo swapping. Se planifica un upgrade a 32 GB en configuración dual channel.",
+      "componente_afectado": {
+        "nombre": "RAM DIMM DDR4 8 GB",
+        "es_reemplazable": true,
+        "es_reparable": false,
+        "esta_funcionando": true,
+        "tipo": "RAM",
+        "capacidad_gb": 8,
+        "velocidad_mhz": 2666,
+        "generacion": "DDR4",
+        "formato": "DIMM"
+      },
+      "pasos_reparacion": [
+        {
+          "descripcion_accion": "Confirmar que la placa base soporta más RAM y velocidades",
+          "explicacion": "El manual de la placa indica la cantidad máxima de GB y las velocidades DDR4 soportadas (XMP); instalar más de lo soportado impide el arranque.",
+          "desafio": {
+            "enunciado": "¿Es necesario verificar la especificación de la placa antes de instalar más RAM?",
+            "tipo": "BOOLEANO",
+            "dificultad": "FACIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Planificar la configuración dual channel",
+          "explicacion": "Para dual channel los módulos deben instalarse en los slots emparejados (generalmente A2 y B2 según el manual de la placa).",
+          "desafio": {
+            "enunciado": "¿En qué slots deben instalarse dos módulos para activar dual channel?",
+            "tipo": "MULTIPLE",
+            "dificultad": "DIFICIL",
+            "alternativas": [
+              "Slots 1 y 2 consecutivos siempre",
+              "Los slots del mismo color / slots emparejados (A2-B2)",
+              "Cualquier par de slots libres",
+              "Solo en el slot 1"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Calcular la nueva capacidad total tras el upgrade",
+          "explicacion": "Retirar el módulo de 8 GB e instalar 2 × 16 GB = 32 GB; verificar que el SO reconoce la nueva capacidad.",
+          "desafio": {
+            "enunciado": "Se retira 1 módulo de 8 GB y se instalan 2 módulos de 16 GB. ¿Total de GB?",
+            "tipo": "ESCRITURA",
+            "dificultad": "FACIL",
+            "respuesta": 32,
+            "tolerancia": 0.0
+          }
+        },
+        {
+          "descripcion_accion": "Instalar los módulos en los slots correctos para dual channel",
+          "explicacion": "Insertar cada módulo DIMM alineando la muesca y presionar uniformemente hasta que las dos pestañas blancas hagan clic simultáneamente.",
+          "desafio": {
+            "enunciado": "¿Qué ventaja principal ofrece el modo dual channel?",
+            "tipo": "MULTIPLE",
+            "dificultad": "DIFICIL",
+            "alternativas": [
+              "Mayor capacidad de almacenamiento",
+              "Mayor ancho de banda de memoria",
+              "Menor consumo eléctrico",
+              "Compatibilidad con más CPUs"
+            ],
+            "indice_correcto": 1
+          }
+        },
+        {
+          "descripcion_accion": "Activar perfil XMP en BIOS para velocidad correcta",
+          "explicacion": "Sin XMP la RAM corre a velocidad base (2133 MHz); activar XMP/DOCP lleva los módulos a su velocidad nominal (ej. 3200 MHz).",
+          "desafio": {
+            "enunciado": "DDR4 a 1600 MHz de reloj real equivale a 3200 MT/s efectivos. ¿Correcto?",
+            "tipo": "BOOLEANO",
+            "dificultad": "DIFICIL",
+            "respuesta": true
+          }
+        },
+        {
+          "descripcion_accion": "Calcular el ancho de banda teórico en dual channel",
+          "explicacion": "Dual channel duplica el ancho de banda respecto a single channel; es importante para cargas de trabajo con RAM intensiva.",
+          "desafio": {
+            "enunciado": "En single channel el ancho de banda es 25 GB/s. ¿Cuánto entrega en dual channel?",
+            "tipo": "ESCRITURA",
+            "dificultad": "DIFICIL",
+            "respuesta": 50,
+            "tolerancia": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}
