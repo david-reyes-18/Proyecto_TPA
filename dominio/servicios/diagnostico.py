@@ -1,20 +1,5 @@
-"""
-Servicio de diagnóstico de dispositivos.
-
-Responsabilidad (SRP):
-    Evaluar el estado de los componentes de un dispositivo y producir un informe
-    unificado que las escenas (taller, inventario) puedan mostrar.
-
-NO debe:
-    - Dibujar UI ni leer teclado.
-    - Modificar componentes (solo consulta).
-    - Crear dispositivos ni gestionar trabajos.
-"""
-
 from __future__ import annotations
-
 from dataclasses import dataclass, field
-
 from dominio.entidades.dispositivos.dispositivo import Dispositivo
 from dominio.entidades.dispositivos.laptop import Laptop
 from dominio.entidades.dispositivos.pc_escritorio import PCEscritorio
@@ -28,12 +13,6 @@ from dominio.valores.mensaje_sistema import MensajesSistema
 class InformeDiagnostico:
     """
     Resultado agregado de diagnosticar un dispositivo completo.
-
-    Attributes:
-        dispositivo_modelo: Identificador legible del equipo (ej. "Laptop ThinkPad X1").
-        resultados: Mapa nombre_componente -> resultado del diagnóstico.
-        componente_afectado: Nombre del componente vinculado al problema activo.
-        resultado_afectado: Diagnóstico específico del componente con falla reportada.
     """
 
     dispositivo_modelo: str
@@ -64,14 +43,8 @@ class InformeDiagnostico:
 class ServicioDiagnostico:
     """
     Orquesta el diagnóstico de hardware sin acoplarse a la presentación.
-
-    Uso típico desde EscenaTaller:
-        servicio = ServicioDiagnostico()
-        informe = servicio.diagnosticar(laptop, laptop.problema)
-        if informe.tiene_fallas:
-            mostrar(informe.resumen)
     """
-
+    
     def diagnosticar(
         self,
         dispositivo: Dispositivo,
@@ -112,7 +85,6 @@ class ServicioDiagnostico:
     def confirmar_falla_reportada(self, informe: InformeDiagnostico) -> ResultadoOperacion:
         """
         Verifica que el componente afectado del problema coincide con una falla real.
-
         Útil como primer paso del taller antes de iniciar la reparación.
         """
         if informe.resultado_afectado is None:

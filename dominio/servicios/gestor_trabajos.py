@@ -1,15 +1,5 @@
-"""
-Gestor de trabajos (correos / misiones de reparación).
-
-Responsabilidad (SRP):
-    Ciclo de vida de un Trabajo: aceptar desde el correo, crear el dispositivo
-    asociado, registrarlo en el inventario y otorgar recompensas al completar.
-"""
-
 from __future__ import annotations
-
 from dataclasses import dataclass, field
-
 from dominio.entidades.dispositivos.dispositivo import Dispositivo
 from dominio.entidades.jugador.inventario import Inventario
 from dominio.entidades.jugador.stats_jugador import StatsJugador

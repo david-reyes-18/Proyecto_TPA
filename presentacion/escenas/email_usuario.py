@@ -1,14 +1,5 @@
-"""
-Presentación: bandeja de entrada del correo del jugador.
-
-Responsabilidad (SRP):
-    Gestionar la lista de correos y su formato visual (dicts para la escena).
-    La creación de trabajos delega en ServicioGestorTrabajos.
-"""
-
 from __future__ import annotations
-
-from dominio.entidades.problemas.catalogo_problemas_historia import CatalogoProblemasHistoria
+from infraestructura.repositorios.repositorio_problemas_historia import RepositorioProblemasHistoria
 from dominio.servicios.gestor_trabajos import ServicioGestorTrabajos, Trabajo
 
 
@@ -22,7 +13,7 @@ class EmailUsuario:
         self._generar_trabajos_iniciales()
 
     def _generar_trabajos_iniciales(self) -> None:
-        problemas_iniciales = CatalogoProblemasHistoria.obtener_todos()[:3]
+        problemas_iniciales = RepositorioProblemasHistoria.obtener_todos()
 
         for i, problema in enumerate(problemas_iniciales):
             nivel = i + 1

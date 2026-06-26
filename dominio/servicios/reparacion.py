@@ -1,19 +1,4 @@
-"""
-Servicio de reparación.
-
-Responsabilidad (SRP):
-    Gestionar el flujo de pasos de reparación: cuál es el paso actual,
-    validar respuestas del jugador al desafío asociado y determinar cuándo
-    el dispositivo queda reparado.
-
-NO debe:
-    - Renderizar el desafío en pantalla (eso es EscenaTaller / UI).
-    - Enviar correos ni otorgar recompensas (eso es GestorTrabajos).
-    - Instanciar dispositivos nuevos.
-"""
-
 from __future__ import annotations
-
 from dominio.entidades.dispositivos.dispositivo import Dispositivo
 from dominio.entidades.problemas.problema import Problema
 from dominio.entidades.problemas.paso_de_reparacion import PasoDeReparacion
@@ -24,16 +9,9 @@ from dominio.valores.mensaje_sistema import MensajesSistema
 
 class ServicioReparacion:
     """
-    Orquesta el ciclo de vida de una reparación sobre un Problema.
-
-    Uso típico desde EscenaTaller:
-        servicio = ServicioReparacion()
-        paso = servicio.obtener_paso_actual(dispositivo.problema)
-        resultado = servicio.responder_paso(paso, respuesta_jugador)
-        if servicio.reparacion_completa(dispositivo.problema):
-            servicio.finalizar(dispositivo)
+    Orquesta el reparo de dispositivos.
     """
-
+    
     def obtener_paso_actual(self, problema: Problema) -> PasoDeReparacion | None:
         """Devuelve el primer paso pendiente o None si ya terminó."""
         for paso in problema.pasos_de_reparacion:
@@ -50,8 +28,6 @@ class ServicioReparacion:
     def progreso(self, problema: Problema) -> tuple[int, int]:
         """
         Retorna (pasos_completados, total_pasos).
-
-        Ejemplo: (2, 5) → el jugador va por el tercer paso.
         """
         completados = sum(1 for paso in problema.pasos_de_reparacion if paso.completado)
         return completados, problema.cantidad_pasos
@@ -69,7 +45,6 @@ class ServicioReparacion:
     ) -> ResultadoOperacion:
         """
         Valida la respuesta del jugador contra el desafío del paso.
-
         Delega en PasoDeReparacion.verificar_respuesta, que a su vez
         delega en Desafio (cadena TipoBooleano / TipoMultiple / TipoEscritura).
         """
