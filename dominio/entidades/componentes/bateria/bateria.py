@@ -8,11 +8,11 @@ from dominio.valores.mensaje_sistema import MensajesSistema
 
 
 class Bateria(Componente, Reemplazable):
-
+    
     """
     Moldea una bateria de laptop
     """
-
+    
     def __init__(
             self,
             voltaje_v: float,
@@ -21,22 +21,17 @@ class Bateria(Componente, Reemplazable):
             salud: int,
             esta_conectada: bool = True,
         ) -> None:
-
+        
         super().__init__(nombre="Bateria", es_reemplazable=True, es_reparable=False)
-
+        
         self._voltaje_v = voltaje_v
         self._forma_bateria = forma_bateria
         self._capacidad_wh = capacidad_wh
         self._salud = salud
         self._esta_conectada = esta_conectada
-
-        if self._salud < 30:
-            self._esta_funcionando = False
-
-
-
+    
+    
     #   Getters
-
     @property
     def voltaje_v(self) -> float:
         return self._voltaje_v
@@ -103,7 +98,7 @@ class Bateria(Componente, Reemplazable):
     def reemplazar(self, nueva_bateria: Bateria, costo: int) -> ResultadoOperacion:
 
         # Si se encuentra funcional no hay nesesidad de un cambio
-        if self._esta_funcionando:
+        if self.esta_funcionando:
             return ResultadoOperacion(
                 exito_operacion = False,
                 codigo_operacion = CodigoOperacion.COMPONENTE_FUNCIONAL,
@@ -131,8 +126,6 @@ class Bateria(Componente, Reemplazable):
         self._voltaje_v = nueva_bateria.voltaje_v
         self._salud = 100
         self._forma_bateria = nueva_bateria._forma_bateria
-        self._esta_funcionando = True
-
         return ResultadoOperacion(
             exito_operacion = True,
             codigo_operacion = CodigoOperacion.EXITO_REEMPLAZO,
@@ -142,8 +135,8 @@ class Bateria(Componente, Reemplazable):
 
     # Diagnostica si el componente se encuentra funcional
     def diagnosticar(self) -> ResultadoOperacion:
-
-        if self._esta_funcionando:
+        
+        if self.esta_funcionando:
             return ResultadoOperacion(
                 exito_operacion = True,
                 codigo_operacion = CodigoOperacion.COMPONENTE_FUNCIONAL,

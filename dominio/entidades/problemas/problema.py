@@ -59,3 +59,9 @@ class Problema(ABC):
     @property
     def perfil_dispositivo(self) -> PerfilDispositivo:
         return self._perfil_dispositivo
+    
+    def reiniciar_pasos(self) -> None:
+        """Reinicia todos los pasos para que puedan volver a responderse."""
+        for paso in self._pasos_de_reparacion:
+            paso._completado = False
+        self._indice_actual = 0
